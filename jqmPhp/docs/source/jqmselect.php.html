@@ -1,0 +1,203 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+
+<html lang="en">
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="generator" content="PHPDoctor 2RC4 (http://peej.github.com/phpdoctor/)">
+<meta name="when" content="Fri, 21 Jan 2011 04:30:38 +0000">
+
+<link rel="stylesheet" type="text/css" href="../stylesheet.css">
+<link rel="start" href="../overview-summary.html">
+
+<title>jqmSelect.php (jqmPhp)</title>
+
+</head>
+<body id="file" onload="parent.document.title=document.title;">
+
+<div class="header">
+<h1>jqmPhp</h1>
+<ul>
+<li><a href="../overview-summary.html">Overview</a></li>
+<li>Package</li><li>Class</li><li>Tree</li><li><a href="../overview-files.html">Files</a></li>
+<li><a href="../deprecated-list.html">Deprecated</a></li>
+<li><a href="../todo-list.html">Todo</a></li>
+<li><a href="../index-all.html">Index</a></li>
+</ul>
+</div>
+
+<div class="small_links">
+<a href="../index.html" target="_top">Frames</a>
+<a href="../source/jqmselect.php.html" target="_top">No frames</a>
+</div>
+<hr>
+
+<h1>jqmSelect.php</h1>
+<hr>
+
+<a name="line1"></a><pre><?php
+<a name="line2"></a>/*
+<a name="line3"></a> *  jqmPhp - HTML code generator for jQuery Mobile Framework
+<a name="line4"></a> *  Copyright (C) 2011  Bruno Maia
+<a name="line5"></a> *
+<a name="line6"></a> *  This program is free software: you can redistribute it and/or modify
+<a name="line7"></a> *  it under the terms of the GNU General Public License as published by
+<a name="line8"></a> *  the Free Software Foundation, either version 3 of the License, or
+<a name="line9"></a> *  (at your option) any later version.
+<a name="line10"></a> *
+<a name="line11"></a> *  This program is distributed in the hope that it will be useful,
+<a name="line12"></a> *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+<a name="line13"></a> *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+<a name="line14"></a> *  GNU General Public License for more details.
+<a name="line15"></a> *
+<a name="line16"></a> *  You should have received a copy of the GNU General Public License
+<a name="line17"></a> *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+<a name="line18"></a> *
+<a name="line19"></a> */
+<a name="line20"></a>/**
+<a name="line21"></a> * This class represents the 'select' tag.
+<a name="line22"></a> * @class jqmSelect
+<a name="line23"></a> * @author Bruno Maia <brunoleaomaia@gmail.com>
+<a name="line24"></a> * @copyright Copyright (c) 2011, Bruno Maia
+<a name="line25"></a> * @license http://www.gnu.org/licenses/gpl.html GNU Public License
+<a name="line26"></a> * @package jqmPhp
+<a name="line27"></a> * @version 0.01
+<a name="line28"></a> * @link http://code.google.com/p/jqmphp/ jqmPhp Project Website
+<a name="line29"></a> * @link http://www.jquerymobile.com jQuery Mobile Website
+<a name="line30"></a> */
+<a name="line31"></a>class jqmSelect extends jqmTag {
+<a name="line32"></a>    private $_name;
+<a name="line33"></a>    private $_label;
+<a name="line34"></a>    private $_fieldContain;
+<a name="line35"></a>    private $_icon;
+<a name="line36"></a>    private $_inline;
+<a name="line37"></a>    /**
+<a name="line38"></a>     *
+<a name="line39"></a>     * @param string $id
+<a name="line40"></a>     * @param string $name
+<a name="line41"></a>     * @param string $label
+<a name="line42"></a>     * @param array $items
+<a name="line43"></a>     * @param string $theme
+<a name="line44"></a>     * @param bool $fieldContain
+<a name="line45"></a>     * @param string $icon
+<a name="line46"></a>     * @param bool $inline
+<a name="line47"></a>     */
+<a name="line48"></a>    function __construct($id='', $name='', $label='', $items=array(), $theme='', $fieldContain=false, $icon='', $inline=false) {
+<a name="line49"></a>        parent::__construct('select', $id, '', $items, $theme);
+<a name="line50"></a>        $this->_name = $this->addAttribute(new jqmAttribute('name', $name, true), true);
+<a name="line51"></a>        $this->_label = new jqmLabel('', $label, $name);
+<a name="line52"></a>        $this->_fieldContain = $fieldContain;
+<a name="line53"></a>        $this->_icon = $this->attribute('data-icon', $icon, true);
+<a name="line54"></a>        $this->_inline = $this->attribute('data-inline', (($inline) ? 'true':''), true);
+<a name="line55"></a>    }
+<a name="line56"></a>    /**
+<a name="line57"></a>     * Adds an option.
+<a name="line58"></a>     * @param string $text
+<a name="line59"></a>     * @param string $value
+<a name="line60"></a>     * @param bool $selected
+<a name="line61"></a>     * @param bool $returnAdded
+<a name="line62"></a>     * @return jqmSelect|jqmOption
+<a name="line63"></a>     */
+<a name="line64"></a>    function addOption($text, $value='', $selected=false, $returnAdded=false) {
+<a name="line65"></a>        $opt = $this->add(new jqmOption($text, $value, $selected), true);
+<a name="line66"></a>        if ($returnAdded) return $opt;
+<a name="line67"></a>        return $this;
+<a name="line68"></a>    }
+<a name="line69"></a>    /**
+<a name="line70"></a>     * Gets and sets the name attribute.
+<a name="line71"></a>     * @param string $value
+<a name="line72"></a>     * @return string|jqmSelect
+<a name="line73"></a>     */
+<a name="line74"></a>    function name() {
+<a name="line75"></a>        if (func_num_args() == 0) return $this->_name->value();
+<a name="line76"></a>        $this->_name->value(func_get_arg(0));
+<a name="line77"></a>        $this->_label->forField($this->_name);
+<a name="line78"></a>        return $this;
+<a name="line79"></a>    }
+<a name="line80"></a>    /**
+<a name="line81"></a>     * Gets and sets the label property.
+<a name="line82"></a>     * @param string $value
+<a name="line83"></a>     * @return string|jqmSelect
+<a name="line84"></a>     */
+<a name="line85"></a>    function label() {
+<a name="line86"></a>        if (func_num_args() == 0) return $this->_label->text();
+<a name="line87"></a>        $this->_label->text(func_get_arg(0));
+<a name="line88"></a>        return $this;
+<a name="line89"></a>    }
+<a name="line90"></a>    /**
+<a name="line91"></a>     * Gets and sets the fieldContain property.
+<a name="line92"></a>     * If the fieldContain is true an automatic div data-role="fieldcontain" is generated.
+<a name="line93"></a>     * @param bool $value
+<a name="line94"></a>     * @return bool|jqmSelect
+<a name="line95"></a>     */
+<a name="line96"></a>    function fieldContain(){
+<a name="line97"></a>        if (func_num_args() == 0) return $this->_fieldContain;
+<a name="line98"></a>        $this->_fieldContain = func_get_arg(0);
+<a name="line99"></a>        return $this;
+<a name="line100"></a>    }
+<a name="line101"></a>    /**
+<a name="line102"></a>     * Gets and sets the icon property (data-icon="gear").
+<a name="line103"></a>     * @param string $value
+<a name="line104"></a>     * @return string|jqmSelect
+<a name="line105"></a>     */
+<a name="line106"></a>    function icon(){
+<a name="line107"></a>        if (func_num_args() == 0) return $this->_icon->value();
+<a name="line108"></a>        $this->_icon->value(func_get_arg(0));
+<a name="line109"></a>        return $this;
+<a name="line110"></a>    }
+<a name="line111"></a>    /**
+<a name="line112"></a>     * Gets and sets the inline property (data-inline="true").
+<a name="line113"></a>     * @param bool $value
+<a name="line114"></a>     * @return bool|jqmSelect
+<a name="line115"></a>     */
+<a name="line116"></a>    function inline() {
+<a name="line117"></a>        if (func_num_args() == 0) return ($this->_inline->value()=='true') ? true : false;
+<a name="line118"></a>        $this->_inline->value((func_get_arg(0)) ? 'true' : '');
+<a name="line119"></a>        return $this;
+<a name="line120"></a>    }
+<a name="line121"></a>    /**
+<a name="line122"></a>     * @access private
+<a name="line123"></a>     * @return string
+<a name="line124"></a>     */
+<a name="line125"></a>    function openTag() {
+<a name="line126"></a>        $string = '';
+<a name="line127"></a>        if ($this->_fieldContain) $string.= '<div data-role="fieldcontain">';
+<a name="line128"></a>        if ($this->_label->text()!='') $string.= $this->_label;
+<a name="line129"></a>        $string.= parent::openTag();
+<a name="line130"></a>        return $string;
+<a name="line131"></a>    }
+<a name="line132"></a>    /**
+<a name="line133"></a>     * @access private
+<a name="line134"></a>     * @return string
+<a name="line135"></a>     */
+<a name="line136"></a>    function closeTag() {
+<a name="line137"></a>        $string = '';
+<a name="line138"></a>        $string.= parent::closeTag();
+<a name="line139"></a>        if ($this->_fieldContain) $string.= '</div>';
+<a name="line140"></a>        return $string;
+<a name="line141"></a>    }
+<a name="line142"></a>}
+<a name="line143"></a>?></pre>
+<div class="header">
+<h1>jqmPhp</h1>
+<ul>
+<li><a href="../overview-summary.html">Overview</a></li>
+<li>Package</li><li>Class</li><li>Tree</li><li><a href="../overview-files.html">Files</a></li>
+<li><a href="../deprecated-list.html">Deprecated</a></li>
+<li><a href="../todo-list.html">Todo</a></li>
+<li><a href="../index-all.html">Index</a></li>
+</ul>
+</div>
+
+<div class="small_links">
+<a href="../index.html" target="_top">Frames</a>
+<a href="../source/jqmselect.php.html" target="_top">No frames</a>
+</div>
+<hr>
+
+<p id="footer">This document was generated by <a href="http://peej.github.com/phpdoctor/">PHPDoctor: The PHP Documentation Creator</a></p>
+
+</body>
+
+</html>

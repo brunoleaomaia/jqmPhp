@@ -1,0 +1,180 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+
+<html lang="en">
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="generator" content="PHPDoctor 2RC4 (http://peej.github.com/phpdoctor/)">
+<meta name="when" content="Fri, 21 Jan 2011 04:30:38 +0000">
+
+<link rel="stylesheet" type="text/css" href="../stylesheet.css">
+<link rel="start" href="../overview-summary.html">
+
+<title>jqmGrid.php (jqmPhp)</title>
+
+</head>
+<body id="file" onload="parent.document.title=document.title;">
+
+<div class="header">
+<h1>jqmPhp</h1>
+<ul>
+<li><a href="../overview-summary.html">Overview</a></li>
+<li>Package</li><li>Class</li><li>Tree</li><li><a href="../overview-files.html">Files</a></li>
+<li><a href="../deprecated-list.html">Deprecated</a></li>
+<li><a href="../todo-list.html">Todo</a></li>
+<li><a href="../index-all.html">Index</a></li>
+</ul>
+</div>
+
+<div class="small_links">
+<a href="../index.html" target="_top">Frames</a>
+<a href="../source/jqmgrid.php.html" target="_top">No frames</a>
+</div>
+<hr>
+
+<h1>jqmGrid.php</h1>
+<hr>
+
+<a name="line1"></a><pre><?php
+<a name="line2"></a>/*
+<a name="line3"></a> *  jqmPhp - HTML code generator for jQuery Mobile Framework
+<a name="line4"></a> *  Copyright (C) 2011  Bruno Maia
+<a name="line5"></a> *
+<a name="line6"></a> *  This program is free software: you can redistribute it and/or modify
+<a name="line7"></a> *  it under the terms of the GNU General Public License as published by
+<a name="line8"></a> *  the Free Software Foundation, either version 3 of the License, or
+<a name="line9"></a> *  (at your option) any later version.
+<a name="line10"></a> *
+<a name="line11"></a> *  This program is distributed in the hope that it will be useful,
+<a name="line12"></a> *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+<a name="line13"></a> *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+<a name="line14"></a> *  GNU General Public License for more details.
+<a name="line15"></a> *
+<a name="line16"></a> *  You should have received a copy of the GNU General Public License
+<a name="line17"></a> *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+<a name="line18"></a> *
+<a name="line19"></a> */
+<a name="line20"></a>/**
+<a name="line21"></a> * This class represents the 'div' tag (class="ui-grid-a").
+<a name="line22"></a> * @class jqmGrid
+<a name="line23"></a> * @author Bruno Maia <brunoleaomaia@gmail.com>
+<a name="line24"></a> * @copyright Copyright (c) 2011, Bruno Maia
+<a name="line25"></a> * @license http://www.gnu.org/licenses/gpl.html GNU Public License
+<a name="line26"></a> * @package jqmPhp
+<a name="line27"></a> * @version 0.01
+<a name="line28"></a> * @link http://code.google.com/p/jqmphp/ jqmPhp Project Website
+<a name="line29"></a> * @link http://www.jquerymobile.com jQuery Mobile Website
+<a name="line30"></a> */
+<a name="line31"></a>class jqmGrid extends jqmTag {
+<a name="line32"></a>    private $_grid;
+<a name="line33"></a>    private $_a;
+<a name="line34"></a>    private $_b;
+<a name="line35"></a>    private $_c;
+<a name="line36"></a>    private $_d;
+<a name="line37"></a>    private $_e;
+<a name="line38"></a>    /**
+<a name="line39"></a>     *
+<a name="line40"></a>     * @param string $id
+<a name="line41"></a>     * @param string $type
+<a name="line42"></a>     * @param array $a
+<a name="line43"></a>     * @param array $b
+<a name="line44"></a>     * @param array $c
+<a name="line45"></a>     * @param array $d
+<a name="line46"></a>     * @param array $e
+<a name="line47"></a>     */
+<a name="line48"></a>    function __construct($id='', $type='a', $a=array(), $b=array(), $c=array(), $d=array(), $e=array()) {
+<a name="line49"></a>        if (is_string($a) && $a != '') $a = array($a);
+<a name="line50"></a>        if (is_string($b) && $b != '') $b = array($b);
+<a name="line51"></a>        if (is_string($c) && $c != '') $c = array($c);
+<a name="line52"></a>        if (is_string($d) && $d != '') $d = array($d);
+<a name="line53"></a>        if (is_string($e) && $e != '') $e = array($e);
+<a name="line54"></a>        if (!is_array($a)) $a = array();
+<a name="line55"></a>        if (!is_array($b)) $b = array();
+<a name="line56"></a>        if (!is_array($c)) $c = array();
+<a name="line57"></a>        if (!is_array($d)) $d = array();
+<a name="line58"></a>        if (!is_array($e)) $e = array();
+<a name="line59"></a>        parent::__construct('div', $id);
+<a name="line60"></a>        $this->grid($type);
+<a name="line61"></a>        $this->_a = $this->add(new jqmCollection($a),true);
+<a name="line62"></a>        $this->_b = $this->add(new jqmCollection($b),true);
+<a name="line63"></a>        $this->_c = $this->add(new jqmCollection($c),true);
+<a name="line64"></a>        $this->_d = $this->add(new jqmCollection($d),true);
+<a name="line65"></a>        $this->_e = $this->add(new jqmCollection($e),true);
+<a name="line66"></a>        $this->_a->prefix('<div class="ui-block-a">')->suffix('</div>');
+<a name="line67"></a>        $this->_b->prefix('<div class="ui-block-b">')->suffix('</div>');
+<a name="line68"></a>        $this->_c->prefix('<div class="ui-block-c">')->suffix('</div>');
+<a name="line69"></a>        $this->_d->prefix('<div class="ui-block-d">')->suffix('</div>');
+<a name="line70"></a>        $this->_e->prefix('<div class="ui-block-e">')->suffix('</div>');
+<a name="line71"></a>    }
+<a name="line72"></a>    /**
+<a name="line73"></a>     * Gets and sets the grid type (a, b, c, d).
+<a name="line74"></a>     * @param string $value
+<a name="line75"></a>     * @return string|jqmGrid
+<a name="line76"></a>     */
+<a name="line77"></a>    function grid() {
+<a name="line78"></a>        if (func_num_args() == 0) return $this->_grid;
+<a name="line79"></a>        $type = func_get_arg(0); if ($type != 'a' && $type != 'b' && $type != 'c' && $type != 'd') $type = 'a';
+<a name="line80"></a>        $this->_grid = $type;
+<a name="line81"></a>        $this->attribute('class', 'ui-grid-'.$this->_grid);
+<a name="line82"></a>        return $this;
+<a name="line83"></a>    }
+<a name="line84"></a>    /**
+<a name="line85"></a>     * Gets a collection of items in the block A (class="ui-block-a").
+<a name="line86"></a>     * @return jqmCollection
+<a name="line87"></a>     */
+<a name="line88"></a>    function blockA() {
+<a name="line89"></a>        return $this->_a;
+<a name="line90"></a>    }
+<a name="line91"></a>    /**
+<a name="line92"></a>     * Gets a collection of items in the block B (class="ui-block-b").
+<a name="line93"></a>     * @return jqmCollection
+<a name="line94"></a>     */
+<a name="line95"></a>    function blockB() {
+<a name="line96"></a>        return $this->_b;
+<a name="line97"></a>    }
+<a name="line98"></a>    /**
+<a name="line99"></a>     * Gets a collection of items in the block C (class="ui-block-c").
+<a name="line100"></a>     * @return jqmCollection
+<a name="line101"></a>     */
+<a name="line102"></a>    function blockC() {
+<a name="line103"></a>        return $this->_c;
+<a name="line104"></a>    }
+<a name="line105"></a>    /**
+<a name="line106"></a>     * Gets a collection of items in the block D (class="ui-block-d").
+<a name="line107"></a>     * @return jqmCollection
+<a name="line108"></a>     */
+<a name="line109"></a>    function blockD() {
+<a name="line110"></a>        return $this->_d;
+<a name="line111"></a>    }
+<a name="line112"></a>    /**
+<a name="line113"></a>     * Gets a collection of items in the block E (class="ui-block-e").
+<a name="line114"></a>     * @return jqmCollection
+<a name="line115"></a>     */
+<a name="line116"></a>    function blockE() {
+<a name="line117"></a>        return $this->_e;
+<a name="line118"></a>    }
+<a name="line119"></a>}
+<a name="line120"></a>?></pre>
+<div class="header">
+<h1>jqmPhp</h1>
+<ul>
+<li><a href="../overview-summary.html">Overview</a></li>
+<li>Package</li><li>Class</li><li>Tree</li><li><a href="../overview-files.html">Files</a></li>
+<li><a href="../deprecated-list.html">Deprecated</a></li>
+<li><a href="../todo-list.html">Todo</a></li>
+<li><a href="../index-all.html">Index</a></li>
+</ul>
+</div>
+
+<div class="small_links">
+<a href="../index.html" target="_top">Frames</a>
+<a href="../source/jqmgrid.php.html" target="_top">No frames</a>
+</div>
+<hr>
+
+<p id="footer">This document was generated by <a href="http://peej.github.com/phpdoctor/">PHPDoctor: The PHP Documentation Creator</a></p>
+
+</body>
+
+</html>

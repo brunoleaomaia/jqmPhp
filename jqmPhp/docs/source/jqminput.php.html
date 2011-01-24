@@ -1,0 +1,191 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+
+<html lang="en">
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="generator" content="PHPDoctor 2RC4 (http://peej.github.com/phpdoctor/)">
+<meta name="when" content="Fri, 21 Jan 2011 04:30:38 +0000">
+
+<link rel="stylesheet" type="text/css" href="../stylesheet.css">
+<link rel="start" href="../overview-summary.html">
+
+<title>jqmInput.php (jqmPhp)</title>
+
+</head>
+<body id="file" onload="parent.document.title=document.title;">
+
+<div class="header">
+<h1>jqmPhp</h1>
+<ul>
+<li><a href="../overview-summary.html">Overview</a></li>
+<li>Package</li><li>Class</li><li>Tree</li><li><a href="../overview-files.html">Files</a></li>
+<li><a href="../deprecated-list.html">Deprecated</a></li>
+<li><a href="../todo-list.html">Todo</a></li>
+<li><a href="../index-all.html">Index</a></li>
+</ul>
+</div>
+
+<div class="small_links">
+<a href="../index.html" target="_top">Frames</a>
+<a href="../source/jqminput.php.html" target="_top">No frames</a>
+</div>
+<hr>
+
+<h1>jqmInput.php</h1>
+<hr>
+
+<a name="line1"></a><pre><?php
+<a name="line2"></a>/*
+<a name="line3"></a> *  jqmPhp - HTML code generator for jQuery Mobile Framework
+<a name="line4"></a> *  Copyright (C) 2011  Bruno Maia
+<a name="line5"></a> *
+<a name="line6"></a> *  This program is free software: you can redistribute it and/or modify
+<a name="line7"></a> *  it under the terms of the GNU General Public License as published by
+<a name="line8"></a> *  the Free Software Foundation, either version 3 of the License, or
+<a name="line9"></a> *  (at your option) any later version.
+<a name="line10"></a> *
+<a name="line11"></a> *  This program is distributed in the hope that it will be useful,
+<a name="line12"></a> *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+<a name="line13"></a> *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+<a name="line14"></a> *  GNU General Public License for more details.
+<a name="line15"></a> *
+<a name="line16"></a> *  You should have received a copy of the GNU General Public License
+<a name="line17"></a> *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+<a name="line18"></a> *
+<a name="line19"></a> */
+<a name="line20"></a>/**
+<a name="line21"></a> * This class represents the 'input' tag.
+<a name="line22"></a> * @class jqmInput
+<a name="line23"></a> * @author Bruno Maia <brunoleaomaia@gmail.com>
+<a name="line24"></a> * @copyright Copyright (c) 2011, Bruno Maia
+<a name="line25"></a> * @license http://www.gnu.org/licenses/gpl.html GNU Public License
+<a name="line26"></a> * @package jqmPhp
+<a name="line27"></a> * @version 0.01
+<a name="line28"></a> * @link http://code.google.com/p/jqmphp/ jqmPhp Project Website
+<a name="line29"></a> * @link http://www.jquerymobile.com jQuery Mobile Website
+<a name="line30"></a> */
+<a name="line31"></a>class jqmInput extends jqmTag {
+<a name="line32"></a>    private $_type;
+<a name="line33"></a>    private $_name;
+<a name="line34"></a>    private $_value;
+<a name="line35"></a>    private $_label;
+<a name="line36"></a>    private $_fieldContain;
+<a name="line37"></a>    /**
+<a name="line38"></a>     *
+<a name="line39"></a>     * @param string $id
+<a name="line40"></a>     * @param string $name
+<a name="line41"></a>     * @param string $type
+<a name="line42"></a>     * @param string $value
+<a name="line43"></a>     * @param string $label
+<a name="line44"></a>     * @param string $theme
+<a name="line45"></a>     */
+<a name="line46"></a>    function __construct($id, $name='', $type='text', $value='', $label='', $theme='', $fieldContain=false){
+<a name="line47"></a>        if ($name == '') $name = $id;
+<a name="line48"></a>        parent::__construct('input', $id, '', '', $theme);
+<a name="line49"></a>        $this->_type = $this->addAttribute(new jqmAttribute('type', $type, true), true);
+<a name="line50"></a>        $this->_name = $this->addAttribute(new jqmAttribute('name', $name, true), true);
+<a name="line51"></a>        $this->_value = $this->addAttribute(new jqmAttribute('value', $value, true), true);
+<a name="line52"></a>        $this->_label = new jqmLabel('', $label, $name);
+<a name="line53"></a>        $this->_fieldContain = $fieldContain;
+<a name="line54"></a>    }
+<a name="line55"></a>    /**
+<a name="line56"></a>     * Gets and sets the type attribute.
+<a name="line57"></a>     * @param string $value
+<a name="line58"></a>     * @return string|jqmInput
+<a name="line59"></a>     */
+<a name="line60"></a>    function type() {
+<a name="line61"></a>        if (func_num_args() == 0) return $this->_type->value();
+<a name="line62"></a>        $this->_type->value(func_get_arg(0));
+<a name="line63"></a>        return $this;
+<a name="line64"></a>    }
+<a name="line65"></a>    /**
+<a name="line66"></a>     * Gets and sets the name attribute.
+<a name="line67"></a>     * @param string $value
+<a name="line68"></a>     * @return string|jqmInput
+<a name="line69"></a>     */
+<a name="line70"></a>    function name() {
+<a name="line71"></a>        if (func_num_args() == 0) return $this->_name->value();
+<a name="line72"></a>        $this->_name->value(func_get_arg(0));
+<a name="line73"></a>        $this->_label->forField($this->_name->value());
+<a name="line74"></a>        if ($this->type() == 'radio') $this->_label->forField($this->id());
+<a name="line75"></a>        return $this;
+<a name="line76"></a>    }
+<a name="line77"></a>    /**
+<a name="line78"></a>     * Gets and sets the value attribute.
+<a name="line79"></a>     * @param string $value
+<a name="line80"></a>     * @return string|jqmInput
+<a name="line81"></a>     */
+<a name="line82"></a>    function value() {
+<a name="line83"></a>        if (func_num_args() == 0) return $this->_value->value();
+<a name="line84"></a>        $this->_value->value(func_get_arg(0));
+<a name="line85"></a>        return $this;
+<a name="line86"></a>    }
+<a name="line87"></a>    /**
+<a name="line88"></a>     * Gets and sets the label property.
+<a name="line89"></a>     * @param string $value
+<a name="line90"></a>     * @return string|jqmInput
+<a name="line91"></a>     */
+<a name="line92"></a>    function label() {
+<a name="line93"></a>        if (func_num_args() == 0) return $this->_label->text();
+<a name="line94"></a>        $this->_label->text(func_get_arg(0));
+<a name="line95"></a>        return $this;
+<a name="line96"></a>    }
+<a name="line97"></a>    /**
+<a name="line98"></a>     * Gets and sets the fieldContain property.
+<a name="line99"></a>     * If the fieldContain is true an automatic div data-role="fieldcontain" is generated.
+<a name="line100"></a>     * @param bool $value
+<a name="line101"></a>     * @return bool|jqmInput
+<a name="line102"></a>     */
+<a name="line103"></a>    function fieldContain(){
+<a name="line104"></a>        if (func_num_args() == 0) return $this->_fieldContain;
+<a name="line105"></a>        $this->_fieldContain = func_get_arg(0);
+<a name="line106"></a>        return $this;
+<a name="line107"></a>    }
+<a name="line108"></a>    /**
+<a name="line109"></a>     * @access private
+<a name="line110"></a>     * @return string
+<a name="line111"></a>     */
+<a name="line112"></a>    function openTag() {
+<a name="line113"></a>        $string = '';
+<a name="line114"></a>        if ($this->_fieldContain) $string.= '<div data-role="fieldcontain">';
+<a name="line115"></a>        if ($this->_label->text()!='' && $this->type() != 'radio' && $this->type() != 'checkbox') $string.= $this->_label;
+<a name="line116"></a>        $string.= parent::openTag();
+<a name="line117"></a>        return $string;
+<a name="line118"></a>    }
+<a name="line119"></a>    /**
+<a name="line120"></a>     * @access private
+<a name="line121"></a>     * @return string
+<a name="line122"></a>     */
+<a name="line123"></a>    function closeTag() {
+<a name="line124"></a>        $string = '';
+<a name="line125"></a>        $string.= parent::closeTag();
+<a name="line126"></a>        if ($this->_fieldContain) $string.= '</div>';
+<a name="line127"></a>        if ($this->_label->text()!='' && ($this->type() == 'radio' || $this->type() == 'checkbox')) $string.= $this->_label;
+<a name="line128"></a>        return $string;
+<a name="line129"></a>    }
+<a name="line130"></a>}
+<a name="line131"></a>?></pre>
+<div class="header">
+<h1>jqmPhp</h1>
+<ul>
+<li><a href="../overview-summary.html">Overview</a></li>
+<li>Package</li><li>Class</li><li>Tree</li><li><a href="../overview-files.html">Files</a></li>
+<li><a href="../deprecated-list.html">Deprecated</a></li>
+<li><a href="../todo-list.html">Todo</a></li>
+<li><a href="../index-all.html">Index</a></li>
+</ul>
+</div>
+
+<div class="small_links">
+<a href="../index.html" target="_top">Frames</a>
+<a href="../source/jqminput.php.html" target="_top">No frames</a>
+</div>
+<hr>
+
+<p id="footer">This document was generated by <a href="http://peej.github.com/phpdoctor/">PHPDoctor: The PHP Documentation Creator</a></p>
+
+</body>
+
+</html>

@@ -1,0 +1,262 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+
+<html lang="en">
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="generator" content="PHPDoctor 2RC4 (http://peej.github.com/phpdoctor/)">
+<meta name="when" content="Fri, 21 Jan 2011 04:30:38 +0000">
+
+<link rel="stylesheet" type="text/css" href="../stylesheet.css">
+<link rel="start" href="../overview-summary.html">
+
+<title>jqmCollection (jqmPhp)</title>
+
+</head>
+<body id="definition" onload="parent.document.title=document.title;">
+
+<div class="header">
+<h1>jqmPhp</h1>
+<ul>
+<li><a href="../overview-summary.html">Overview</a></li>
+<li><a href="../jqmphp/package-summary.html">Namespace</a></li>
+<li class="active">Class</li>
+<li><a href="../jqmphp/package-tree.html">Tree</a></li>
+<li><a href="../overview-files.html">Files</a></li>
+<li><a href="../deprecated-list.html">Deprecated</a></li>
+<li><a href="../todo-list.html">Todo</a></li>
+<li><a href="../index-all.html">Index</a></li>
+</ul>
+</div>
+
+<div class="small_links">
+<a href="../index.html" target="_top">Frames</a>
+<a href="../jqmphp/jqmcollection.html" target="_top">No frames</a>
+</div>
+<div class="small_links">
+Summary: <a href="#summary_field">Field</a> | <a href="#summary_method">Method</a> | <a href="#summary_constr">Constr</a>
+Detail: <a href="#detail_field">Field</a> | <a href="#detail_method">Method</a> | <a href="#summary_constr">Constr</a>
+</div>
+<hr>
+
+<div class="qualifiedName">jqmPhp\jqmCollection</div>
+<a href="../source/jqmcollection.php.html#line31" class="location">jqmCollection.php at line 31</a>
+
+<h1>Class jqmCollection</h1>
+
+<pre class="tree"><strong>jqmCollection</strong><br /></pre>
+
+<hr>
+
+<p class="signature">public  class <strong>jqmCollection</strong></p>
+
+<div class="comment" id="overview_description"><p>This class represents a collection.</p></div>
+
+<dl>
+<dt>Class:</dt>
+<dd>jqmCollection</dd>
+<dt>Author:</dt>
+<dd>Bruno Maia <brunoleaomaia@gmail.com></dd>
+<dt>Copyright:</dt>
+<dd>Copyright (c) 2011, Bruno Maia</dd>
+<dt>License:</dt>
+<dd>http://www.gnu.org/licenses/gpl.html GNU Public License</dd>
+<dt>Version:</dt>
+<dd>0.01</dd>
+<dt>See Also:</dt>
+<dd><code><a href="http://code.google.com/p/jqmphp/">jqmPhp Project Website</a></code></dd>
+<dd><code><a href="http://www.jquerymobile.com">jQuery Mobile Website</a></code></dd>
+</dl>
+<hr>
+
+<table id="summary_method">
+<tr><th colspan="2">Method Summary</th></tr>
+<tr>
+<td class="type"> void</td>
+<td class="description"><p class="name"><a href="#__construct()">__construct</a>(array items, string separator, string prefix, string suffix)</p><p class="description"></p></td>
+</tr>
+<tr>
+<td class="type"> <a href="../jqmphp/jqmcollection.html">jqmCollection</a></td>
+<td class="description"><p class="name"><a href="#add()">add</a>(mixed item)</p><p class="description">Adds an item.</p></td>
+</tr>
+<tr>
+<td class="type"> <a href="../jqmphp/jqmcollection.html">jqmCollection</a></td>
+<td class="description"><p class="name"><a href="#addFromArray()">addFromArray</a>(array items)</p><p class="description">Adds many items from an array.</p></td>
+</tr>
+<tr>
+<td class="type"> mixed</td>
+<td class="description"><p class="name"><a href="#get()">get</a>(int index)</p><p class="description">Gets an item in a position.</p></td>
+</tr>
+<tr>
+<td class="type"> array</td>
+<td class="description"><p class="name"><a href="#getAll()">getAll</a>()</p><p class="description">Gets all items.</p></td>
+</tr>
+<tr>
+<td class="type"> <a href="../jqmphp/jqmcollection.html">jqmCollection</a></td>
+<td class="description"><p class="name"><a href="#insert()">insert</a>(int index, mixed item)</p><p class="description">Inserts an item in a position.</p></td>
+</tr>
+<tr>
+<td class="type"> string|jqmCollection</td>
+<td class="description"><p class="name"><a href="#prefix()">prefix</a>(string value)</p><p class="description">Gets and sets the prefix property.</p></td>
+</tr>
+<tr>
+<td class="type"> <a href="../jqmphp/jqmcollection.html">jqmCollection</a></td>
+<td class="description"><p class="name"><a href="#remove()">remove</a>(int index)</p><p class="description">Removes an item in a position.</p></td>
+</tr>
+<tr>
+<td class="type"> string|jqmCollection</td>
+<td class="description"><p class="name"><a href="#separator()">separator</a>(string value)</p><p class="description">Gets and sets the separator property.</p></td>
+</tr>
+<tr>
+<td class="type"> <a href="../jqmphp/jqmcollection.html">jqmCollection</a></td>
+<td class="description"><p class="name"><a href="#set()">set</a>(int index, mixed item)</p><p class="description">Sets an item in a position.</p></td>
+</tr>
+<tr>
+<td class="type"> int</td>
+<td class="description"><p class="name"><a href="#size()">size</a>()</p><p class="description">Gets the collection size.</p></td>
+</tr>
+<tr>
+<td class="type"> string|jqmCollection</td>
+<td class="description"><p class="name"><a href="#suffix()">suffix</a>(string value)</p><p class="description">Gets and sets the suffix property.</p></td>
+</tr>
+</table>
+
+<h2 id="detail_method">Method Detail</h2>
+<a href="../source/jqmcollection.php.html#line43" class="location">jqmCollection.php at line 43</a>
+
+<h3 id="__construct()">__construct</h3>
+<code class="signature">public  void <strong>__construct</strong>(array items, string separator, string prefix, string suffix)</code>
+<div class="details">
+<p></p></div>
+
+<hr>
+
+<a href="../source/jqmcollection.php.html#line70" class="location">jqmCollection.php at line 70</a>
+
+<h3 id="add()">add</h3>
+<code class="signature">public  <a href="../jqmphp/jqmcollection.html">jqmCollection</a> <strong>add</strong>(mixed item)</code>
+<div class="details">
+<p>Adds an item.</p></div>
+
+<hr>
+
+<a href="../source/jqmcollection.php.html#line79" class="location">jqmCollection.php at line 79</a>
+
+<h3 id="addFromArray()">addFromArray</h3>
+<code class="signature">public  <a href="../jqmphp/jqmcollection.html">jqmCollection</a> <strong>addFromArray</strong>(array items)</code>
+<div class="details">
+<p>Adds many items from an array.</p></div>
+
+<hr>
+
+<a href="../source/jqmcollection.php.html#line95" class="location">jqmCollection.php at line 95</a>
+
+<h3 id="get()">get</h3>
+<code class="signature">public  mixed <strong>get</strong>(int index)</code>
+<div class="details">
+<p>Gets an item in a position.</p></div>
+
+<hr>
+
+<a href="../source/jqmcollection.php.html#line87" class="location">jqmCollection.php at line 87</a>
+
+<h3 id="getAll()">getAll</h3>
+<code class="signature">public  array <strong>getAll</strong>()</code>
+<div class="details">
+<p>Gets all items.</p></div>
+
+<hr>
+
+<a href="../source/jqmcollection.php.html#line127" class="location">jqmCollection.php at line 127</a>
+
+<h3 id="insert()">insert</h3>
+<code class="signature">public  <a href="../jqmphp/jqmcollection.html">jqmCollection</a> <strong>insert</strong>(int index, mixed item)</code>
+<div class="details">
+<p>Inserts an item in a position.</p></div>
+
+<hr>
+
+<a href="../source/jqmcollection.php.html#line158" class="location">jqmCollection.php at line 158</a>
+
+<h3 id="prefix()">prefix</h3>
+<code class="signature">public  string|jqmCollection <strong>prefix</strong>(string value)</code>
+<div class="details">
+<p>Gets and sets the prefix property.</p></div>
+
+<hr>
+
+<a href="../source/jqmcollection.php.html#line113" class="location">jqmCollection.php at line 113</a>
+
+<h3 id="remove()">remove</h3>
+<code class="signature">public  <a href="../jqmphp/jqmcollection.html">jqmCollection</a> <strong>remove</strong>(int index)</code>
+<div class="details">
+<p>Removes an item in a position.</p></div>
+
+<hr>
+
+<a href="../source/jqmcollection.php.html#line148" class="location">jqmCollection.php at line 148</a>
+
+<h3 id="separator()">separator</h3>
+<code class="signature">public  string|jqmCollection <strong>separator</strong>(string value)</code>
+<div class="details">
+<p>Gets and sets the separator property.</p></div>
+
+<hr>
+
+<a href="../source/jqmcollection.php.html#line104" class="location">jqmCollection.php at line 104</a>
+
+<h3 id="set()">set</h3>
+<code class="signature">public  <a href="../jqmphp/jqmcollection.html">jqmCollection</a> <strong>set</strong>(int index, mixed item)</code>
+<div class="details">
+<p>Sets an item in a position.</p></div>
+
+<hr>
+
+<a href="../source/jqmcollection.php.html#line140" class="location">jqmCollection.php at line 140</a>
+
+<h3 id="size()">size</h3>
+<code class="signature">public  int <strong>size</strong>()</code>
+<div class="details">
+<p>Gets the collection size.</p></div>
+
+<hr>
+
+<a href="../source/jqmcollection.php.html#line168" class="location">jqmCollection.php at line 168</a>
+
+<h3 id="suffix()">suffix</h3>
+<code class="signature">public  string|jqmCollection <strong>suffix</strong>(string value)</code>
+<div class="details">
+<p>Gets and sets the suffix property.</p></div>
+
+<hr>
+
+<div class="header">
+<h1>jqmPhp</h1>
+<ul>
+<li><a href="../overview-summary.html">Overview</a></li>
+<li><a href="../jqmphp/package-summary.html">Namespace</a></li>
+<li class="active">Class</li>
+<li><a href="../jqmphp/package-tree.html">Tree</a></li>
+<li><a href="../overview-files.html">Files</a></li>
+<li><a href="../deprecated-list.html">Deprecated</a></li>
+<li><a href="../todo-list.html">Todo</a></li>
+<li><a href="../index-all.html">Index</a></li>
+</ul>
+</div>
+
+<div class="small_links">
+<a href="../index.html" target="_top">Frames</a>
+<a href="../jqmphp/jqmcollection.html" target="_top">No frames</a>
+</div>
+<div class="small_links">
+Summary: <a href="#summary_field">Field</a> | <a href="#summary_method">Method</a> | <a href="#summary_constr">Constr</a>
+Detail: <a href="#detail_field">Field</a> | <a href="#detail_method">Method</a> | <a href="#summary_constr">Constr</a>
+</div>
+<hr>
+
+<p id="footer">This document was generated by <a href="http://peej.github.com/phpdoctor/">PHPDoctor: The PHP Documentation Creator</a></p>
+
+</body>
+
+</html>

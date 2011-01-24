@@ -1,0 +1,234 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+
+<html lang="en">
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="generator" content="PHPDoctor 2RC4 (http://peej.github.com/phpdoctor/)">
+<meta name="when" content="Fri, 21 Jan 2011 04:30:38 +0000">
+
+<link rel="stylesheet" type="text/css" href="../stylesheet.css">
+<link rel="start" href="../overview-summary.html">
+
+<title>jqmCollection.php (jqmPhp)</title>
+
+</head>
+<body id="file" onload="parent.document.title=document.title;">
+
+<div class="header">
+<h1>jqmPhp</h1>
+<ul>
+<li><a href="../overview-summary.html">Overview</a></li>
+<li>Package</li><li>Class</li><li>Tree</li><li><a href="../overview-files.html">Files</a></li>
+<li><a href="../deprecated-list.html">Deprecated</a></li>
+<li><a href="../todo-list.html">Todo</a></li>
+<li><a href="../index-all.html">Index</a></li>
+</ul>
+</div>
+
+<div class="small_links">
+<a href="../index.html" target="_top">Frames</a>
+<a href="../source/jqmcollection.php.html" target="_top">No frames</a>
+</div>
+<hr>
+
+<h1>jqmCollection.php</h1>
+<hr>
+
+<a name="line1"></a><pre><?php
+<a name="line2"></a>/*
+<a name="line3"></a> *  jqmPhp - HTML code generator for jQuery Mobile Framework
+<a name="line4"></a> *  Copyright (C) 2011  Bruno Maia
+<a name="line5"></a> *
+<a name="line6"></a> *  This program is free software: you can redistribute it and/or modify
+<a name="line7"></a> *  it under the terms of the GNU General Public License as published by
+<a name="line8"></a> *  the Free Software Foundation, either version 3 of the License, or
+<a name="line9"></a> *  (at your option) any later version.
+<a name="line10"></a> *
+<a name="line11"></a> *  This program is distributed in the hope that it will be useful,
+<a name="line12"></a> *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+<a name="line13"></a> *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+<a name="line14"></a> *  GNU General Public License for more details.
+<a name="line15"></a> *
+<a name="line16"></a> *  You should have received a copy of the GNU General Public License
+<a name="line17"></a> *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+<a name="line18"></a> *
+<a name="line19"></a> */
+<a name="line20"></a>/**
+<a name="line21"></a> * This class represents a collection.
+<a name="line22"></a> * @class jqmCollection
+<a name="line23"></a> * @author Bruno Maia <brunoleaomaia@gmail.com>
+<a name="line24"></a> * @copyright Copyright (c) 2011, Bruno Maia
+<a name="line25"></a> * @license http://www.gnu.org/licenses/gpl.html GNU Public License
+<a name="line26"></a> * @package jqmPhp
+<a name="line27"></a> * @version 0.01
+<a name="line28"></a> * @link http://code.google.com/p/jqmphp/ jqmPhp Project Website
+<a name="line29"></a> * @link http://www.jquerymobile.com jQuery Mobile Website
+<a name="line30"></a> */
+<a name="line31"></a>class jqmCollection {
+<a name="line32"></a>    private $_items;
+<a name="line33"></a>    private $_separator;
+<a name="line34"></a>    private $_prefix;
+<a name="line35"></a>    private $_suffix;
+<a name="line36"></a>    /**
+<a name="line37"></a>     *
+<a name="line38"></a>     * @param array $items
+<a name="line39"></a>     * @param string $separator
+<a name="line40"></a>     * @param string $prefix
+<a name="line41"></a>     * @param string $suffix
+<a name="line42"></a>     */
+<a name="line43"></a>    function __construct($items=array(), $separator='', $prefix='', $suffix=''){
+<a name="line44"></a>        if (!is_array($items) && $items != '') $items = array($items);
+<a name="line45"></a>        if (!is_array($items)) $items = array();
+<a name="line46"></a>        if (is_array($items)) $this->_items = $items;
+<a name="line47"></a>        $this->_separator = $separator;
+<a name="line48"></a>        $this->_prefix = $prefix;
+<a name="line49"></a>        $this->_suffix = $suffix;
+<a name="line50"></a>    }
+<a name="line51"></a>    /**
+<a name="line52"></a>     *
+<a name="line53"></a>     * @return string
+<a name="line54"></a>     */
+<a name="line55"></a>    function __toString() {
+<a name="line56"></a>        $string='';
+<a name="line57"></a>        if (count($this->_items) > 0) $string = $this->prefix();
+<a name="line58"></a>        for($i = 0; $i < count($this->_items); $i++) {
+<a name="line59"></a>            if ($i > 0 && $this->_items[$i] != '') $string .= $this->separator();
+<a name="line60"></a>            $string .= $this->_items[$i];
+<a name="line61"></a>        }
+<a name="line62"></a>        if (count($this->_items) > 0) $string.= $this->suffix();
+<a name="line63"></a>        return $string;
+<a name="line64"></a>    }
+<a name="line65"></a>    /**
+<a name="line66"></a>     * Adds an item.
+<a name="line67"></a>     * @param mixed $item
+<a name="line68"></a>     * @return jqmCollection
+<a name="line69"></a>     */
+<a name="line70"></a>    function add($item) {
+<a name="line71"></a>        $this->_items[] = $item;
+<a name="line72"></a>        return $this;
+<a name="line73"></a>    }
+<a name="line74"></a>    /**
+<a name="line75"></a>     * Adds many items from an array.
+<a name="line76"></a>     * @param array $items
+<a name="line77"></a>     * @return jqmCollection
+<a name="line78"></a>     */
+<a name="line79"></a>    function addFromArray($items) {
+<a name="line80"></a>        if (is_array($items)) for ($i = 0; $i < count($items); $i++) $this->add($items[$i]);
+<a name="line81"></a>        return $this;
+<a name="line82"></a>    }
+<a name="line83"></a>    /**
+<a name="line84"></a>     * Gets all items.
+<a name="line85"></a>     * @return array
+<a name="line86"></a>     */
+<a name="line87"></a>    function getAll() {
+<a name="line88"></a>        return $this->_items;
+<a name="line89"></a>    }
+<a name="line90"></a>    /**
+<a name="line91"></a>     * Gets an item in a position.
+<a name="line92"></a>     * @param int $index
+<a name="line93"></a>     * @return mixed
+<a name="line94"></a>     */
+<a name="line95"></a>    function get($index) {
+<a name="line96"></a>        return $this->_items[$index];
+<a name="line97"></a>    }
+<a name="line98"></a>    /**
+<a name="line99"></a>     * Sets an item in a position.
+<a name="line100"></a>     * @param int $index
+<a name="line101"></a>     * @param mixed $item
+<a name="line102"></a>     * @return jqmCollection
+<a name="line103"></a>     */
+<a name="line104"></a>    function set($index, $item) {
+<a name="line105"></a>        $this->_items[$index] = $item;
+<a name="line106"></a>        return $this;
+<a name="line107"></a>    }
+<a name="line108"></a>    /**
+<a name="line109"></a>     * Removes an item in a position.
+<a name="line110"></a>     * @param int $index
+<a name="line111"></a>     * @return jqmCollection
+<a name="line112"></a>     */
+<a name="line113"></a>    function remove($index) {
+<a name="line114"></a>        $tmp = array();
+<a name="line115"></a>        for ($i = 0; $i < count($this->_items); $i++) {
+<a name="line116"></a>            if ($i != $index) $tmp[] = $this->_items[$i];
+<a name="line117"></a>        }
+<a name="line118"></a>        $this->_items = $tmp;
+<a name="line119"></a>        return $this;
+<a name="line120"></a>    }
+<a name="line121"></a>    /**
+<a name="line122"></a>     * Inserts an item in a position.
+<a name="line123"></a>     * @param int $index
+<a name="line124"></a>     * @param mixed $item
+<a name="line125"></a>     * @return jqmCollection
+<a name="line126"></a>     */
+<a name="line127"></a>    function insert($index, $item) {
+<a name="line128"></a>        $tmp = array();
+<a name="line129"></a>        for ($i = 0; $i < count($this->_items); $i++) {
+<a name="line130"></a>            if ($i == $index) $tmp[] = $item;
+<a name="line131"></a>            $tmp[] = $this->_items[$i];
+<a name="line132"></a>        }
+<a name="line133"></a>        $this->_items = $tmp;
+<a name="line134"></a>        return $this;
+<a name="line135"></a>    }
+<a name="line136"></a>    /**
+<a name="line137"></a>     * Gets the collection size.
+<a name="line138"></a>     * @return int
+<a name="line139"></a>     */
+<a name="line140"></a>    function size() {
+<a name="line141"></a>        return count($this->_items);
+<a name="line142"></a>    }
+<a name="line143"></a>    /**
+<a name="line144"></a>     * Gets and sets the separator property.
+<a name="line145"></a>     * @param string $value
+<a name="line146"></a>     * @return string|jqmCollection
+<a name="line147"></a>     */
+<a name="line148"></a>    function separator(){
+<a name="line149"></a>        if (func_num_args() == 0) return $this->_separator;
+<a name="line150"></a>        $this->_separator = func_get_arg(0);
+<a name="line151"></a>        return $this;
+<a name="line152"></a>    }
+<a name="line153"></a>    /**
+<a name="line154"></a>     * Gets and sets the prefix property.
+<a name="line155"></a>     * @param string $value
+<a name="line156"></a>     * @return string|jqmCollection
+<a name="line157"></a>     */
+<a name="line158"></a>    function prefix(){
+<a name="line159"></a>        if (func_num_args() == 0) return $this->_prefix;
+<a name="line160"></a>        $this->_prefix = func_get_arg(0);
+<a name="line161"></a>        return $this;
+<a name="line162"></a>    }
+<a name="line163"></a>    /**
+<a name="line164"></a>     * Gets and sets the suffix property.
+<a name="line165"></a>     * @param string $value
+<a name="line166"></a>     * @return string|jqmCollection
+<a name="line167"></a>     */
+<a name="line168"></a>    function suffix(){
+<a name="line169"></a>        if (func_num_args() == 0) return $this->_suffix;
+<a name="line170"></a>        $this->_suffix = func_get_arg(0);
+<a name="line171"></a>        return $this;
+<a name="line172"></a>    }
+<a name="line173"></a>}
+<a name="line174"></a>?></pre>
+<div class="header">
+<h1>jqmPhp</h1>
+<ul>
+<li><a href="../overview-summary.html">Overview</a></li>
+<li>Package</li><li>Class</li><li>Tree</li><li><a href="../overview-files.html">Files</a></li>
+<li><a href="../deprecated-list.html">Deprecated</a></li>
+<li><a href="../todo-list.html">Todo</a></li>
+<li><a href="../index-all.html">Index</a></li>
+</ul>
+</div>
+
+<div class="small_links">
+<a href="../index.html" target="_top">Frames</a>
+<a href="../source/jqmcollection.php.html" target="_top">No frames</a>
+</div>
+<hr>
+
+<p id="footer">This document was generated by <a href="http://peej.github.com/phpdoctor/">PHPDoctor: The PHP Documentation Creator</a></p>
+
+</body>
+
+</html>
