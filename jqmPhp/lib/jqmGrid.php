@@ -75,8 +75,9 @@ class jqmGrid extends jqmTag {
      * @return string|jqmGrid
      */
     function grid() {
-        if (func_num_args() == 0) return $this->_grid;
-        $type = func_get_arg(0); if ($type != 'a' && $type != 'b' && $type != 'c' && $type != 'd') $type = 'a';
+        $args = func_get_args();
+        if (count($args) == 0) return $this->_grid;
+        $type = $args[0]; if ($type != 'a' && $type != 'b' && $type != 'c' && $type != 'd') $type = 'a';
         $this->_grid = $type;
         $this->attribute('class', 'ui-grid-'.$this->_grid);
         return $this;

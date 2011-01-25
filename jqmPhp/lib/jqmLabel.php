@@ -48,8 +48,9 @@ class jqmLabel extends jqmTag {
      * @return string|jqmLabel
      */
     function text() {
-        if (func_num_args() == 0) return $this->_text->text();
-        $this->_text->text(func_get_arg(0));
+        $args = func_get_args();
+        if (count($args) == 0) return $this->_text->text();
+        $this->_text->text($args[0]);
         return $this;
     }
     /**
@@ -58,8 +59,9 @@ class jqmLabel extends jqmTag {
      * @return string|jqmLabel
      */
     function forField() {
-        if (func_num_args() == 0) return $this->_forField->value();
-        $this->_forField->value(func_get_arg(0));
+        $args = func_get_args();
+        if (count($args) == 0) return $this->_forField->value();
+        $this->_forField->value($args[0]);
         return $this;
     }
 }

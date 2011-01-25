@@ -63,8 +63,9 @@ class jqmHtml extends jqmTag  {
      * @return string|jqmHtml
      */
     function doctype(){
-        if (func_num_args() == 0) return $this->_doctype->text();
-        $this->_doctype->text(func_get_arg(0));
+        $args = func_get_args();
+        if (count($args) == 0) return $this->_doctype->text();
+        $this->_doctype->text($args[0]);
         return $this;
     }
     /**

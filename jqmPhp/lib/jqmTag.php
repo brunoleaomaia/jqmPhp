@@ -74,19 +74,20 @@ class jqmTag {
      * @return string|jqmTag|jqmAttribute
      */
     function attribute() {
-        if (func_num_args() == 0) return '';
+        $args = func_get_args();
+        if (count($args) == 0) return '';
         for ($i = 0; $i < $this->attributes()->size(); $i++) {
             if (is_object($this->attributes()->get($i)) && get_class($this->attributes()->get($i)) == 'jqmAttribute') {
-                if ($this->attributes()->get($i)->name() == func_get_arg(0)) {
-                    if (func_num_args() == 1) return $this->attributes()->get($i)->value();
-                    $this->attributes()->get($i)->value(func_get_arg(1));
-                    if (func_num_args() == 3 && func_get_arg(2)) return $this->attributes()->get($i);
+                if ($this->attributes()->get($i)->name() == $args[0]) {
+                    if (count($args) == 1) return $this->attributes()->get($i)->value();
+                    $this->attributes()->get($i)->value($args[1]);
+                    if (count($args) == 3 && $args[2]) return $this->attributes()->get($i);
                     return $this;
                 }
             }
         }
-        if (func_num_args() == 1) return '';
-        return $this->addAttribute(new jqmAttribute(func_get_arg(0), func_get_arg(1)), (func_num_args() == 3 && func_get_arg(2)));
+        if (count($args) == 1) return '';
+        return $this->addAttribute(new jqmAttribute($args[0], $args[1]), (count($args) == 3 && $args[2]));
     }
     /**
      * Adds an attribute.
@@ -123,8 +124,9 @@ class jqmTag {
      * @return string|jqmTag
      */
     function tag() {
-        if (func_num_args() == 0) return $this->_tag;
-        $this->_tag = func_get_arg(0);
+        $args = func_get_args();
+        if (count($args) == 0) return $this->_tag;
+        $this->_tag = $args[0];
         return $this;
     }
     /**
@@ -133,8 +135,9 @@ class jqmTag {
      * @return string|jqmTag
      */
     function id(){
-        if (func_num_args() == 0) return $this->_id->value();
-        $this->_id->value(func_get_arg(0));
+        $args = func_get_args();
+        if (count($args) == 0) return $this->_id->value();
+        $this->_id->value($args[0]);
         return $this;
     }
     /**
@@ -143,8 +146,9 @@ class jqmTag {
      * @return string|jqmTag
      */
     function theme() {
-        if (func_num_args() == 0) return $this->_theme->value();
-        $this->_theme->value(func_get_arg(0));
+        $args = func_get_args();
+        if (count($args) == 0) return $this->_theme->value();
+        $this->_theme->value($args[0]);
         return $this;
     }
     /**

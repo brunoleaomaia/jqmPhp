@@ -59,8 +59,9 @@ class jqmHead extends jqmTag {
      * @return string|jqmHead
      */
     function xmlns(){
-        if (func_num_args() == 0) return $this->_xmlns->value();
-        $this->_xmlns->value(func_get_arg(0));
+        $args = func_get_args();
+        if (count($args) == 0) return $this->_xmlns->value();
+        $this->_xmlns->value($args[0]);
         return $this;
     }
     /**
@@ -69,8 +70,9 @@ class jqmHead extends jqmTag {
      * @return string|jqmHead
      */
     function charset(){
-        if (func_num_args() == 0) return $this->_charset->value();
-        $this->_charset->value(func_get_arg(0));
+        $args = func_get_args();
+        if (count($args) == 0) return $this->_charset->value();
+        $this->_charset->value($args[0]);
         return $this;
     }
     /**
@@ -79,8 +81,9 @@ class jqmHead extends jqmTag {
      * @return string|jqmHead
      */
     function title(){
-        if (func_num_args() == 0) return $this->_title->text();
-        $this->_title->text(func_get_arg(0));
+        $args = func_get_args();
+        if (count($args) == 0) return $this->_title->text();
+        $this->_title->text($args[0]);
         return $this;
     }
     /**
@@ -89,8 +92,9 @@ class jqmHead extends jqmTag {
      * @return string|jqmHead
      */
     function css(){
-        if (func_num_args() == 0) return $this->_css->href();
-        $this->_css->href(func_get_arg(0));
+        $args = func_get_args();
+        if (count($args) == 0) return $this->_css->href();
+        $this->_css->href($args[0]);
         return $this;
     }
     /**
@@ -99,8 +103,9 @@ class jqmHead extends jqmTag {
      * @return string|jqmHead
      */
     function jq(){
-        if (func_num_args() == 0) return $this->_jq->src();
-        $this->_jq->src(func_get_arg(0));
+        $args = func_get_args();
+        if (count($args) == 0) return $this->_jq->src();
+        $this->_jq->src($args[0]);
         return $this;
     }
     /**
@@ -109,8 +114,9 @@ class jqmHead extends jqmTag {
      * @return string|jqmHead
      */
     function jqm(){
-        if (func_num_args() == 0) return $this->_jqm->src();
-        $this->_jqm->src(func_get_arg(0));
+        $args = func_get_args();
+        if (count($args) == 0) return $this->_jqm->src();
+        $this->_jqm->src($args[0]);
         return $this;
     }
 }

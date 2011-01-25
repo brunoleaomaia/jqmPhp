@@ -44,8 +44,9 @@ class jqmOption extends jqmTag {
      * @return string|jqmOption
      */
     function text(){
-        if (func_num_args() == 0) return $this->_text->text();
-        $this->_text->text(func_get_arg(0));
+        $args = func_get_args();
+        if (count($args) == 0) return $this->_text->text();
+        $this->_text->text($args[0]);
         return $this;
     }
     /**
@@ -54,8 +55,9 @@ class jqmOption extends jqmTag {
      * @return string|jqmOption
      */
     function value(){
-        if (func_num_args() == 0) return $this->_value->value();
-        $this->_value->value(func_get_arg(0));
+        $args = func_get_args();
+        if (count($args) == 0) return $this->_value->value();
+        $this->_value->value($args[0]);
         return $this;
     }
     /**
@@ -64,8 +66,9 @@ class jqmOption extends jqmTag {
      * @return bool|jqmOption
      */
     function selected(){
-        if (func_num_args() == 0) return ($this->_selected->value() == 'selected') ? true : false;
-        $this->_selected->value((func_get_arg(0)) ? 'selected' : '');
+        $args = func_get_args();
+        if (count($args) == 0) return ($this->_selected->value() == 'selected') ? true : false;
+        $this->_selected->value(($args[0]) ? 'selected' : '');
         return $this;
     }
 }

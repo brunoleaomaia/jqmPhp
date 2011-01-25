@@ -46,8 +46,9 @@ class jqmLink extends jqmTag {
      * @return string|jqmLink
      */
     function href(){
-        if (func_num_args() == 0) return $this->_href->value();
-        $this->_href->value(func_get_arg(0));
+        $args = func_get_args();
+        if (count($args) == 0) return $this->_href->value();
+        $this->_href->value($args[0]);
         return $this;
     }
 }

@@ -74,8 +74,9 @@ class jqmRadiogroup extends jqmTag {
      * @return string|jqmSlider
      */
     function legend() {
-        if (func_num_args() == 0) return $this->_legend->items()->get(0);
-        $this->_legend->items()->set(0, func_get_arg(0));
+        $args = func_get_args();
+        if (count($args) == 0) return $this->_legend->items()->get(0);
+        $this->_legend->items()->set(0, $args[0]);
         return $this;
     }
     /**
@@ -84,8 +85,9 @@ class jqmRadiogroup extends jqmTag {
      * @return string|jqmRadiogroup
      */
     function name() {
-        if (func_num_args() == 0) return $this->_name;
-        $this->_name = func_get_arg(0);
+        $args = func_get_args();
+        if (count($args) == 0) return $this->_name;
+        $this->_name = $args[0];
         return $this;
     }
     /**
@@ -94,8 +96,9 @@ class jqmRadiogroup extends jqmTag {
      * @return string|jqmRadiogroup
      */
     function role() {
-        if (func_num_args() == 0) return $this->_role->value();
-        $this->_role->value(func_get_arg(0));
+        $args = func_get_args();
+        if (count($args) == 0) return $this->_role->value();
+        $this->_role->value($args[0]);
         return $this;
     }
     /**
@@ -104,8 +107,9 @@ class jqmRadiogroup extends jqmTag {
      * @return string|jqmRadiogroup
      */
     function dataType() {
-        if (func_num_args() == 0) return $this->_dataType->value();
-        $this->_dataType->value(func_get_arg(0));
+        $args = func_get_args();
+        if (count($args) == 0) return $this->_dataType->value();
+        $this->_dataType->value($args[0]);
         return $this;
     }
     /**
@@ -115,8 +119,9 @@ class jqmRadiogroup extends jqmTag {
      * @return bool|jqmRadiogroup
      */
     function fieldContain(){
-        if (func_num_args() == 0) return $this->_fieldContain;
-        $this->_fieldContain = func_get_arg(0);
+        $args = func_get_args();
+        if (count($args) == 0) return $this->_fieldContain;
+        $this->_fieldContain = $args[0];
         return $this;
     }
     /**

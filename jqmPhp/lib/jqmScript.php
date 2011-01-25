@@ -46,8 +46,9 @@ class jqmScript extends jqmTag {
      * @return string|jqmScript
      */
     function src(){
-        if (func_num_args() == 0) return $this->_src->value();
-        $this->_src->value(func_get_arg(0));
+        $args = func_get_args();
+        if (count($args) == 0) return $this->_src->value();
+        $this->_src->value($args[0]);
         return $this;
     }
 }

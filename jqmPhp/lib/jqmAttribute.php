@@ -57,8 +57,9 @@ class jqmAttribute {
      * @return string|jqmAttribute
      */
     function name(){
-        if (func_num_args() == 0) return $this->_name;
-        $this->_name = func_get_arg(0);
+        $args = func_get_args();
+        if (count($args) == 0) return $this->_name;
+        $this->_name = $args[0];
         return $this;
     }
     /**
@@ -67,8 +68,9 @@ class jqmAttribute {
      * @return string|jqmAttribute
      */
     function value(){
-        if (func_num_args() == 0) return $this->_value;
-        $this->_value = func_get_arg(0);
+        $args = func_get_args();
+        if (count($args) == 0) return $this->_value;
+        $this->_value = $args[0];
         return $this;
     }
     /**
@@ -78,8 +80,9 @@ class jqmAttribute {
      * @return bool|jqmAttribute
      */
     function allowBlank(){
-        if (func_num_args() == 0) return $this->_allowBlank;
-        $this->_allowBlank = func_get_arg(0);
+        $args = func_get_args();
+        if (count($args) == 0) return $this->_allowBlank;
+        $this->_allowBlank = $args[0];
         return $this;
     }
 }

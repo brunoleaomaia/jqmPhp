@@ -51,8 +51,9 @@ class jqmText {
      * @return string|jqmText
      */
     function text(){
-        if (func_num_args() == 0) return $this->_text;
-        $this->_text = func_get_arg(0);
+        $args = func_get_args();
+        if (count($args) == 0) return $this->_text;
+        $this->_text = $args[0];
         return $this;
     }
 }

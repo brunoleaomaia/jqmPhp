@@ -53,8 +53,9 @@ class jqmCollapsible extends jqmTag {
      * @return string|jqmCollapsible
      */
     function title() {
-        if (func_num_args() == 0) return $this->_title->text();
-        $this->_title->text(func_get_arg(0));
+        $args = func_get_args();
+        if (count($args) == 0) return $this->_title->text();
+        $this->_title->text($args[0]);
         return $this;
     }
     /**
@@ -63,8 +64,9 @@ class jqmCollapsible extends jqmTag {
      * @return bool|jqmCollapsible
      */
     function collapsed() {
-        if (func_num_args() == 0) return ($this->_collapsed->value()=='true') ? true : false;
-        $this->_collapsed->value((func_get_arg(0)) ? 'true' : 'false');
+        $args = func_get_args();
+        if (count($args) == 0) return ($this->_collapsed->value()=='true') ? true : false;
+        $this->_collapsed->value(($args[0]) ? 'true' : 'false');
         return $this;
     }
     /**
@@ -73,8 +75,9 @@ class jqmCollapsible extends jqmTag {
      * @return string|jqmCollapsible
      */
     function role() {
-        if (func_num_args() == 0) return $this->_role->value();
-        $this->_role->value(func_get_arg(0));
+        $args = func_get_args();
+        if (count($args) == 0) return $this->_role->value();
+        $this->_role->value($args[0]);
         return $this;
     }
 }   

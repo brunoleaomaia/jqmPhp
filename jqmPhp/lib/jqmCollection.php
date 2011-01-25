@@ -146,8 +146,9 @@ class jqmCollection {
      * @return string|jqmCollection
      */
     function separator(){
-        if (func_num_args() == 0) return $this->_separator;
-        $this->_separator = func_get_arg(0);
+        $args = func_get_args();
+        if (count($args) == 0) return $this->_separator;
+        $this->_separator = $args[0];
         return $this;
     }
     /**
@@ -156,8 +157,9 @@ class jqmCollection {
      * @return string|jqmCollection
      */
     function prefix(){
-        if (func_num_args() == 0) return $this->_prefix;
-        $this->_prefix = func_get_arg(0);
+        $args = func_get_args();
+        if (count($args) == 0) return $this->_prefix;
+        $this->_prefix = $args[0];
         return $this;
     }
     /**
@@ -166,8 +168,9 @@ class jqmCollection {
      * @return string|jqmCollection
      */
     function suffix(){
-        if (func_num_args() == 0) return $this->_suffix;
-        $this->_suffix = func_get_arg(0);
+        $args = func_get_args();
+        if (count($args) == 0) return $this->_suffix;
+        $this->_suffix = $args[0];
         return $this;
     }
 }

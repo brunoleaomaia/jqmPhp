@@ -60,8 +60,9 @@ class jqmButton extends jqmTag {
      * @return bool|jqmButton
      */
     function active(){
-        if (func_num_args() == 0) return $this->_active;
-        $this->_active = func_get_arg(0);
+        $args = func_get_args();
+        if (count($args) == 0) return $this->_active;
+        $this->_active = $args[0];
         $this->attribute('class', (($this->_active)? 'ui-btn-active':''));
         return $this;
     }
@@ -71,8 +72,9 @@ class jqmButton extends jqmTag {
      * @return bool|jqmButton
      */
     function inline() {
-        if (func_num_args() == 0) return ($this->_inline->value()=='true') ? true : false;
-        $this->_inline->value((func_get_arg(0)) ? 'true' : '');
+        $args = func_get_args();
+        if (count($args) == 0) return ($this->_inline->value()=='true') ? true : false;
+        $this->_inline->value(($args[0]) ? 'true' : '');
         return $this;
     }
     /**
@@ -81,8 +83,9 @@ class jqmButton extends jqmTag {
      * @return string|jqmButton
      */
     function href(){
-        if (func_num_args() == 0) return $this->_href->value();
-        $this->_href->value(func_get_arg(0));
+        $args = func_get_args();
+        if (count($args) == 0) return $this->_href->value();
+        $this->_href->value($args[0]);
         return $this;
     }
     /**
@@ -91,8 +94,9 @@ class jqmButton extends jqmTag {
      * @return string|jqmButton
      */
     function text(){
-        if (func_num_args() == 0) return $this->_text->text();
-        $this->_text->text(func_get_arg(0));
+        $args = func_get_args();
+        if (count($args) == 0) return $this->_text->text();
+        $this->_text->text($args[0]);
         return $this;
     }
     /**
@@ -101,8 +105,9 @@ class jqmButton extends jqmTag {
      * @return string|jqmButton
      */
     function icon(){
-        if (func_num_args() == 0) return $this->_icon->value();
-        $this->_icon->value(func_get_arg(0));
+        $args = func_get_args();
+        if (count($args) == 0) return $this->_icon->value();
+        $this->_icon->value($args[0]);
         return $this;
     }
     /**
@@ -111,8 +116,9 @@ class jqmButton extends jqmTag {
      * @return string|jqmButton
      */
     function role() {
-        if (func_num_args() == 0) return $this->_role->value();
-        $this->_role->value(func_get_arg(0));
+        $args = func_get_args();
+        if (count($args) == 0) return $this->_role->value();
+        $this->_role->value($args[0]);
         return $this;
     }
 }

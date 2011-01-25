@@ -51,8 +51,9 @@ class jqmForm extends jqmTag {
      * @return string|jqmForm
      */
     function action() {
-        if (func_num_args() == 0) return $this->_action->value();
-        $this->_action->value(func_get_arg(0));
+        $args = func_get_args();
+        if (count($args) == 0) return $this->_action->value();
+        $this->_action->value($args[0]);
         return $this;
     }
     /**
@@ -61,8 +62,9 @@ class jqmForm extends jqmTag {
      * @return string|jqmForm
      */
     function method() {
-        if (func_num_args() == 0) return $this->_method->value();
-        $this->_method->value(func_get_arg(0));
+        $args = func_get_args();
+        if (count($args) == 0) return $this->_method->value();
+        $this->_method->value($args[0]);
         return $this;
     }
 }

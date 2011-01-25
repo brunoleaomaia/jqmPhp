@@ -68,8 +68,9 @@ class jqmListitem extends jqmTag {
      * @return bool|jqmListitem
      */
     function divider() {
-        if (func_num_args() == 0) return ($this->_divider->value()=='list-divider') ? true : false;
-        $this->_divider->value((func_get_arg(0)) ? 'list-divider' : '');
+        $args = func_get_args();
+        if (count($args) == 0) return ($this->_divider->value()=='list-divider') ? true : false;
+        $this->_divider->value(($args[0]) ? 'list-divider' : '');
         return $this;
     }
     /**
@@ -78,8 +79,9 @@ class jqmListitem extends jqmTag {
      * @return string|jqmListitem
      */
     function title() {
-        if (func_num_args() == 0) return $this->_title;
-        $this->_title = func_get_arg(0);
+        $args = func_get_args();
+        if (count($args) == 0) return $this->_title;
+        $this->_title = $args[0];
         return $this;
     }
     /**
@@ -88,8 +90,9 @@ class jqmListitem extends jqmTag {
      * @return string|jqmListitem
      */
     function href() {
-        if (func_num_args() == 0) return $this->_href;
-        $this->_href = func_get_arg(0);
+        $args = func_get_args();
+        if (count($args) == 0) return $this->_href;
+        $this->_href = $args[0];
         return $this;
     }
     /**
@@ -98,8 +101,9 @@ class jqmListitem extends jqmTag {
      * @return string|jqmListitem
      */
     function count() {
-        if (func_num_args() == 0) return $this->_count;
-        $this->_count = func_get_arg(0);
+        $args = func_get_args();
+        if (count($args) == 0) return $this->_count;
+        $this->_count = $args[0];
         return $this;
     }
     /**
@@ -108,8 +112,9 @@ class jqmListitem extends jqmTag {
      * @return string|jqmListitem
      */
     function img() {
-        if (func_num_args() == 0) return $this->_img;
-        $this->_img = func_get_arg(0);
+        $args = func_get_args();
+        if (count($args) == 0) return $this->_img;
+        $this->_img = $args[0];
         return $this;
     }
     /**
@@ -118,8 +123,9 @@ class jqmListitem extends jqmTag {
      * @return string|jqmListitem
      */
     function subTitle() {
-        if (func_num_args() == 0) return $this->_subTitle;
-        $this->_subTitle = func_get_arg(0);
+        $args = func_get_args();
+        if (count($args) == 0) return $this->_subTitle;
+        $this->_subTitle = $args[0];
         return $this;
     }
     /**
@@ -129,8 +135,9 @@ class jqmListitem extends jqmTag {
      * @return bool|jqmListitem
      */
     function isThumb() {
-        if (func_num_args() == 0) return $this->_isThumb;
-        $this->_isThumb = func_get_arg(0);
+        $args = func_get_args();
+        if (count($args) == 0) return $this->_isThumb;
+        $this->_isThumb = $args[0];
         return $this;
     }
     /**
@@ -139,8 +146,9 @@ class jqmListitem extends jqmTag {
      * @return string|jqmListitem
      */
     function splitHref() {
-        if (func_num_args() == 0) return $this->_splitHref;
-        $this->_splitHref = func_get_arg(0);
+        $args = func_get_args();
+        if (count($args) == 0) return $this->_splitHref;
+        $this->_splitHref = $args[0];
         return $this;
     }
     /**

@@ -71,8 +71,9 @@ class jqmCheckboxgroup extends jqmTag {
      * @return string|jqmCheckboxgroup
      */
     function legend() {
-        if (func_num_args() == 0) return $this->_legend->items()->get(0);
-        $this->_legend->items()->set(0, func_get_arg(0));
+        $args = func_get_args();
+        if (count($args) == 0) return $this->_legend->items()->get(0);
+        $this->_legend->items()->set(0, $args[0]);
         return $this;
     }
     /**
@@ -81,8 +82,9 @@ class jqmCheckboxgroup extends jqmTag {
      * @return string|jqmCheckboxgroup
      */
     function role() {
-        if (func_num_args() == 0) return $this->_role->value();
-        $this->_role->value(func_get_arg(0));
+        $args = func_get_args();
+        if (count($args) == 0) return $this->_role->value();
+        $this->_role->value($args[0]);
         return $this;
     }
     /**
@@ -91,8 +93,9 @@ class jqmCheckboxgroup extends jqmTag {
      * @return string|jqmCheckboxgroup
      */
     function dataType() {
-        if (func_num_args() == 0) return $this->_dataType->value();
-        $this->_dataType->value(func_get_arg(0));
+        $args = func_get_args();
+        if (count($args) == 0) return $this->_dataType->value();
+        $this->_dataType->value($args[0]);
         return $this;
     }
     /**
@@ -102,8 +105,9 @@ class jqmCheckboxgroup extends jqmTag {
      * @return bool|jqmCheckboxgroup
      */
     function fieldContain(){
-        if (func_num_args() == 0) return $this->_fieldContain;
-        $this->_fieldContain = func_get_arg(0);
+        $args = func_get_args();
+        if (count($args) == 0) return $this->_fieldContain;
+        $this->_fieldContain = $args[0];
         return $this;
     }
     /**

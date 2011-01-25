@@ -186,8 +186,9 @@ class jqmListviem extends jqmTag {
      * @return string|jqmListviem
      */
     function role() {
-        if (func_num_args() == 0) return $this->_role->value();
-        $this->_role->value(func_get_arg(0));
+        $args = func_get_args();
+        if (count($args) == 0) return $this->_role->value();
+        $this->_role->value($args[0]);
         return $this;
     }
     /**
@@ -196,8 +197,9 @@ class jqmListviem extends jqmTag {
      * @return bool|jqmListviem
      */
     function inset() {
-        if (func_num_args() == 0) return ($this->_inset->value()=='true') ? true : false;
-        $this->_inset->value((func_get_arg(0)) ? 'true' : '');
+        $args = func_get_args();
+        if (count($args) == 0) return ($this->_inset->value()=='true') ? true : false;
+        $this->_inset->value(($args[0]) ? 'true' : '');
         return $this;
     }
     /**
@@ -206,8 +208,9 @@ class jqmListviem extends jqmTag {
      * @return bool|jqmListviem
      */
     function filter() {
-        if (func_num_args() == 0) return ($this->_filter->value()=='true') ? true : false;
-        $this->_filter->value((func_get_arg(0)) ? 'true' : '');
+        $args = func_get_args();
+        if (count($args) == 0) return ($this->_filter->value()=='true') ? true : false;
+        $this->_filter->value(($args[0]) ? 'true' : '');
         return $this;
     }
     /**
@@ -216,8 +219,9 @@ class jqmListviem extends jqmTag {
      * @return string|jqmListviem
      */
     function splitIcon() {
-        if (func_num_args() == 0) return $this->_splitIcon->value();
-        $this->_splitIcon->value(func_get_arg(0));
+        $args = func_get_args();
+        if (count($args) == 0) return $this->_splitIcon->value();
+        $this->_splitIcon->value($args[0]);
         return $this;
     }
     /**
@@ -226,8 +230,9 @@ class jqmListviem extends jqmTag {
      * @return string|jqmListviem
      */
     function splitTheme() {
-        if (func_num_args() == 0) return $this->_splitTheme->value();
-        $this->_splitTheme->value(func_get_arg(0));
+        $args = func_get_args();
+        if (count($args) == 0) return $this->_splitTheme->value();
+        $this->_splitTheme->value($args[0]);
         return $this;
     }
     /**
@@ -236,8 +241,9 @@ class jqmListviem extends jqmTag {
      * @return string|jqmListviem
      */
     function dividerTheme() {
-        if (func_num_args() == 0) return $this->_dividerTheme->value();
-        $this->_dividerTheme->value(func_get_arg(0));
+        $args = func_get_args();
+        if (count($args) == 0) return $this->_dividerTheme->value();
+        $this->_dividerTheme->value($args[0]);
         return $this;
     }
     /**
@@ -246,8 +252,9 @@ class jqmListviem extends jqmTag {
      * @return string|jqmListviem
      */
     function countTheme() {
-        if (func_num_args() == 0) return $this->_countTheme->value();
-        $this->_countTheme->value(func_get_arg(0));
+        $args = func_get_args();
+        if (count($args) == 0) return $this->_countTheme->value();
+        $this->_countTheme->value($args[0]);
         return $this;
     }
 }

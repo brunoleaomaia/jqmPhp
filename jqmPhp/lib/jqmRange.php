@@ -53,8 +53,9 @@ class jqmRange extends jqmInput {
      * @return string|jqmRange
      */
     function name() {
-        if (func_num_args() == 0) return $this->_name->value();
-        $this->_name->value(func_get_arg(0));
+        $args = func_get_args();
+        if (count($args) == 0) return $this->_name->value();
+        $this->_name->value($args[0]);
         $this->_label->forField($this->_name);
         return $this;
     }
@@ -64,8 +65,9 @@ class jqmRange extends jqmInput {
      * @return string|jqmRange
      */
     function min(){
-        if (func_num_args() == 0) return $this->_min->value();
-        $this->_min->value(func_get_arg(0));
+        $args = func_get_args();
+        if (count($args) == 0) return $this->_min->value();
+        $this->_min->value($args[0]);
         return $this;
     }
     /**
@@ -74,8 +76,9 @@ class jqmRange extends jqmInput {
      * @return string|jqmRange
      */
     function max(){
-        if (func_num_args() == 0) return $this->_max->value();
-        $this->_max->value(func_get_arg(0));
+        $args = func_get_args();
+        if (count($args) == 0) return $this->_max->value();
+        $this->_max->value($args[0]);
         return $this;
     }
 }

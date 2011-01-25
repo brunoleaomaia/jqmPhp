@@ -87,8 +87,9 @@ class jqmPage extends jqmTag {
      * @return bool|jqmPage
      */
     function fullscreen() {
-        if (func_num_args() == 0) return ($this->_fullscreen->value()=='true') ? true : false;
-        $this->_fullscreen->value((func_get_arg(0)) ? 'true' : '');
+        $args = func_get_args();
+        if (count($args) == 0) return ($this->_fullscreen->value()=='true') ? true : false;
+        $this->_fullscreen->value(($args[0]) ? 'true' : '');
         return $this;
     }
     /**
@@ -97,8 +98,9 @@ class jqmPage extends jqmTag {
      * @return bool|jqmPage
      */
     function noBackBtn() {
-        if (func_num_args() == 0) return ($this->_nobackbtn->value()=='true') ? true : false;
-        $this->_nobackbtn->value((func_get_arg(0)) ? 'true' : '');
+        $args = func_get_args();
+        if (count($args) == 0) return ($this->_nobackbtn->value()=='true') ? true : false;
+        $this->_nobackbtn->value(($args[0]) ? 'true' : '');
         return $this;
     }
     /**
@@ -107,8 +109,9 @@ class jqmPage extends jqmTag {
      * @return bool|jqmPage
      */
     function title() {
-        if (func_num_args() == 0) return $this->header()->title();
-        $this->header()->title((func_get_arg(0)));
+        $args = func_get_args();
+        if (count($args) == 0) return $this->header()->title();
+        $this->header()->title(($args[0]));
         return $this;
     }
     /**
@@ -128,8 +131,9 @@ class jqmPage extends jqmTag {
      * @return string|jqmPage
      */
     function role() {
-        if (func_num_args() == 0) return $this->_role->value();
-        $this->_role->value(func_get_arg(0));
+        $args = func_get_args();
+        if (count($args) == 0) return $this->_role->value();
+        $this->_role->value($args[0]);
         return $this;
     }
 }

@@ -72,8 +72,9 @@ class jqmSelect extends jqmTag {
      * @return string|jqmSelect
      */
     function name() {
-        if (func_num_args() == 0) return $this->_name->value();
-        $this->_name->value(func_get_arg(0));
+        $args = func_get_args();
+        if (count($args) == 0) return $this->_name->value();
+        $this->_name->value($args[0]);
         $this->_label->forField($this->_name);
         return $this;
     }
@@ -83,8 +84,9 @@ class jqmSelect extends jqmTag {
      * @return string|jqmSelect
      */
     function label() {
-        if (func_num_args() == 0) return $this->_label->text();
-        $this->_label->text(func_get_arg(0));
+        $args = func_get_args();
+        if (count($args) == 0) return $this->_label->text();
+        $this->_label->text($args[0]);
         return $this;
     }
     /**
@@ -94,8 +96,9 @@ class jqmSelect extends jqmTag {
      * @return bool|jqmSelect
      */
     function fieldContain(){
-        if (func_num_args() == 0) return $this->_fieldContain;
-        $this->_fieldContain = func_get_arg(0);
+        $args = func_get_args();
+        if (count($args) == 0) return $this->_fieldContain;
+        $this->_fieldContain = $args[0];
         return $this;
     }
     /**
@@ -104,8 +107,9 @@ class jqmSelect extends jqmTag {
      * @return string|jqmSelect
      */
     function icon(){
-        if (func_num_args() == 0) return $this->_icon->value();
-        $this->_icon->value(func_get_arg(0));
+        $args = func_get_args();
+        if (count($args) == 0) return $this->_icon->value();
+        $this->_icon->value($args[0]);
         return $this;
     }
     /**
@@ -114,8 +118,9 @@ class jqmSelect extends jqmTag {
      * @return bool|jqmSelect
      */
     function inline() {
-        if (func_num_args() == 0) return ($this->_inline->value()=='true') ? true : false;
-        $this->_inline->value((func_get_arg(0)) ? 'true' : '');
+        $args = func_get_args();
+        if (count($args) == 0) return ($this->_inline->value()=='true') ? true : false;
+        $this->_inline->value(($args[0]) ? 'true' : '');
         return $this;
     }
     /**

@@ -58,8 +58,9 @@ class jqmInput extends jqmTag {
      * @return string|jqmInput
      */
     function type() {
-        if (func_num_args() == 0) return $this->_type->value();
-        $this->_type->value(func_get_arg(0));
+        $args = func_get_args();
+        if (count($args) == 0) return $this->_type->value();
+        $this->_type->value($args[0]);
         return $this;
     }
     /**
@@ -68,8 +69,9 @@ class jqmInput extends jqmTag {
      * @return string|jqmInput
      */
     function name() {
-        if (func_num_args() == 0) return $this->_name->value();
-        $this->_name->value(func_get_arg(0));
+        $args = func_get_args();
+        if (count($args) == 0) return $this->_name->value();
+        $this->_name->value($args[0]);
         $this->_label->forField($this->_name->value());
         if ($this->type() == 'radio') $this->_label->forField($this->id());
         return $this;
@@ -80,8 +82,9 @@ class jqmInput extends jqmTag {
      * @return string|jqmInput
      */
     function value() {
-        if (func_num_args() == 0) return $this->_value->value();
-        $this->_value->value(func_get_arg(0));
+        $args = func_get_args();
+        if (count($args) == 0) return $this->_value->value();
+        $this->_value->value($args[0]);
         return $this;
     }
     /**
@@ -90,8 +93,9 @@ class jqmInput extends jqmTag {
      * @return string|jqmInput
      */
     function label() {
-        if (func_num_args() == 0) return $this->_label->text();
-        $this->_label->text(func_get_arg(0));
+        $args = func_get_args();
+        if (count($args) == 0) return $this->_label->text();
+        $this->_label->text($args[0]);
         return $this;
     }
     /**
@@ -101,8 +105,9 @@ class jqmInput extends jqmTag {
      * @return bool|jqmInput
      */
     function fieldContain(){
-        if (func_num_args() == 0) return $this->_fieldContain;
-        $this->_fieldContain = func_get_arg(0);
+        $args = func_get_args();
+        if (count($args) == 0) return $this->_fieldContain;
+        $this->_fieldContain = $args[0];
         return $this;
     }
     /**

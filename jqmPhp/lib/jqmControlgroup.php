@@ -50,8 +50,9 @@ class jqmControlgroup extends jqmTag {
      * @return string|jqmControlgroup
      */
     function role() {
-        if (func_num_args() == 0) return $this->_role->value();
-        $this->_role->value(func_get_arg(0));
+        $args = func_get_args();
+        if (count($args) == 0) return $this->_role->value();
+        $this->_role->value($args[0]);
         return $this;
     }
     /**
@@ -60,8 +61,9 @@ class jqmControlgroup extends jqmTag {
      * @return string|jqmControlgroup
      */
     function dataType() {
-        if (func_num_args() == 0) return $this->_dataType->value();
-        $this->_dataType->value(func_get_arg(0));
+        $args = func_get_args();
+        if (count($args) == 0) return $this->_dataType->value();
+        $this->_dataType->value($args[0]);
         return $this;
     }
 }
