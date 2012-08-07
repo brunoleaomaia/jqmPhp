@@ -18,17 +18,24 @@
  *
  */
 /**
+ * This file is part of the jqmPhp package.
+ * @package jqmPhp
+ * @filesource
+ */
+/**
  * This class represents the 'ul' or 'ol' tag (data-role="listview").
  * @class jqmListviem
  * @author Bruno Maia <brunoleaomaia@gmail.com>
  * @copyright Copyright (c) 2011, Bruno Maia
- * @license http://www.gnu.org/licenses/gpl.html GNU Public License
+ * @license http://www.gnu.org/licenses/gpl.html GNU Public License
  * @package jqmPhp
- * @version 0.01
+ * @version 0.03
+ * @since 0.01
+ * @link http://www.jqmphp.com/ jqmPhp Website
  * @link http://code.google.com/p/jqmphp/ jqmPhp Project Website
  * @link http://www.jquerymobile.com jQuery Mobile Website
  */
-class jqmListviem extends jqmTag {
+class jqmListview extends jqmTag {
     private $_role;
     private $_inset;
     private $_filter;
@@ -258,4 +265,8 @@ class jqmListviem extends jqmTag {
         return $this;
     }
 }
+/**
+ * Fix a typo in first version of the Class Name;
+ */
+class jqmListviem extends jqmListview {}
 ?>

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos -->
+			<title>File Source for custom-css.php</title>
+			<link rel="stylesheet" href="../media/stylesheet.css" />
+			<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'/>
+		</head>
+		<body>
+						<h1>Source for file custom-css.php</h1>
+<p>Documentation is available at <a href="../jqmPhp/_examples---custom-css.php.html">custom-css.php</a></p>
+<div class="src-code">
+<div class="src-code"><ol><li><div class="src-line"><a name="a1"></a><span class="src-php">&lt;?php</span></div></li>
+<li><div class="src-line"><a name="a2"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-doc">/**</span></div></li>
+<li><div class="src-line"><a name="a3"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Adding&nbsp;custom&nbsp;CSS</span></div></li>
+<li><div class="src-line"><a name="a4"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;</span><span class="src-doc-coretag">@package</span><span class="src-doc">&nbsp;jqmPhp</span></div></li>
+<li><div class="src-line"><a name="a5"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;</span><span class="src-doc-coretag">@filesource</span></div></li>
+<li><div class="src-line"><a name="a6"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</span></div></li>
+<li><div class="src-line"><a name="a7"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a8"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-doc">/**</span></div></li>
+<li><div class="src-line"><a name="a9"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Include&nbsp;the&nbsp;jqmPhp&nbsp;class.</span></div></li>
+<li><div class="src-line"><a name="a10"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</span></div></li>
+<li><div class="src-line"><a name="a11"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-inc">include&nbsp;</span><span class="src-str">'../lib/jqmPhp.php'</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a12"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a13"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-doc">/**</span></div></li>
+<li><div class="src-line"><a name="a14"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Create&nbsp;a&nbsp;new&nbsp;jqmPhp&nbsp;object.</span></div></li>
+<li><div class="src-line"><a name="a15"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</span></div></li>
+<li><div class="src-line"><a name="a16"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$jqmPhp&nbsp;</span>=&nbsp;<span class="src-key">new&nbsp;</span><span class="src-id"><a href="../jqmPhp/jqmPhp.html">jqmPhp</a></span><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a17"></a>&nbsp;&nbsp;&nbsp;&nbsp;</div></li>
+<li><div class="src-line"><a name="a18"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-doc">/**</span></div></li>
+<li><div class="src-line"><a name="a19"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Adding&nbsp;custom&nbsp;CSS&nbsp;to&nbsp;jqmHead&nbsp;in&nbsp;jqmPhp</span></div></li>
+<li><div class="src-line"><a name="a20"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</span></div></li>
+<li><div class="src-line"><a name="a21"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$jqmPhp</span><span class="src-sym">-&gt;</span><span class="src-id">head</span><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">-&gt;</span><span class="src-id">title</span><span class="src-sym">(</span><span class="src-str">'Custom&nbsp;CSS&nbsp;Example'</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a22"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$jqmPhp</span><span class="src-sym">-&gt;</span><span class="src-id">head</span><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">-&gt;</span><span class="src-id">add</span><span class="src-sym">(</span><span class="src-key">new&nbsp;</span><span class="src-id"><a href="../jqmPhp/jqmLink.html">jqmLink</a></span><span class="src-sym">(</span><span class="src-str">'custom.css'</span><span class="src-sym">))</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a23"></a>&nbsp;&nbsp;&nbsp;&nbsp;</div></li>
+<li><div class="src-line"><a name="a24"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a25"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-doc">/**</span></div></li>
+<li><div class="src-line"><a name="a26"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Create&nbsp;a&nbsp;new&nbsp;jqmPage&nbsp;object.</span></div></li>
+<li><div class="src-line"><a name="a27"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</span></div></li>
+<li><div class="src-line"><a name="a28"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$p&nbsp;</span>=&nbsp;<span class="src-key">new&nbsp;</span><span class="src-id"><a href="../jqmPhp/jqmPage.html">jqmPage</a></span><span class="src-sym">(</span><span class="src-str">'custom-css'</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a29"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$p</span><span class="src-sym">-&gt;</span><span class="src-id">theme</span><span class="src-sym">(</span><span class="src-str">'b'</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a30"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$p</span><span class="src-sym">-&gt;</span><span class="src-id">title</span><span class="src-sym">(</span><span class="src-str">'Custom&nbsp;CSS&nbsp;Example'</span><span class="src-sym">)</span><span class="src-sym">;&nbsp;&nbsp;&nbsp;&nbsp;</span></div></li>
+<li><div class="src-line"><a name="a31"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$p</span><span class="src-sym">-&gt;</span><a href="http://www.php.net/header">header</a><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">-&gt;</span><span class="src-id">theme</span><span class="src-sym">(</span><span class="src-str">'a'</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a32"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$bt&nbsp;</span>=&nbsp;<span class="src-var">$p</span><span class="src-sym">-&gt;</span><a href="http://www.php.net/header">header</a><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">-&gt;</span><span class="src-id">addButton</span><span class="src-sym">(</span><span class="src-str">''</span><span class="src-sym">,&nbsp;</span><span class="src-str">'index.php#'</span><span class="src-sym">,&nbsp;</span><span class="src-str">'a'</span><span class="src-sym">,&nbsp;</span><span class="src-str">'home'</span><span class="src-sym">,&nbsp;</span><span class="src-id">false</span><span class="src-sym">,&nbsp;</span><span class="src-id">false</span><span class="src-sym">,&nbsp;</span><span class="src-id">true</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a33"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$bt</span><span class="src-sym">-&gt;</span><span class="src-id">rel</span><span class="src-sym">(</span><span class="src-str">'external'</span><span class="src-sym">)</span><span class="src-sym">-&gt;</span><span class="src-id">attribute</span><span class="src-sym">(</span><span class="src-str">'data-iconpos'</span><span class="src-sym">,&nbsp;</span><span class="src-str">'notext'</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a34"></a>&nbsp;&nbsp;&nbsp;&nbsp;</div></li>
+<li><div class="src-line"><a name="a35"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-doc">/**</span></div></li>
+<li><div class="src-line"><a name="a36"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Adding&nbsp;Content.</span></div></li>
+<li><div class="src-line"><a name="a37"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</span></div></li>
+<li><div class="src-line"><a name="a38"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$p</span><span class="src-sym">-&gt;</span><span class="src-id">addContent</span><span class="src-sym">(</span><span class="src-str">'&lt;h1&gt;Adding&nbsp;Custom&nbsp;CSS&lt;/h1&gt;'</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a39"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$p</span><span class="src-sym">-&gt;</span><span class="src-id">addContent</span><span class="src-sym">(</span><span class="src-str">'&lt;p&nbsp;align=&quot;justify&quot;&gt;To&nbsp;add&nbsp;a&nbsp;custom&nbsp;CSS&nbsp;you&nbsp;need&nbsp;add&nbsp;the&nbsp;tag&nbsp;&lt;b&gt;'</span>.<a href="http://www.php.net/htmlspecialchars">htmlspecialchars</a><span class="src-sym">(</span><span class="src-str">'&lt;link...&gt;&lt;/link&gt;'</span><span class="src-sym">)</span>.<span class="src-str">'&lt;/b&gt;'</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a40"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$p</span><span class="src-sym">-&gt;</span><span class="src-id">addContent</span><span class="src-sym">(</span><span class="src-str">'&nbsp;to&nbsp;the&nbsp;jqmHead&nbsp;object&nbsp;[&lt;b&gt;'</span>.<a href="http://www.php.net/htmlspecialchars">htmlspecialchars</a><span class="src-sym">(</span><span class="src-str">'$jqmPhp-&gt;head()'</span><span class="src-sym">)</span>.<span class="src-str">'&lt;/b&gt;]&nbsp;in&nbsp;the&nbsp;jqmPhp&nbsp;instance.&nbsp;'</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a41"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$p</span><span class="src-sym">-&gt;</span><span class="src-id">addContent</span><span class="src-sym">(</span><span class="src-str">'To&nbsp;facilitate&nbsp;the&nbsp;addition&nbsp;of&nbsp;CSS&nbsp;you&nbsp;can&nbsp;use&nbsp;the&nbsp;class&nbsp;&lt;b&gt;jqmLink&lt;/b&gt;&nbsp;as&nbsp;example:&lt;/p&gt;'</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a42"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$p</span><span class="src-sym">-&gt;</span><span class="src-id">addContent</span><span class="src-sym">(</span><span class="src-str">'&lt;pre&nbsp;class=&quot;ui-body-c&quot;&gt;$jqmPhp&nbsp;=&nbsp;new&nbsp;jqmPhp();'</span>.<span class="src-str">&quot;\n&quot;</span>.<span class="src-str">'$jqmPhp-&gt;head()-&gt;add('</span>.<span class="src-str">&quot;\n\t&quot;</span>.<span class="src-str">'new&nbsp;jqmLink(\'custom.css\')'</span>.<span class="src-str">&quot;\n&quot;</span>.<span class="src-str">');&lt;/pre&gt;'</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a43"></a>&nbsp;&nbsp;&nbsp;&nbsp;</div></li>
+<li><div class="src-line"><a name="a44"></a>&nbsp;&nbsp;&nbsp;&nbsp;</div></li>
+<li><div class="src-line"><a name="a45"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-doc">/**</span></div></li>
+<li><div class="src-line"><a name="a46"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Adding&nbsp;Source&nbsp;Code&nbsp;Links.</span></div></li>
+<li><div class="src-line"><a name="a47"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</span></div></li>
+<li><div class="src-line"><a name="a48"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$list&nbsp;</span>=&nbsp;<span class="src-key">new&nbsp;</span><span class="src-id"><a href="../jqmPhp/jqmListview.html">jqmListview</a></span><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a49"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$list</span><span class="src-sym">-&gt;</span><span class="src-id">inset</span><span class="src-sym">(</span><span class="src-id">true</span><span class="src-sym">)</span><span class="src-sym">-&gt;</span><span class="src-id">dividerTheme</span><span class="src-sym">(</span><span class="src-str">'a'</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a50"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$list</span><span class="src-sym">-&gt;</span><span class="src-id">addDivider</span><span class="src-sym">(</span><span class="src-str">'Source&nbsp;Code'</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a51"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$li&nbsp;</span>=&nbsp;<span class="src-var">$list</span><span class="src-sym">-&gt;</span><span class="src-id">addBasic</span><span class="src-sym">(</span><span class="src-str">'custom.css'</span><span class="src-sym">,&nbsp;</span><span class="src-str">'custom.css'</span><span class="src-sym">,&nbsp;</span><span class="src-str">''</span><span class="src-sym">,&nbsp;</span><span class="src-id">true</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a52"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$li</span><span class="src-sym">-&gt;</span><span class="src-id">rel</span><span class="src-sym">(</span><span class="src-str">'external'</span><span class="src-sym">)</span><span class="src-sym">-&gt;</span><span class="src-id">target</span><span class="src-sym">(</span><span class="src-str">'_blank'</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a53"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$li&nbsp;</span>=&nbsp;<span class="src-var">$list</span><span class="src-sym">-&gt;</span><span class="src-id">addBasic</span><span class="src-sym">(</span><span class="src-str">'custom-css.php'</span><span class="src-sym">,&nbsp;</span><span class="src-str">'custom-css.php.txt'</span><span class="src-sym">,&nbsp;</span><span class="src-str">''</span><span class="src-sym">,&nbsp;</span><span class="src-id">true</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a54"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$li</span><span class="src-sym">-&gt;</span><span class="src-id">rel</span><span class="src-sym">(</span><span class="src-str">'external'</span><span class="src-sym">)</span><span class="src-sym">-&gt;</span><span class="src-id">target</span><span class="src-sym">(</span><span class="src-str">'_blank'</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a55"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$p</span><span class="src-sym">-&gt;</span><span class="src-id">addContent</span><span class="src-sym">(</span><span class="src-var">$list</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a56"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div></li>
+<li><div class="src-line"><a name="a57"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-doc">/**</span></div></li>
+<li><div class="src-line"><a name="a58"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Add&nbsp;the&nbsp;page&nbsp;to&nbsp;jqmPhp&nbsp;object.</span></div></li>
+<li><div class="src-line"><a name="a59"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</span></div></li>
+<li><div class="src-line"><a name="a60"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$jqmPhp</span><span class="src-sym">-&gt;</span><span class="src-id">addPage</span><span class="src-sym">(</span><span class="src-var">$p</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a61"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a62"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-doc">/**</span></div></li>
+<li><div class="src-line"><a name="a63"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Generate&nbsp;the&nbsp;HTML&nbsp;code.</span></div></li>
+<li><div class="src-line"><a name="a64"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</span></div></li>
+<li><div class="src-line"><a name="a65"></a>&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;<span class="src-var">$jqmPhp</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a66"></a><span class="src-php">?&gt;</span></div></li>
+</ol></div>
+</div>
+	<p class="notes" id="credit">
+		Documentation generated on Tue, 22 Mar 2011 19:15:58 -0300 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.3</a>
+	</p>
+	</body>
+</html>

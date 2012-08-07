@@ -1,0 +1,12 @@
+CHANGELOG
+
+http://code.google.com/p/jqmphp/source/list
+
+VERSION         DATE            MESSAGE
+
+0.01            2011-01-24      First version released.
+0.01 R4         2011-01-25      PHP versions prior to 5.3.0 is now supported.
+0.01 R5         2011-02-02      Bug fixed in jqmHead class.
+0.02 R8         2011-02-16      Updated to jQuery Mobile Alpha 3 and new documentation.
+0.02 R12        2011-03-01      Fixed a typo in Class Name in the jqmListview.php file.
+0.03 R13        2011-03-22      Bugs Fixed and New Examples Added.
