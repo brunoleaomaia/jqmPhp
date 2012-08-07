@@ -18,20 +18,24 @@
  *
  */
 namespace jqmPhp;
+
 /**
  * Sets the library folder name.
  * @var JQMPHP_FOLDER
  */
+
 define('JQMPHP_FOLDER', 'lib', true);
 /**
  * Sets the library path.
  * @var JQMPHP_PATH
  */
+
 define('JQMPHP_PATH', realpath(dirname(__FILE__).'/../'.JQMPHP_FOLDER.'/').'/', true);
 /**
  * Sets the Application Default Title.
  * @var JQMPHP_TITLE
  */
+
 define('JQMPHP_TITLE', '', true);
 /**
  * Sets the jQuery path.
@@ -68,6 +72,12 @@ define('JQMPHP_XMLNS', 'http://www.w3.org/1999/xhtml', true);
  * @var JQMPHP_CHARSET
  */
 define('JQMPHP_CHARSET', 'UTF-8', true);
+
+/**
+ * Sets the Default Viewport.
+ * @var JQMPHP_VIEWPORT
+ */
+define('JQMPHP_VIEWPORT', 'width=device-width, initial-scale=1', true);
 
 /*
  * Includes required files.

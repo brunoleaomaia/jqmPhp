@@ -39,6 +39,7 @@ namespace jqmPhp;
 class jqmHead extends jqmTag {
     private $_xmlns;
     private $_charset;
+    private $_viewport;
     private $_title;
     private $_css;
     private $_jq;
@@ -56,6 +57,7 @@ class jqmHead extends jqmTag {
         parent::__construct('head');
         $this->_xmlns = $this->attribute('xmlns', $xmlns, true);
         $this->_charset = new jqmAttribute('charset', $charset); $this->add(new jqmTag('meta', '', array($this->_charset)));
+        $this->_viewport = new jqmAttribute('content', JQMPHP_VIEWPORT); $this->add(new jqmTag('meta', '', array(new jqmAttribute('name', 'viewport'), $this->_viewport)));
         $this->_css = $this->add(new jqmLink($css),true);
         $this->_jq = $this->add(new jqmScript($jq),true);
         $this->_jqm = $this->add(new jqmScript($jqm),true);
@@ -81,6 +83,17 @@ class jqmHead extends jqmTag {
         $args = func_get_args();
         if (count($args) == 0) return $this->_charset->value();
         $this->_charset->value($args[0]);
+        return $this;
+    }
+    /**
+     * Gets and sets the viewport property.
+     * @param string $value
+     * @return string|jqmHead
+     */
+    function viewport(){
+        $args = func_get_args();
+        if (count($args) == 0) return $this->_viewport->value();
+        $this->_viewport->value($args[0]);
         return $this;
     }
     /**
