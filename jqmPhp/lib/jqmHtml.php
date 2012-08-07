@@ -22,6 +22,7 @@
  * @package jqmPhp
  * @filesource
  */
+namespace jqmPhp;
 /**
  * This class represents the 'html' tag.
  * @class jqmHtml

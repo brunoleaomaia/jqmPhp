@@ -17,7 +17,7 @@
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
  */
-
+namespace jqmPhp;
 /**
  * Sets the library folder name.
  * @var JQMPHP_FOLDER
@@ -37,19 +37,19 @@ define('JQMPHP_TITLE', '', true);
  * Sets the jQuery path.
  * @var JQMPHP_JQ
  */
-define('JQMPHP_JQ', 'http://code.jquery.com/jquery-1.5.min.js', true);
+define('JQMPHP_JQ', 'http://code.jquery.com/jquery-1.7.1.min.js', true);
 
 /**
  * Sets the jQuery Mobile path.
  * @var JQMPHP_JQM
  */
-define('JQMPHP_JQM', 'http://code.jquery.com/mobile/1.0a3/jquery.mobile-1.0a3.min.js', true);
+define('JQMPHP_JQM', 'http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.js', true);
 
 /**
  * Sets the jQuery Mobile CSS path.
  * @var JQMPHP_CSS
  */
-define('JQMPHP_CSS', 'http://code.jquery.com/mobile/1.0a3/jquery.mobile-1.0a3.min.css', true);
+define('JQMPHP_CSS', 'http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.css', true);
 
 /**
  * Sets the Default Doctype.

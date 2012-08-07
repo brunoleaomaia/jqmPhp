@@ -22,6 +22,7 @@
  * @package jqmPhp
  * @filesource
  */
+namespace jqmPhp;
 /**
  * This class represents the 'a' tag (data-role="button").
  * @class jqmButton

@@ -22,6 +22,7 @@
  * @package jqmPhp
  * @filesource
  */
+namespace jqmPhp;
 /**
  * This class represents an attribute of an HTML tag.
  * @class jqmAttribute

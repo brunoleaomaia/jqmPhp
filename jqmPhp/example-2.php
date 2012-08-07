@@ -7,12 +7,12 @@
     /**
      * Create a new jqmPhp object.
      */
-    $j = new jqmPhp();
+    $j = new jqmPhp\jqmPhp();
 
     /**
      * Create a new jqmPage object.
      */
-    $p = new jqmPage('example-2');
+    $p = new jqmPhp\jqmPage('example-2');
     $p->theme('b');
     $p->title('Example 2');
     $p->header()->addButton('Example 1', 'example-1.php#', 'a', 'arrow-l');

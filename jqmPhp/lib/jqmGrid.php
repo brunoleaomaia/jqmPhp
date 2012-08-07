@@ -22,6 +22,7 @@
  * @package jqmPhp
  * @filesource
  */
+namespace jqmPhp;
 /**
  * This class represents the 'div' tag (class="ui-grid-a").
  * @class jqmGrid
