@@ -1,0 +1,719 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos -->
+			<title>Docs For Class jqmListview</title>
+			<link rel="stylesheet" href="../media/stylesheet.css" />
+			<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'/>
+		</head>
+		<body>
+			<div class="page-body">			
+<h2 class="class-name">Class jqmListview</h2>
+
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+							<a href="#sec-descendents">Descendents</a>
+			|													<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+						
+					</div>
+	<div class="info-box-body">
+        		<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">This class represents the 'ul' or 'ol' tag (data-role=&quot;listview&quot;).</p>
+	<ul class="tags">
+				<li><span class="field">author:</span> Bruno Maia &lt;<a href="mailto:brunoleaomaia@gmail.com">brunoleaomaia@gmail.com</a>&gt;</li>
+				<li><span class="field">version:</span> 0.03</li>
+				<li><span class="field">copyright:</span> Copyright (c) 2011, Bruno Maia</li>
+				<li><span class="field">link:</span> <a href="http://www.jqmphp.com/">jqmPhp Website</a></li>
+				<li><span class="field">link:</span> <a href="http://www.jquerymobile.com">jQuery Mobile Website</a></li>
+				<li><span class="field">link:</span> <a href="http://code.google.com/p/jqmphp/">jqmPhp Project Website</a></li>
+				<li><span class="field">since:</span> 0.01</li>
+				<li><span class="field">license:</span> <a href="http://www.gnu.org/licenses/gpl.html">GNU Public License</a></li>
+			</ul>
+		<p class="notes">
+			Located in <a class="field" href="_lib---jqmListview.php.html">/lib/jqmListview.php</a> (line <span class="field"><a href="../__filesource/fsource_jqmPhp__libjqmListview.php.html#a38">38</a></span>)
+		</p>
+		
+				
+		<pre><a href="../jqmPhp/jqmTag.html">jqmTag</a>
+   |
+   --jqmListview</pre>
+	
+			</div>
+</div>
+
+	<a name="sec-descendents"></a>
+	<div class="info-box">
+		<div class="info-box-title">Direct descendents</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+			<span class="disabled">Descendents</span>
+			|															<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+								</div>
+		<div class="info-box-body">
+			<table cellpadding="2" cellspacing="0" class="class-table">
+				<tr>
+					<th class="class-table-header">Class</th>
+					<th class="class-table-header">Description</th>
+				</tr>
+								<tr>
+					<td style="padding-right: 2em"><a href="../jqmPhp/jqmListviem.html">jqmListviem</a></td>
+					<td>
+											Fix a typo in first version of the Class Name;
+										</td>
+				</tr>
+							</table>
+		</div>
+	</div>
+
+
+
+	<a name="sec-method-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Method Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+							<a href="#sec-descendents">Descendents</a> |
+												<span class="disabled">Methods</span> (<a href="#sec-methods">details</a>)
+		</div>
+		<div class="info-box-body">			
+			<div class="method-summary">
+																																																																																																																												
+												<div class="method-definition">
+											<span class="method-result">jqmListview</span>
+										<a href="#__construct" title="details" class="method-name">__construct</a>
+											([<span class="var-type">string</span>&nbsp;<span class="var-name">$id</span> = <span class="var-default">''</span>], [<span class="var-type">array</span>&nbsp;<span class="var-name">$attributes</span> = <span class="var-default">array()</span>], [<span class="var-type">array</span>&nbsp;<span class="var-name">$items</span> = <span class="var-default">array()</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$theme</span> = <span class="var-default">''</span>], [<span class="var-type">bool</span>&nbsp;<span class="var-name">$inset</span> = <span class="var-default">false</span>], [<span class="var-type">bool</span>&nbsp;<span class="var-name">$filter</span> = <span class="var-default">false</span>], [<span class="var-type">bool</span>&nbsp;<span class="var-name">$ordered</span> = <span class="var-default">false</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$splitIcon</span> = <span class="var-default">''</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$splitTheme</span> = <span class="var-default">''</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$dividerTheme</span> = <span class="var-default">''</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$countTheme</span> = <span class="var-default">''</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result"><a href="../jqmPhp/jqmListview.html">jqmListview</a>|<a href="../jqmPhp/jqmListitem.html">jqmListitem</a></span>
+										<a href="#addBasic" title="details" class="method-name">addBasic</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$title</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$href</span> = <span class="var-default">''</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$count</span> = <span class="var-default">''</span>], [<span class="var-type">bool</span>&nbsp;<span class="var-name">$returnAdded</span> = <span class="var-default">false</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result"><a href="../jqmPhp/jqmListview.html">jqmListview</a>|<a href="../jqmPhp/jqmListitem.html">jqmListitem</a></span>
+										<a href="#addDivider" title="details" class="method-name">addDivider</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$title</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$count</span> = <span class="var-default">''</span>], [<span class="var-type">bool</span>&nbsp;<span class="var-name">$returnAdded</span> = <span class="var-default">false</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result"><a href="../jqmPhp/jqmListview.html">jqmListview</a>|<a href="../jqmPhp/jqmListitem.html">jqmListitem</a></span>
+										<a href="#addIcon" title="details" class="method-name">addIcon</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$title</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$href</span> = <span class="var-default">''</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$img</span> = <span class="var-default">''</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$count</span> = <span class="var-default">''</span>], [<span class="var-type">bool</span>&nbsp;<span class="var-name">$returnAdded</span> = <span class="var-default">false</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result"><a href="../jqmPhp/jqmListview.html">jqmListview</a>|<a href="../jqmPhp/jqmListitem.html">jqmListitem</a></span>
+										<a href="#addIconSplit" title="details" class="method-name">addIconSplit</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$title</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$href</span> = <span class="var-default">''</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$splitHref</span> = <span class="var-default">''</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$img</span> = <span class="var-default">''</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$count</span> = <span class="var-default">''</span>], [<span class="var-type">bool</span>&nbsp;<span class="var-name">$returnAdded</span> = <span class="var-default">false</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result"><a href="../jqmPhp/jqmListview.html">jqmListview</a></span>
+										<a href="#addNested" title="details" class="method-name">addNested</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$title</span>, <span class="var-type"><a href="../jqmPhp/jqmListview.html">jqmListview</a></span>&nbsp;<span class="var-name">$listview</span>, [<span class="var-type">bool</span>&nbsp;<span class="var-name">$returnAdded</span> = <span class="var-default">false</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result"><a href="../jqmPhp/jqmListview.html">jqmListview</a>|<a href="../jqmPhp/jqmListitem.html">jqmListitem</a></span>
+										<a href="#addSplit" title="details" class="method-name">addSplit</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$title</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$href</span> = <span class="var-default">''</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$splitHref</span> = <span class="var-default">''</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$count</span> = <span class="var-default">''</span>], [<span class="var-type">bool</span>&nbsp;<span class="var-name">$returnAdded</span> = <span class="var-default">false</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result"><a href="../jqmPhp/jqmListview.html">jqmListview</a>|<a href="../jqmPhp/jqmListitem.html">jqmListitem</a></span>
+										<a href="#addThumb" title="details" class="method-name">addThumb</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$title</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$subTitle</span> = <span class="var-default">''</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$href</span> = <span class="var-default">''</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$img</span> = <span class="var-default">''</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$count</span> = <span class="var-default">''</span>], [<span class="var-type">bool</span>&nbsp;<span class="var-name">$returnAdded</span> = <span class="var-default">false</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result"><a href="../jqmPhp/jqmListview.html">jqmListview</a>|<a href="../jqmPhp/jqmListitem.html">jqmListitem</a></span>
+										<a href="#addThumbSplit" title="details" class="method-name">addThumbSplit</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$title</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$subTitle</span> = <span class="var-default">''</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$href</span> = <span class="var-default">''</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$splitHref</span> = <span class="var-default">''</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$img</span> = <span class="var-default">''</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$count</span> = <span class="var-default">''</span>], [<span class="var-type">bool</span>&nbsp;<span class="var-name">$returnAdded</span> = <span class="var-default">false</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string|<a href="../jqmPhp/jqmListviem.html">jqmListviem</a></span>
+										<a href="#countTheme" title="details" class="method-name">countTheme</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$value</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string|<a href="../jqmPhp/jqmListviem.html">jqmListviem</a></span>
+										<a href="#dividerTheme" title="details" class="method-name">dividerTheme</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$value</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">bool|<a href="../jqmPhp/jqmListviem.html">jqmListviem</a></span>
+										<a href="#filter" title="details" class="method-name">filter</a>
+											(<span class="var-type">bool</span>&nbsp;<span class="var-name">$value</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">bool|<a href="../jqmPhp/jqmListviem.html">jqmListviem</a></span>
+										<a href="#inset" title="details" class="method-name">inset</a>
+											(<span class="var-type">bool</span>&nbsp;<span class="var-name">$value</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string|<a href="../jqmPhp/jqmListviem.html">jqmListviem</a></span>
+										<a href="#splitIcon" title="details" class="method-name">splitIcon</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$value</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string|<a href="../jqmPhp/jqmListviem.html">jqmListviem</a></span>
+										<a href="#splitTheme" title="details" class="method-name">splitTheme</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$value</span>)
+									</div>
+								</div>
+		</div>
+	</div>		
+
+	
+	<a name="sec-methods"></a>
+	<div class="info-box">
+		<div class="info-box-title">Methods</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+							<a href="#sec-descendents">Descendents</a> |
+																<a href="#sec-method-summary">Methods</a> (<span class="disabled">details</span>)
+						
+		</div>
+		<div class="info-box-body">
+			<A NAME='method_detail'></A>
+
+<a name="method__construct" id="__construct"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">Constructor __construct</span> (line <span class="line-number"><a href="../__filesource/fsource_jqmPhp__libjqmListview.php.html#a60">60</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">jqmListview</span>
+		<span class="method-name">
+			__construct
+		</span>
+					([<span class="var-type">string</span>&nbsp;<span class="var-name">$id</span> = <span class="var-default">''</span>], [<span class="var-type">array</span>&nbsp;<span class="var-name">$attributes</span> = <span class="var-default">array()</span>], [<span class="var-type">array</span>&nbsp;<span class="var-name">$items</span> = <span class="var-default">array()</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$theme</span> = <span class="var-default">''</span>], [<span class="var-type">bool</span>&nbsp;<span class="var-name">$inset</span> = <span class="var-default">false</span>], [<span class="var-type">bool</span>&nbsp;<span class="var-name">$filter</span> = <span class="var-default">false</span>], [<span class="var-type">bool</span>&nbsp;<span class="var-name">$ordered</span> = <span class="var-default">false</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$splitIcon</span> = <span class="var-default">''</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$splitTheme</span> = <span class="var-default">''</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$dividerTheme</span> = <span class="var-default">''</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$countTheme</span> = <span class="var-default">''</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$id</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$attributes</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$items</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$theme</span>			</li>
+					<li>
+				<span class="var-type">bool</span>
+				<span class="var-name">$inset</span>			</li>
+					<li>
+				<span class="var-type">bool</span>
+				<span class="var-name">$filter</span>			</li>
+					<li>
+				<span class="var-type">bool</span>
+				<span class="var-name">$ordered</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$splitIcon</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$splitTheme</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$dividerTheme</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$countTheme</span>			</li>
+				</ul>
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../jqmPhp/jqmTag.html#method__construct">jqmTag::__construct()</a></dt>
+					</dl>
+			
+	</div>
+<a name="methodaddBasic" id="addBasic"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">addBasic</span> (line <span class="line-number"><a href="../__filesource/fsource_jqmPhp__libjqmListview.php.html#a78">78</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Adds a Basic Listitem (jqmListitem).</p>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../jqmPhp/jqmListview.html">jqmListview</a>|<a href="../jqmPhp/jqmListitem.html">jqmListitem</a></span>
+		<span class="method-name">
+			addBasic
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$title</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$href</span> = <span class="var-default">''</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$count</span> = <span class="var-default">''</span>], [<span class="var-type">bool</span>&nbsp;<span class="var-name">$returnAdded</span> = <span class="var-default">false</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$title</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$href</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$count</span>			</li>
+					<li>
+				<span class="var-type">bool</span>
+				<span class="var-name">$returnAdded</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodaddDivider" id="addDivider"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">addDivider</span> (line <span class="line-number"><a href="../__filesource/fsource_jqmPhp__libjqmListview.php.html#a105">105</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Adds a Divider Listitem (jqmListitem).</p>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../jqmPhp/jqmListview.html">jqmListview</a>|<a href="../jqmPhp/jqmListitem.html">jqmListitem</a></span>
+		<span class="method-name">
+			addDivider
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$title</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$count</span> = <span class="var-default">''</span>], [<span class="var-type">bool</span>&nbsp;<span class="var-name">$returnAdded</span> = <span class="var-default">false</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$title</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$count</span>			</li>
+					<li>
+				<span class="var-type">bool</span>
+				<span class="var-name">$returnAdded</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodaddIcon" id="addIcon"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">addIcon</span> (line <span class="line-number"><a href="../__filesource/fsource_jqmPhp__libjqmListview.php.html#a120">120</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Adds a Icon Listitem (jqmListitem).</p>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../jqmPhp/jqmListview.html">jqmListview</a>|<a href="../jqmPhp/jqmListitem.html">jqmListitem</a></span>
+		<span class="method-name">
+			addIcon
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$title</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$href</span> = <span class="var-default">''</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$img</span> = <span class="var-default">''</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$count</span> = <span class="var-default">''</span>], [<span class="var-type">bool</span>&nbsp;<span class="var-name">$returnAdded</span> = <span class="var-default">false</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$title</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$href</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$img</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$count</span>			</li>
+					<li>
+				<span class="var-type">bool</span>
+				<span class="var-name">$returnAdded</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodaddIconSplit" id="addIconSplit"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">addIconSplit</span> (line <span class="line-number"><a href="../__filesource/fsource_jqmPhp__libjqmListview.php.html#a167">167</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Adds a Icon-Split Listitem (jqmListitem).</p>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../jqmPhp/jqmListview.html">jqmListview</a>|<a href="../jqmPhp/jqmListitem.html">jqmListitem</a></span>
+		<span class="method-name">
+			addIconSplit
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$title</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$href</span> = <span class="var-default">''</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$splitHref</span> = <span class="var-default">''</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$img</span> = <span class="var-default">''</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$count</span> = <span class="var-default">''</span>], [<span class="var-type">bool</span>&nbsp;<span class="var-name">$returnAdded</span> = <span class="var-default">false</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$title</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$href</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$splitHref</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$img</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$count</span>			</li>
+					<li>
+				<span class="var-type">bool</span>
+				<span class="var-name">$returnAdded</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodaddNested" id="addNested"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">addNested</span> (line <span class="line-number"><a href="../__filesource/fsource_jqmPhp__libjqmListview.php.html#a91">91</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Adds a Nested Listitem (jqmListitem).</p>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../jqmPhp/jqmListview.html">jqmListview</a></span>
+		<span class="method-name">
+			addNested
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$title</span>, <span class="var-type"><a href="../jqmPhp/jqmListview.html">jqmListview</a></span>&nbsp;<span class="var-name">$listview</span>, [<span class="var-type">bool</span>&nbsp;<span class="var-name">$returnAdded</span> = <span class="var-default">false</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$title</span>			</li>
+					<li>
+				<span class="var-type"><a href="../jqmPhp/jqmListview.html">jqmListview</a></span>
+				<span class="var-name">$listview</span>			</li>
+					<li>
+				<span class="var-type">bool</span>
+				<span class="var-name">$returnAdded</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodaddSplit" id="addSplit"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">addSplit</span> (line <span class="line-number"><a href="../__filesource/fsource_jqmPhp__libjqmListview.php.html#a151">151</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Adds a Split Listitem (jqmListitem).</p>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../jqmPhp/jqmListview.html">jqmListview</a>|<a href="../jqmPhp/jqmListitem.html">jqmListitem</a></span>
+		<span class="method-name">
+			addSplit
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$title</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$href</span> = <span class="var-default">''</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$splitHref</span> = <span class="var-default">''</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$count</span> = <span class="var-default">''</span>], [<span class="var-type">bool</span>&nbsp;<span class="var-name">$returnAdded</span> = <span class="var-default">false</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$title</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$href</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$splitHref</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$count</span>			</li>
+					<li>
+				<span class="var-type">bool</span>
+				<span class="var-name">$returnAdded</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodaddThumb" id="addThumb"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">addThumb</span> (line <span class="line-number"><a href="../__filesource/fsource_jqmPhp__libjqmListview.php.html#a136">136</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Adds a Thumbnail Listitem (jqmListitem).</p>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../jqmPhp/jqmListview.html">jqmListview</a>|<a href="../jqmPhp/jqmListitem.html">jqmListitem</a></span>
+		<span class="method-name">
+			addThumb
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$title</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$subTitle</span> = <span class="var-default">''</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$href</span> = <span class="var-default">''</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$img</span> = <span class="var-default">''</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$count</span> = <span class="var-default">''</span>], [<span class="var-type">bool</span>&nbsp;<span class="var-name">$returnAdded</span> = <span class="var-default">false</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$title</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$subTitle</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$href</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$img</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$count</span>			</li>
+					<li>
+				<span class="var-type">bool</span>
+				<span class="var-name">$returnAdded</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodaddThumbSplit" id="addThumbSplit"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">addThumbSplit</span> (line <span class="line-number"><a href="../__filesource/fsource_jqmPhp__libjqmListview.php.html#a184">184</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Adds a Thumbnail-Split Listitem (jqmListitem).</p>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../jqmPhp/jqmListview.html">jqmListview</a>|<a href="../jqmPhp/jqmListitem.html">jqmListitem</a></span>
+		<span class="method-name">
+			addThumbSplit
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$title</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$subTitle</span> = <span class="var-default">''</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$href</span> = <span class="var-default">''</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$splitHref</span> = <span class="var-default">''</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$img</span> = <span class="var-default">''</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$count</span> = <span class="var-default">''</span>], [<span class="var-type">bool</span>&nbsp;<span class="var-name">$returnAdded</span> = <span class="var-default">false</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$title</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$subTitle</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$href</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$splitHref</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$img</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$count</span>			</li>
+					<li>
+				<span class="var-type">bool</span>
+				<span class="var-name">$returnAdded</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodcountTheme" id="countTheme"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">countTheme</span> (line <span class="line-number"><a href="../__filesource/fsource_jqmPhp__libjqmListview.php.html#a261">261</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Gets and sets the countTheme property (data-count-theme=&quot;a&quot;).</p>
+	
+	<div class="method-signature">
+		<span class="method-result">string|<a href="../jqmPhp/jqmListviem.html">jqmListviem</a></span>
+		<span class="method-name">
+			countTheme
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$value</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$value</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methoddividerTheme" id="dividerTheme"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">dividerTheme</span> (line <span class="line-number"><a href="../__filesource/fsource_jqmPhp__libjqmListview.php.html#a250">250</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Gets and sets the dividerTheme property (data-divider-theme=&quot;a&quot;).</p>
+	
+	<div class="method-signature">
+		<span class="method-result">string|<a href="../jqmPhp/jqmListviem.html">jqmListviem</a></span>
+		<span class="method-name">
+			dividerTheme
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$value</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$value</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodfilter" id="filter"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">filter</span> (line <span class="line-number"><a href="../__filesource/fsource_jqmPhp__libjqmListview.php.html#a217">217</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Gets and sets the filter property (data-filter=&quot;true&quot;).</p>
+	
+	<div class="method-signature">
+		<span class="method-result">bool|<a href="../jqmPhp/jqmListviem.html">jqmListviem</a></span>
+		<span class="method-name">
+			filter
+		</span>
+					(<span class="var-type">bool</span>&nbsp;<span class="var-name">$value</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">bool</span>
+				<span class="var-name">$value</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodinset" id="inset"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">inset</span> (line <span class="line-number"><a href="../__filesource/fsource_jqmPhp__libjqmListview.php.html#a206">206</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Gets and sets the inset property (data-inset=&quot;true&quot;).</p>
+	
+	<div class="method-signature">
+		<span class="method-result">bool|<a href="../jqmPhp/jqmListviem.html">jqmListviem</a></span>
+		<span class="method-name">
+			inset
+		</span>
+					(<span class="var-type">bool</span>&nbsp;<span class="var-name">$value</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">bool</span>
+				<span class="var-name">$value</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsplitIcon" id="splitIcon"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">splitIcon</span> (line <span class="line-number"><a href="../__filesource/fsource_jqmPhp__libjqmListview.php.html#a228">228</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Gets and sets the splitIcon property (data-split-icon=&quot;gear&quot;).</p>
+	
+	<div class="method-signature">
+		<span class="method-result">string|<a href="../jqmPhp/jqmListviem.html">jqmListviem</a></span>
+		<span class="method-name">
+			splitIcon
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$value</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$value</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsplitTheme" id="splitTheme"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">splitTheme</span> (line <span class="line-number"><a href="../__filesource/fsource_jqmPhp__libjqmListview.php.html#a239">239</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Gets and sets the splitTheme property (data-split-theme=&quot;a&quot;).</p>
+	
+	<div class="method-signature">
+		<span class="method-result">string|<a href="../jqmPhp/jqmListviem.html">jqmListviem</a></span>
+		<span class="method-name">
+			splitTheme
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$value</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$value</span>			</li>
+				</ul>
+		
+			
+	</div>
+							<h4>Inherited Methods</h4>
+				<a name='inherited_methods'><!-- --></a>	
+									<!-- =========== Summary =========== -->
+					<p>Inherited From <span class="classname"><a href="../jqmPhp/jqmTag.html">jqmTag</a></span></p>
+					<blockquote>
+													<span class="method-name"><a href="../jqmPhp/jqmTag.html#method__construct">jqmTag::__construct()</a></span><br>
+													<span class="method-name"><a href="../jqmPhp/jqmTag.html#methodadd">jqmTag::add()</a></span><br>
+													<span class="method-name"><a href="../jqmPhp/jqmTag.html#methodaddAttribute">jqmTag::addAttribute()</a></span><br>
+													<span class="method-name"><a href="../jqmPhp/jqmTag.html#methodattribute">jqmTag::attribute()</a></span><br>
+													<span class="method-name"><a href="../jqmPhp/jqmTag.html#methodattributes">jqmTag::attributes()</a></span><br>
+													<span class="method-name"><a href="../jqmPhp/jqmTag.html#methodid">jqmTag::id()</a></span><br>
+													<span class="method-name"><a href="../jqmPhp/jqmTag.html#methoditems">jqmTag::items()</a></span><br>
+													<span class="method-name"><a href="../jqmPhp/jqmTag.html#methodtag">jqmTag::tag()</a></span><br>
+													<span class="method-name"><a href="../jqmPhp/jqmTag.html#methodtheme">jqmTag::theme()</a></span><br>
+											</blockquote>
+										
+		</div>
+	</div>
+
+
+	<p class="notes" id="credit">
+		Documentation generated on Tue, 22 Mar 2011 19:16:57 -0300 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.3</a>
+	</p>
+	</div></body>
+</html>

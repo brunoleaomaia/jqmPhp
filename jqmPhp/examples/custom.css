@@ -1,0 +1,111 @@
+pre {
+    padding:                            10px;
+    -webkit-border-radius:              8px;
+    -moz-border-radius:                 8px;
+    border-radius:                      8px;
+    display:                            block;
+}
+
+.ui-bar-a {
+    font-weight:                        bold;
+    border:                             1px solid #be7800;
+    background:                         #e99515;
+    color:                              #fff;
+    text-shadow:                        0 -1px 0px #94440F;
+    background-image:                   -moz-linear-gradient(top, #e9a015, #e98a15);
+    background-image:                   -webkit-gradient(linear,left top,left bottom, color-stop(0, #e9a015), color-stop(1, #e98a15));
+    -ms-filter:                         "progid:DXImageTransform.Microsoft.gradient(startColorStr='#e9a015', EndColorStr='#e98a15')";
+}
+
+.ui-icon {
+    -moz-border-radius: 		3px;
+    -webkit-border-radius: 		3px;
+    border-radius: 			3px;
+}
+.ui-icon-disc {
+    background-color: 			#666;
+    background-color: 			rgba(0,0,0,.3);
+    -moz-border-radius: 		3px;
+    -webkit-border-radius: 		3px;
+    border-radius: 			3px;
+}
+
+.ui-icon-black {
+    background-image:                   url(images/icons-18-black.png);
+}
+.ui-icon-black-disc {
+    background-color:                   #fff;
+    background-color:                   rgba(255,255,255,.3);
+    -moz-border-radius: 		3px;
+    -webkit-border-radius: 		3px;
+    border-radius: 			3px;
+}
+.ui-btn-corner-tl {
+    -moz-border-radius-topleft:         1em;
+    -webkit-border-top-left-radius:     1em;
+    border-top-left-radius:             1em;
+}
+
+.ui-btn-corner-tr {
+    -moz-border-radius-topright:        1em;
+    -webkit-border-top-right-radius:    1em;
+    border-top-right-radius:            1em;
+}
+.ui-btn-corner-bl {
+    -moz-border-radius-bottomleft:      1em;
+    -webkit-border-bottom-left-radius:  1em;
+    border-bottom-left-radius:          1em;
+}
+.ui-btn-corner-br {
+    -moz-border-radius-bottomright:     1em;
+    -webkit-border-bottom-right-radius: 1em;
+    border-bottom-right-radius:         1em;
+}
+.ui-btn-corner-top {
+    -moz-border-radius-topleft:         1em;
+    -webkit-border-top-left-radius:     1em;
+    border-top-left-radius:             1em;
+    -moz-border-radius-topright:        1em;
+    -webkit-border-top-right-radius:    1em;
+    border-top-right-radius:            1em;
+}
+.ui-btn-corner-bottom {
+    -moz-border-radius-bottomleft:      1em;
+    -webkit-border-bottom-left-radius:  1em;
+    border-bottom-left-radius:          1em;
+    -moz-border-radius-bottomright:     1em;
+    -webkit-border-bottom-right-radius: 1em;
+    border-bottom-right-radius:         1em;
+}
+.ui-btn-corner-right {
+    -moz-border-radius-topright:        1em;
+    -webkit-border-top-right-radius:    1em;
+    border-top-right-radius:            1em;
+    -moz-border-radius-bottomright:     1em;
+    -webkit-border-bottom-right-radius: 1em;
+    border-bottom-right-radius:         1em;
+}
+.ui-btn-corner-left {
+    -moz-border-radius-topleft:         1em;
+    -webkit-border-top-left-radius:     1em;
+    border-top-left-radius:             1em;
+    -moz-border-radius-bottomleft:      1em;
+    -webkit-border-bottom-left-radius:  1em;
+    border-bottom-left-radius:          1em;
+}
+.ui-btn-corner-all {
+    -moz-border-radius:                 .4em;
+    -webkit-border-radius:              .4em;
+    border-radius:                      .4em;
+}
+
+.ui-corner-tl, .ui-corner-tr, .ui-corner-bl,
+.ui-corner-br, .ui-corner-top, .ui-corner-bottom,
+.ui-corner-right, .ui-corner-left, .ui-corner-all,
+.ui-btn-corner-tl, .ui-btn-corner-tr, .ui-btn-corner-bl,
+.ui-btn-corner-br, .ui-btn-corner-top, .ui-btn-corner-bottom,
+.ui-btn-corner-right, .ui-btn-corner-left, .ui-btn-corner-all {
+    -webkit-background-clip:            padding-box;
+    -moz-background-clip:               padding-box;
+    background-clip:                    padding-box;
+}

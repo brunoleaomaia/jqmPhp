@@ -18,13 +18,21 @@
  *
  */
 /**
+ * This file is part of the jqmPhp package.
+ * @package jqmPhp
+ * @filesource
+ */
+namespace jqmPhp;
+/**
  * This class represents the 'link' tag.
  * @class jqmLink
  * @author Bruno Maia <brunoleaomaia@gmail.com>
  * @copyright Copyright (c) 2011, Bruno Maia
- * @license http://www.gnu.org/licenses/gpl.html GNU Public License
+ * @license http://www.gnu.org/licenses/gpl.html GNU Public License
  * @package jqmPhp
- * @version 0.01
+ * @version 0.03
+ * @since 0.01
+ * @link http://www.jqmphp.com/ jqmPhp Website
  * @link http://code.google.com/p/jqmphp/ jqmPhp Project Website
  * @link http://www.jquerymobile.com jQuery Mobile Website
  */

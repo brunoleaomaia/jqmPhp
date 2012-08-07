@@ -1,257 +1,463 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos -->
+			<title>Docs For Class jqmSlider</title>
+			<link rel="stylesheet" href="../media/stylesheet.css" />
+			<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'/>
+		</head>
+		<body>
+			<div class="page-body">			
+<h2 class="class-name">Class jqmSlider</h2>
 
-<html lang="en">
-<head>
-
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
-<meta name="generator" content="PHPDoctor 2RC4 (http://peej.github.com/phpdoctor/)">
-<meta name="when" content="Fri, 21 Jan 2011 04:30:38 +0000">
-
-<link rel="stylesheet" type="text/css" href="../stylesheet.css">
-<link rel="start" href="../overview-summary.html">
-
-<title>jqmSlider (jqmPhp)</title>
-
-</head>
-<body id="definition" onload="parent.document.title=document.title;">
-
-<div class="header">
-<h1>jqmPhp</h1>
-<ul>
-<li><a href="../overview-summary.html">Overview</a></li>
-<li><a href="../jqmphp/package-summary.html">Namespace</a></li>
-<li class="active">Class</li>
-<li><a href="../jqmphp/package-tree.html">Tree</a></li>
-<li><a href="../overview-files.html">Files</a></li>
-<li><a href="../deprecated-list.html">Deprecated</a></li>
-<li><a href="../todo-list.html">Todo</a></li>
-<li><a href="../index-all.html">Index</a></li>
-</ul>
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+															<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+						
+					</div>
+	<div class="info-box-body">
+        		<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">This class represents the 'select' tag (data-role=&quot;slider&quot;).</p>
+	<ul class="tags">
+				<li><span class="field">author:</span> Bruno Maia &lt;<a href="mailto:brunoleaomaia@gmail.com">brunoleaomaia@gmail.com</a>&gt;</li>
+				<li><span class="field">version:</span> 0.03</li>
+				<li><span class="field">copyright:</span> Copyright (c) 2011, Bruno Maia</li>
+				<li><span class="field">link:</span> <a href="http://www.jqmphp.com/">jqmPhp Website</a></li>
+				<li><span class="field">link:</span> <a href="http://www.jquerymobile.com">jQuery Mobile Website</a></li>
+				<li><span class="field">link:</span> <a href="http://code.google.com/p/jqmphp/">jqmPhp Project Website</a></li>
+				<li><span class="field">since:</span> 0.01</li>
+				<li><span class="field">license:</span> <a href="http://www.gnu.org/licenses/gpl.html">GNU Public License</a></li>
+			</ul>
+		<p class="notes">
+			Located in <a class="field" href="_lib---jqmSlider.php.html">/lib/jqmSlider.php</a> (line <span class="field"><a href="../__filesource/fsource_jqmPhp__libjqmSlider.php.html#a38">38</a></span>)
+		</p>
+		
+				
+		<pre><a href="../jqmPhp/jqmTag.html">jqmTag</a>
+   |
+   --jqmSlider</pre>
+	
+			</div>
 </div>
 
-<div class="small_links">
-<a href="../index.html" target="_top">Frames</a>
-<a href="../jqmphp/jqmslider.html" target="_top">No frames</a>
-</div>
-<div class="small_links">
-Summary: <a href="#summary_field">Field</a> | <a href="#summary_method">Method</a> | <a href="#summary_constr">Constr</a>
-Detail: <a href="#detail_field">Field</a> | <a href="#detail_method">Method</a> | <a href="#summary_constr">Constr</a>
-</div>
-<hr>
 
-<div class="qualifiedName">jqmPhp\jqmSlider</div>
-<a href="../source/jqmslider.php.html#line31" class="location">jqmSlider.php at line 31</a>
 
-<h1>Class jqmSlider</h1>
 
-<pre class="tree"><a href="../jqmphp/jqmtag.html">jqmTag</a><br>    â””â”€<strong>jqmSlider</strong><br /></pre>
+	<a name="sec-method-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Method Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+												<span class="disabled">Methods</span> (<a href="#sec-methods">details</a>)
+		</div>
+		<div class="info-box-body">			
+			<div class="method-summary">
+																																																																																												
+												<div class="method-definition">
+											<span class="method-result">jqmSlider</span>
+										<a href="#__construct" title="details" class="method-name">__construct</a>
+											([<span class="var-type">string</span>&nbsp;<span class="var-name">$id</span> = <span class="var-default">''</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$name</span> = <span class="var-default">''</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$label</span> = <span class="var-default">''</span>], [<span class="var-type">bool</span>&nbsp;<span class="var-name">$isOn</span> = <span class="var-default">false</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$onLabel</span> = <span class="var-default">'on'</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$onValue</span> = <span class="var-default">'on'</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$offLabel</span> = <span class="var-default">'off'</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$offValue</span> = <span class="var-default">'off'</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$theme</span> = <span class="var-default">''</span>], [<span class="var-type">bool</span>&nbsp;<span class="var-name">$fieldContain</span> = <span class="var-default">false</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">bool|<a href="../jqmPhp/jqmSlider.html">jqmSlider</a></span>
+										<a href="#fieldContain" title="details" class="method-name">fieldContain</a>
+											(<span class="var-type">bool</span>&nbsp;<span class="var-name">$value</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">bool|<a href="../jqmPhp/jqmSlider.html">jqmSlider</a></span>
+										<a href="#isOn" title="details" class="method-name">isOn</a>
+											(<span class="var-type">bool</span>&nbsp;<span class="var-name">$value</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string|<a href="../jqmPhp/jqmSlider.html">jqmSlider</a></span>
+										<a href="#label" title="details" class="method-name">label</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$value</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string|<a href="../jqmPhp/jqmSlider.html">jqmSlider</a></span>
+										<a href="#name" title="details" class="method-name">name</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$value</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result"><a href="../jqmPhp/jqmSlider.html">jqmSlider</a></span>
+										<a href="#off" title="details" class="method-name">off</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string|<a href="../jqmPhp/jqmSlider.html">jqmSlider</a></span>
+										<a href="#offLabel" title="details" class="method-name">offLabel</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$value</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string|<a href="../jqmPhp/jqmSlider.html">jqmSlider</a></span>
+										<a href="#offValue" title="details" class="method-name">offValue</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$value</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result"><a href="../jqmPhp/jqmSlider.html">jqmSlider</a></span>
+										<a href="#on" title="details" class="method-name">on</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string|<a href="../jqmPhp/jqmSlider.html">jqmSlider</a></span>
+										<a href="#onLabel" title="details" class="method-name">onLabel</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$value</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string|<a href="../jqmPhp/jqmSlider.html">jqmSlider</a></span>
+										<a href="#onValue" title="details" class="method-name">onValue</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$value</span>)
+									</div>
+								</div>
+		</div>
+	</div>		
 
-<hr>
+	
+	<a name="sec-methods"></a>
+	<div class="info-box">
+		<div class="info-box-title">Methods</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+																<a href="#sec-method-summary">Methods</a> (<span class="disabled">details</span>)
+						
+		</div>
+		<div class="info-box-body">
+			<A NAME='method_detail'></A>
 
-<p class="signature">public  class <strong>jqmSlider</strong><br>extends <a href="../jqmphp/jqmtag.html">jqmTag</a>
+<a name="method__construct" id="__construct"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">Constructor __construct</span> (line <span class="line-number"><a href="../__filesource/fsource_jqmPhp__libjqmSlider.php.html#a59">59</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">jqmSlider</span>
+		<span class="method-name">
+			__construct
+		</span>
+					([<span class="var-type">string</span>&nbsp;<span class="var-name">$id</span> = <span class="var-default">''</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$name</span> = <span class="var-default">''</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$label</span> = <span class="var-default">''</span>], [<span class="var-type">bool</span>&nbsp;<span class="var-name">$isOn</span> = <span class="var-default">false</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$onLabel</span> = <span class="var-default">'on'</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$onValue</span> = <span class="var-default">'on'</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$offLabel</span> = <span class="var-default">'off'</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$offValue</span> = <span class="var-default">'off'</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$theme</span> = <span class="var-default">''</span>], [<span class="var-type">bool</span>&nbsp;<span class="var-name">$fieldContain</span> = <span class="var-default">false</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$id</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$name</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$label</span>			</li>
+					<li>
+				<span class="var-type">bool</span>
+				<span class="var-name">$isOn</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$onLabel</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$onValue</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$offLabel</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$offValue</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$theme</span>			</li>
+					<li>
+				<span class="var-type">bool</span>
+				<span class="var-name">$fieldContain</span>			</li>
+				</ul>
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../jqmPhp/jqmTag.html#method__construct">jqmTag::__construct()</a></dt>
+					</dl>
+			
+	</div>
+<a name="methodfieldContain" id="fieldContain"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">fieldContain</span> (line <span class="line-number"><a href="../__filesource/fsource_jqmPhp__libjqmSlider.php.html#a175">175</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Gets and sets the fieldContain property.</p>
+<p class="description"><p>If the fieldContain is true an automatic div data-role=&quot;fieldcontain&quot; is generated.</p></p>
+	
+	<div class="method-signature">
+		<span class="method-result">bool|<a href="../jqmPhp/jqmSlider.html">jqmSlider</a></span>
+		<span class="method-name">
+			fieldContain
+		</span>
+					(<span class="var-type">bool</span>&nbsp;<span class="var-name">$value</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">bool</span>
+				<span class="var-name">$value</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodisOn" id="isOn"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">isOn</span> (line <span class="line-number"><a href="../__filesource/fsource_jqmPhp__libjqmSlider.php.html#a131">131</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Gets and sets the isOn property.</p>
+	
+	<div class="method-signature">
+		<span class="method-result">bool|<a href="../jqmPhp/jqmSlider.html">jqmSlider</a></span>
+		<span class="method-name">
+			isOn
+		</span>
+					(<span class="var-type">bool</span>&nbsp;<span class="var-name">$value</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">bool</span>
+				<span class="var-name">$value</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodlabel" id="label"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">label</span> (line <span class="line-number"><a href="../__filesource/fsource_jqmPhp__libjqmSlider.php.html#a163">163</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Gets and sets the label property.</p>
+	
+	<div class="method-signature">
+		<span class="method-result">string|<a href="../jqmPhp/jqmSlider.html">jqmSlider</a></span>
+		<span class="method-name">
+			label
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$value</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$value</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodname" id="name"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">name</span> (line <span class="line-number"><a href="../__filesource/fsource_jqmPhp__libjqmSlider.php.html#a75">75</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Gets and sets the name attribute.</p>
+	
+	<div class="method-signature">
+		<span class="method-result">string|<a href="../jqmPhp/jqmSlider.html">jqmSlider</a></span>
+		<span class="method-name">
+			name
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$value</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$value</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodoff" id="off"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">off</span> (line <span class="line-number"><a href="../__filesource/fsource_jqmPhp__libjqmSlider.php.html#a155">155</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Sets slider off.</p>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../jqmPhp/jqmSlider.html">jqmSlider</a></span>
+		<span class="method-name">
+			off
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodoffLabel" id="offLabel"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">offLabel</span> (line <span class="line-number"><a href="../__filesource/fsource_jqmPhp__libjqmSlider.php.html#a120">120</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Gets and sets the offLabel property.</p>
+	
+	<div class="method-signature">
+		<span class="method-result">string|<a href="../jqmPhp/jqmSlider.html">jqmSlider</a></span>
+		<span class="method-name">
+			offLabel
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$value</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$value</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodoffValue" id="offValue"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">offValue</span> (line <span class="line-number"><a href="../__filesource/fsource_jqmPhp__libjqmSlider.php.html#a109">109</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Gets and sets the offValue property.</p>
+	
+	<div class="method-signature">
+		<span class="method-result">string|<a href="../jqmPhp/jqmSlider.html">jqmSlider</a></span>
+		<span class="method-name">
+			offValue
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$value</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$value</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodon" id="on"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">on</span> (line <span class="line-number"><a href="../__filesource/fsource_jqmPhp__libjqmSlider.php.html#a148">148</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Sets slider on.</p>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../jqmPhp/jqmSlider.html">jqmSlider</a></span>
+		<span class="method-name">
+			on
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodonLabel" id="onLabel"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">onLabel</span> (line <span class="line-number"><a href="../__filesource/fsource_jqmPhp__libjqmSlider.php.html#a98">98</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Gets and sets the onLabel property.</p>
+	
+	<div class="method-signature">
+		<span class="method-result">string|<a href="../jqmPhp/jqmSlider.html">jqmSlider</a></span>
+		<span class="method-name">
+			onLabel
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$value</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$value</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodonValue" id="onValue"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">onValue</span> (line <span class="line-number"><a href="../__filesource/fsource_jqmPhp__libjqmSlider.php.html#a87">87</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Gets and sets the onValue property.</p>
+	
+	<div class="method-signature">
+		<span class="method-result">string|<a href="../jqmPhp/jqmSlider.html">jqmSlider</a></span>
+		<span class="method-name">
+			onValue
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$value</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$value</span>			</li>
+				</ul>
+		
+			
+	</div>
+							<h4>Inherited Methods</h4>
+				<a name='inherited_methods'><!-- --></a>	
+									<!-- =========== Summary =========== -->
+					<p>Inherited From <span class="classname"><a href="../jqmPhp/jqmTag.html">jqmTag</a></span></p>
+					<blockquote>
+													<span class="method-name"><a href="../jqmPhp/jqmTag.html#method__construct">jqmTag::__construct()</a></span><br>
+													<span class="method-name"><a href="../jqmPhp/jqmTag.html#methodadd">jqmTag::add()</a></span><br>
+													<span class="method-name"><a href="../jqmPhp/jqmTag.html#methodaddAttribute">jqmTag::addAttribute()</a></span><br>
+													<span class="method-name"><a href="../jqmPhp/jqmTag.html#methodattribute">jqmTag::attribute()</a></span><br>
+													<span class="method-name"><a href="../jqmPhp/jqmTag.html#methodattributes">jqmTag::attributes()</a></span><br>
+													<span class="method-name"><a href="../jqmPhp/jqmTag.html#methodid">jqmTag::id()</a></span><br>
+													<span class="method-name"><a href="../jqmPhp/jqmTag.html#methoditems">jqmTag::items()</a></span><br>
+													<span class="method-name"><a href="../jqmPhp/jqmTag.html#methodtag">jqmTag::tag()</a></span><br>
+													<span class="method-name"><a href="../jqmPhp/jqmTag.html#methodtheme">jqmTag::theme()</a></span><br>
+											</blockquote>
+										
+		</div>
+	</div>
 
-</p>
 
-<div class="comment" id="overview_description"><p>This class represents the 'select' tag (data-role="slider").</p></div>
-
-<dl>
-<dt>Class:</dt>
-<dd>jqmSlider</dd>
-<dt>Author:</dt>
-<dd>Bruno Maia <brunoleaomaia@gmail.com></dd>
-<dt>Copyright:</dt>
-<dd>Copyright (c) 2011, Bruno Maia</dd>
-<dt>License:</dt>
-<dd>http://www.gnu.org/licenses/gpl.html GNU Public License</dd>
-<dt>Version:</dt>
-<dd>0.01</dd>
-<dt>See Also:</dt>
-<dd><code><a href="http://code.google.com/p/jqmphp/">jqmPhp Project Website</a></code></dd>
-<dd><code><a href="http://www.jquerymobile.com">jQuery Mobile Website</a></code></dd>
-</dl>
-<hr>
-
-<table id="summary_method">
-<tr><th colspan="2">Method Summary</th></tr>
-<tr>
-<td class="type"> void</td>
-<td class="description"><p class="name"><a href="#__construct()">__construct</a>(string id, string name, string label, bool isOn, string onLabel, string onValue, string offLabel, string offValue, string theme, bool fieldContain, mixed tag, array attributes, array items)</p><p class="description"></p></td>
-</tr>
-<tr>
-<td class="type"> bool|jqmSlider</td>
-<td class="description"><p class="name"><a href="#fieldContain()">fieldContain</a>(bool value)</p><p class="description">Gets and sets the fieldContain property.
-</p></td>
-</tr>
-<tr>
-<td class="type"> bool|jqmSlider</td>
-<td class="description"><p class="name"><a href="#isOn()">isOn</a>(bool value)</p><p class="description">Gets and sets the isOn property.</p></td>
-</tr>
-<tr>
-<td class="type"> string|jqmSlider</td>
-<td class="description"><p class="name"><a href="#label()">label</a>(string value)</p><p class="description">Gets and sets the label property.</p></td>
-</tr>
-<tr>
-<td class="type"> string|jqmSlider</td>
-<td class="description"><p class="name"><a href="#name()">name</a>(string value)</p><p class="description">Gets and sets the name attribute.</p></td>
-</tr>
-<tr>
-<td class="type"> <a href="../jqmphp/jqmslider.html">jqmSlider</a></td>
-<td class="description"><p class="name"><a href="#off()">off</a>()</p><p class="description">Sets slider off.</p></td>
-</tr>
-<tr>
-<td class="type"> string|jqmSlider</td>
-<td class="description"><p class="name"><a href="#offLabel()">offLabel</a>(string value)</p><p class="description">Gets and sets the offLabel property.</p></td>
-</tr>
-<tr>
-<td class="type"> string|jqmSlider</td>
-<td class="description"><p class="name"><a href="#offValue()">offValue</a>(string value)</p><p class="description">Gets and sets the offValue property.</p></td>
-</tr>
-<tr>
-<td class="type"> <a href="../jqmphp/jqmslider.html">jqmSlider</a></td>
-<td class="description"><p class="name"><a href="#on()">on</a>()</p><p class="description">Sets slider on.</p></td>
-</tr>
-<tr>
-<td class="type"> string|jqmSlider</td>
-<td class="description"><p class="name"><a href="#onLabel()">onLabel</a>(string value)</p><p class="description">Gets and sets the onLabel property.</p></td>
-</tr>
-<tr>
-<td class="type"> string|jqmSlider</td>
-<td class="description"><p class="name"><a href="#onValue()">onValue</a>(string value)</p><p class="description">Gets and sets the onValue property.</p></td>
-</tr>
-</table>
-
-<table class="inherit">
-<tr><th colspan="2">Methods inherited from jqmPhp\jqmTag</th></tr>
-<tr><td><a href="../jqmphp/jqmtag.html#__construct()">__construct</a>, <a href="../jqmphp/jqmtag.html#add()">add</a>, <a href="../jqmphp/jqmtag.html#addAttribute()">addAttribute</a>, <a href="../jqmphp/jqmtag.html#attribute()">attribute</a>, <a href="../jqmphp/jqmtag.html#attributes()">attributes</a>, <a href="../jqmphp/jqmtag.html#id()">id</a>, <a href="../jqmphp/jqmtag.html#items()">items</a>, <a href="../jqmphp/jqmtag.html#tag()">tag</a>, <a href="../jqmphp/jqmtag.html#theme()">theme</a></td></tr></table>
-
-<h2 id="detail_method">Method Detail</h2>
-<a href="../source/jqmslider.php.html#line52" class="location">jqmSlider.php at line 52</a>
-
-<h3 id="__construct()">__construct</h3>
-<code class="signature">public  void <strong>__construct</strong>(string id, string name, string label, bool isOn, string onLabel, string onValue, string offLabel, string offValue, string theme, bool fieldContain, mixed tag, array attributes, array items)</code>
-<div class="details">
-<p></p></div>
-
-<hr>
-
-<a href="../source/jqmslider.php.html#line161" class="location">jqmSlider.php at line 161</a>
-
-<h3 id="fieldContain()">fieldContain</h3>
-<code class="signature">public  bool|jqmSlider <strong>fieldContain</strong>(bool value)</code>
-<div class="details">
-<p>Gets and sets the fieldContain property.
-If the fieldContain is true an automatic div data-role="fieldcontain" is generated.</p></div>
-
-<hr>
-
-<a href="../source/jqmslider.php.html#line119" class="location">jqmSlider.php at line 119</a>
-
-<h3 id="isOn()">isOn</h3>
-<code class="signature">public  bool|jqmSlider <strong>isOn</strong>(bool value)</code>
-<div class="details">
-<p>Gets and sets the isOn property.</p></div>
-
-<hr>
-
-<a href="../source/jqmslider.php.html#line150" class="location">jqmSlider.php at line 150</a>
-
-<h3 id="label()">label</h3>
-<code class="signature">public  string|jqmSlider <strong>label</strong>(string value)</code>
-<div class="details">
-<p>Gets and sets the label property.</p></div>
-
-<hr>
-
-<a href="../source/jqmslider.php.html#line68" class="location">jqmSlider.php at line 68</a>
-
-<h3 id="name()">name</h3>
-<code class="signature">public  string|jqmSlider <strong>name</strong>(string value)</code>
-<div class="details">
-<p>Gets and sets the name attribute.</p></div>
-
-<hr>
-
-<a href="../source/jqmslider.php.html#line142" class="location">jqmSlider.php at line 142</a>
-
-<h3 id="off()">off</h3>
-<code class="signature">public  <a href="../jqmphp/jqmslider.html">jqmSlider</a> <strong>off</strong>()</code>
-<div class="details">
-<p>Sets slider off.</p></div>
-
-<hr>
-
-<a href="../source/jqmslider.php.html#line109" class="location">jqmSlider.php at line 109</a>
-
-<h3 id="offLabel()">offLabel</h3>
-<code class="signature">public  string|jqmSlider <strong>offLabel</strong>(string value)</code>
-<div class="details">
-<p>Gets and sets the offLabel property.</p></div>
-
-<hr>
-
-<a href="../source/jqmslider.php.html#line99" class="location">jqmSlider.php at line 99</a>
-
-<h3 id="offValue()">offValue</h3>
-<code class="signature">public  string|jqmSlider <strong>offValue</strong>(string value)</code>
-<div class="details">
-<p>Gets and sets the offValue property.</p></div>
-
-<hr>
-
-<a href="../source/jqmslider.php.html#line135" class="location">jqmSlider.php at line 135</a>
-
-<h3 id="on()">on</h3>
-<code class="signature">public  <a href="../jqmphp/jqmslider.html">jqmSlider</a> <strong>on</strong>()</code>
-<div class="details">
-<p>Sets slider on.</p></div>
-
-<hr>
-
-<a href="../source/jqmslider.php.html#line89" class="location">jqmSlider.php at line 89</a>
-
-<h3 id="onLabel()">onLabel</h3>
-<code class="signature">public  string|jqmSlider <strong>onLabel</strong>(string value)</code>
-<div class="details">
-<p>Gets and sets the onLabel property.</p></div>
-
-<hr>
-
-<a href="../source/jqmslider.php.html#line79" class="location">jqmSlider.php at line 79</a>
-
-<h3 id="onValue()">onValue</h3>
-<code class="signature">public  string|jqmSlider <strong>onValue</strong>(string value)</code>
-<div class="details">
-<p>Gets and sets the onValue property.</p></div>
-
-<hr>
-
-<div class="header">
-<h1>jqmPhp</h1>
-<ul>
-<li><a href="../overview-summary.html">Overview</a></li>
-<li><a href="../jqmphp/package-summary.html">Namespace</a></li>
-<li class="active">Class</li>
-<li><a href="../jqmphp/package-tree.html">Tree</a></li>
-<li><a href="../overview-files.html">Files</a></li>
-<li><a href="../deprecated-list.html">Deprecated</a></li>
-<li><a href="../todo-list.html">Todo</a></li>
-<li><a href="../index-all.html">Index</a></li>
-</ul>
-</div>
-
-<div class="small_links">
-<a href="../index.html" target="_top">Frames</a>
-<a href="../jqmphp/jqmslider.html" target="_top">No frames</a>
-</div>
-<div class="small_links">
-Summary: <a href="#summary_field">Field</a> | <a href="#summary_method">Method</a> | <a href="#summary_constr">Constr</a>
-Detail: <a href="#detail_field">Field</a> | <a href="#detail_method">Method</a> | <a href="#summary_constr">Constr</a>
-</div>
-<hr>
-
-<p id="footer">This document was generated by <a href="http://peej.github.com/phpdoctor/">PHPDoctor: The PHP Documentation Creator</a></p>
-
-</body>
-
+	<p class="notes" id="credit">
+		Documentation generated on Tue, 22 Mar 2011 19:17:13 -0300 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.3</a>
+	</p>
+	</div></body>
 </html>

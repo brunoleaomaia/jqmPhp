@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<root>
+    <brandGroup>
+        <name>F</name>
+        <brand>
+            <name>Fiat</name>
+            <car>Bravo</car>
+            <car>Linea</car>
+            <car>Punto</car>
+        </brand>
+    </brandGroup>
+    <brandGroup>
+        <name>G</name>
+        <brand>
+            <name>GM</name>
+            <car>Celta</car>
+            <car>Agile</car>
+            <car>Vectra</car>
+        </brand>
+    </brandGroup>
+    <brandGroup>
+        <name>H</name>
+        <brand>
+            <name>Honda</name>
+            <car>City</car>
+            <car>Civic</car>
+            <car>Fit</car>
+        </brand>
+        <brand>
+            <name>Hyundai</name>
+            <car>I30</car>
+            <car>IX35</car>
+            <car>Sonata</car>
+        </brand>
+    </brandGroup>
+</root>
