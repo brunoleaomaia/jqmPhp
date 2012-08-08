@@ -1,6 +1,6 @@
 LICENSE
 
-jqmPhp v0.01 - HTML code generator for jQuery Mobile Framework
+jqmPhp v0.03 - HTML code generator for jQuery Mobile Framework
 Copyright (C) 2011  Bruno Maia
 
 This program is free software: you can redistribute it and/or modify
@@ -28,11 +28,7 @@ HOW TO USE
 
 EXAMPLES
 
-    - example-1.php (Minimalist Example)
-    - example-2.php (Config Page Header and Footer)
-    - example-3.php (Adding Objects)
-    - example-4.php (Adding Forms)
-    - example-4.php (Adding Listviews)
+    - examples/index.html
 
 DOCUMENTATION
 
@@ -41,3 +37,7 @@ DOCUMENTATION
 PROJECT WEBSITE
 
     - http://code.google.com/p/jqmphp/
+
+CHANGELOG
+
+    - http://code.google.com/p/jqmphp/source/list

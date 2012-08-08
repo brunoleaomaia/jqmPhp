@@ -1,205 +1,352 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos -->
+			<title>Docs For Class jqmSelect</title>
+			<link rel="stylesheet" href="../media/stylesheet.css" />
+			<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'/>
+		</head>
+		<body>
+			<div class="page-body">			
+<h2 class="class-name">Class jqmSelect</h2>
 
-<html lang="en">
-<head>
-
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
-<meta name="generator" content="PHPDoctor 2RC4 (http://peej.github.com/phpdoctor/)">
-<meta name="when" content="Fri, 21 Jan 2011 04:30:38 +0000">
-
-<link rel="stylesheet" type="text/css" href="../stylesheet.css">
-<link rel="start" href="../overview-summary.html">
-
-<title>jqmSelect (jqmPhp)</title>
-
-</head>
-<body id="definition" onload="parent.document.title=document.title;">
-
-<div class="header">
-<h1>jqmPhp</h1>
-<ul>
-<li><a href="../overview-summary.html">Overview</a></li>
-<li><a href="../jqmphp/package-summary.html">Namespace</a></li>
-<li class="active">Class</li>
-<li><a href="../jqmphp/package-tree.html">Tree</a></li>
-<li><a href="../overview-files.html">Files</a></li>
-<li><a href="../deprecated-list.html">Deprecated</a></li>
-<li><a href="../todo-list.html">Todo</a></li>
-<li><a href="../index-all.html">Index</a></li>
-</ul>
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+															<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+						
+					</div>
+	<div class="info-box-body">
+        		<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">This class represents the 'select' tag.</p>
+	<ul class="tags">
+				<li><span class="field">author:</span> Bruno Maia &lt;<a href="mailto:brunoleaomaia@gmail.com">brunoleaomaia@gmail.com</a>&gt;</li>
+				<li><span class="field">version:</span> 0.03</li>
+				<li><span class="field">copyright:</span> Copyright (c) 2011, Bruno Maia</li>
+				<li><span class="field">link:</span> <a href="http://www.jqmphp.com/">jqmPhp Website</a></li>
+				<li><span class="field">link:</span> <a href="http://www.jquerymobile.com">jQuery Mobile Website</a></li>
+				<li><span class="field">link:</span> <a href="http://code.google.com/p/jqmphp/">jqmPhp Project Website</a></li>
+				<li><span class="field">since:</span> 0.01</li>
+				<li><span class="field">license:</span> <a href="http://www.gnu.org/licenses/gpl.html">GNU Public License</a></li>
+			</ul>
+		<p class="notes">
+			Located in <a class="field" href="_lib---jqmSelect.php.html">/lib/jqmSelect.php</a> (line <span class="field"><a href="../__filesource/fsource_jqmPhp__libjqmSelect.php.html#a38">38</a></span>)
+		</p>
+		
+				
+		<pre><a href="../jqmPhp/jqmTag.html">jqmTag</a>
+   |
+   --jqmSelect</pre>
+	
+			</div>
 </div>
 
-<div class="small_links">
-<a href="../index.html" target="_top">Frames</a>
-<a href="../jqmphp/jqmselect.html" target="_top">No frames</a>
-</div>
-<div class="small_links">
-Summary: <a href="#summary_field">Field</a> | <a href="#summary_method">Method</a> | <a href="#summary_constr">Constr</a>
-Detail: <a href="#detail_field">Field</a> | <a href="#detail_method">Method</a> | <a href="#summary_constr">Constr</a>
-</div>
-<hr>
 
-<div class="qualifiedName">jqmPhp\jqmSelect</div>
-<a href="../source/jqmselect.php.html#line31" class="location">jqmSelect.php at line 31</a>
 
-<h1>Class jqmSelect</h1>
 
-<pre class="tree"><a href="../jqmphp/jqmtag.html">jqmTag</a><br>    â””â”€<strong>jqmSelect</strong><br /></pre>
+	<a name="sec-method-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Method Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+												<span class="disabled">Methods</span> (<a href="#sec-methods">details</a>)
+		</div>
+		<div class="info-box-body">			
+			<div class="method-summary">
+																																																												
+												<div class="method-definition">
+											<span class="method-result">jqmSelect</span>
+										<a href="#__construct" title="details" class="method-name">__construct</a>
+											([<span class="var-type">string</span>&nbsp;<span class="var-name">$id</span> = <span class="var-default">''</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$name</span> = <span class="var-default">''</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$label</span> = <span class="var-default">''</span>], [<span class="var-type">array</span>&nbsp;<span class="var-name">$items</span> = <span class="var-default">array()</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$theme</span> = <span class="var-default">''</span>], [<span class="var-type">bool</span>&nbsp;<span class="var-name">$fieldContain</span> = <span class="var-default">false</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$icon</span> = <span class="var-default">''</span>], [<span class="var-type">bool</span>&nbsp;<span class="var-name">$inline</span> = <span class="var-default">false</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result"><a href="../jqmPhp/jqmSelect.html">jqmSelect</a>|<a href="../jqmPhp/jqmOption.html">jqmOption</a></span>
+										<a href="#addOption" title="details" class="method-name">addOption</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$text</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$value</span> = <span class="var-default">''</span>], [<span class="var-type">bool</span>&nbsp;<span class="var-name">$selected</span> = <span class="var-default">false</span>], [<span class="var-type">bool</span>&nbsp;<span class="var-name">$returnAdded</span> = <span class="var-default">false</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">bool|<a href="../jqmPhp/jqmSelect.html">jqmSelect</a></span>
+										<a href="#fieldContain" title="details" class="method-name">fieldContain</a>
+											(<span class="var-type">bool</span>&nbsp;<span class="var-name">$value</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string|<a href="../jqmPhp/jqmSelect.html">jqmSelect</a></span>
+										<a href="#icon" title="details" class="method-name">icon</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$value</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">bool|<a href="../jqmPhp/jqmSelect.html">jqmSelect</a></span>
+										<a href="#inline" title="details" class="method-name">inline</a>
+											(<span class="var-type">bool</span>&nbsp;<span class="var-name">$value</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string|<a href="../jqmPhp/jqmSelect.html">jqmSelect</a></span>
+										<a href="#label" title="details" class="method-name">label</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$value</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string|<a href="../jqmPhp/jqmSelect.html">jqmSelect</a></span>
+										<a href="#name" title="details" class="method-name">name</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$value</span>)
+									</div>
+								</div>
+		</div>
+	</div>		
 
-<hr>
+	
+	<a name="sec-methods"></a>
+	<div class="info-box">
+		<div class="info-box-title">Methods</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+																<a href="#sec-method-summary">Methods</a> (<span class="disabled">details</span>)
+						
+		</div>
+		<div class="info-box-body">
+			<A NAME='method_detail'></A>
 
-<p class="signature">public  class <strong>jqmSelect</strong><br>extends <a href="../jqmphp/jqmtag.html">jqmTag</a>
+<a name="method__construct" id="__construct"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">Constructor __construct</span> (line <span class="line-number"><a href="../__filesource/fsource_jqmPhp__libjqmSelect.php.html#a55">55</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">jqmSelect</span>
+		<span class="method-name">
+			__construct
+		</span>
+					([<span class="var-type">string</span>&nbsp;<span class="var-name">$id</span> = <span class="var-default">''</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$name</span> = <span class="var-default">''</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$label</span> = <span class="var-default">''</span>], [<span class="var-type">array</span>&nbsp;<span class="var-name">$items</span> = <span class="var-default">array()</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$theme</span> = <span class="var-default">''</span>], [<span class="var-type">bool</span>&nbsp;<span class="var-name">$fieldContain</span> = <span class="var-default">false</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$icon</span> = <span class="var-default">''</span>], [<span class="var-type">bool</span>&nbsp;<span class="var-name">$inline</span> = <span class="var-default">false</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$id</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$name</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$label</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$items</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$theme</span>			</li>
+					<li>
+				<span class="var-type">bool</span>
+				<span class="var-name">$fieldContain</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$icon</span>			</li>
+					<li>
+				<span class="var-type">bool</span>
+				<span class="var-name">$inline</span>			</li>
+				</ul>
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../jqmPhp/jqmTag.html#method__construct">jqmTag::__construct()</a></dt>
+					</dl>
+			
+	</div>
+<a name="methodaddOption" id="addOption"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">addOption</span> (line <span class="line-number"><a href="../__filesource/fsource_jqmPhp__libjqmSelect.php.html#a71">71</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Adds an option.</p>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../jqmPhp/jqmSelect.html">jqmSelect</a>|<a href="../jqmPhp/jqmOption.html">jqmOption</a></span>
+		<span class="method-name">
+			addOption
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$text</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$value</span> = <span class="var-default">''</span>], [<span class="var-type">bool</span>&nbsp;<span class="var-name">$selected</span> = <span class="var-default">false</span>], [<span class="var-type">bool</span>&nbsp;<span class="var-name">$returnAdded</span> = <span class="var-default">false</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$text</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$value</span>			</li>
+					<li>
+				<span class="var-type">bool</span>
+				<span class="var-name">$selected</span>			</li>
+					<li>
+				<span class="var-type">bool</span>
+				<span class="var-name">$returnAdded</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodfieldContain" id="fieldContain"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">fieldContain</span> (line <span class="line-number"><a href="../__filesource/fsource_jqmPhp__libjqmSelect.php.html#a105">105</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Gets and sets the fieldContain property.</p>
+<p class="description"><p>If the fieldContain is true an automatic div data-role=&quot;fieldcontain&quot; is generated.</p></p>
+	
+	<div class="method-signature">
+		<span class="method-result">bool|<a href="../jqmPhp/jqmSelect.html">jqmSelect</a></span>
+		<span class="method-name">
+			fieldContain
+		</span>
+					(<span class="var-type">bool</span>&nbsp;<span class="var-name">$value</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">bool</span>
+				<span class="var-name">$value</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodicon" id="icon"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">icon</span> (line <span class="line-number"><a href="../__filesource/fsource_jqmPhp__libjqmSelect.php.html#a116">116</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Gets and sets the icon property (data-icon=&quot;gear&quot;).</p>
+	
+	<div class="method-signature">
+		<span class="method-result">string|<a href="../jqmPhp/jqmSelect.html">jqmSelect</a></span>
+		<span class="method-name">
+			icon
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$value</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$value</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodinline" id="inline"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">inline</span> (line <span class="line-number"><a href="../__filesource/fsource_jqmPhp__libjqmSelect.php.html#a127">127</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Gets and sets the inline property (data-inline=&quot;true&quot;).</p>
+	
+	<div class="method-signature">
+		<span class="method-result">bool|<a href="../jqmPhp/jqmSelect.html">jqmSelect</a></span>
+		<span class="method-name">
+			inline
+		</span>
+					(<span class="var-type">bool</span>&nbsp;<span class="var-name">$value</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">bool</span>
+				<span class="var-name">$value</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodlabel" id="label"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">label</span> (line <span class="line-number"><a href="../__filesource/fsource_jqmPhp__libjqmSelect.php.html#a93">93</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Gets and sets the label property.</p>
+	
+	<div class="method-signature">
+		<span class="method-result">string|<a href="../jqmPhp/jqmSelect.html">jqmSelect</a></span>
+		<span class="method-name">
+			label
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$value</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$value</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodname" id="name"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">name</span> (line <span class="line-number"><a href="../__filesource/fsource_jqmPhp__libjqmSelect.php.html#a81">81</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Gets and sets the name attribute.</p>
+	
+	<div class="method-signature">
+		<span class="method-result">string|<a href="../jqmPhp/jqmSelect.html">jqmSelect</a></span>
+		<span class="method-name">
+			name
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$value</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$value</span>			</li>
+				</ul>
+		
+			
+	</div>
+							<h4>Inherited Methods</h4>
+				<a name='inherited_methods'><!-- --></a>	
+									<!-- =========== Summary =========== -->
+					<p>Inherited From <span class="classname"><a href="../jqmPhp/jqmTag.html">jqmTag</a></span></p>
+					<blockquote>
+													<span class="method-name"><a href="../jqmPhp/jqmTag.html#method__construct">jqmTag::__construct()</a></span><br>
+													<span class="method-name"><a href="../jqmPhp/jqmTag.html#methodadd">jqmTag::add()</a></span><br>
+													<span class="method-name"><a href="../jqmPhp/jqmTag.html#methodaddAttribute">jqmTag::addAttribute()</a></span><br>
+													<span class="method-name"><a href="../jqmPhp/jqmTag.html#methodattribute">jqmTag::attribute()</a></span><br>
+													<span class="method-name"><a href="../jqmPhp/jqmTag.html#methodattributes">jqmTag::attributes()</a></span><br>
+													<span class="method-name"><a href="../jqmPhp/jqmTag.html#methodid">jqmTag::id()</a></span><br>
+													<span class="method-name"><a href="../jqmPhp/jqmTag.html#methoditems">jqmTag::items()</a></span><br>
+													<span class="method-name"><a href="../jqmPhp/jqmTag.html#methodtag">jqmTag::tag()</a></span><br>
+													<span class="method-name"><a href="../jqmPhp/jqmTag.html#methodtheme">jqmTag::theme()</a></span><br>
+											</blockquote>
+										
+		</div>
+	</div>
 
-</p>
 
-<div class="comment" id="overview_description"><p>This class represents the 'select' tag.</p></div>
-
-<dl>
-<dt>Class:</dt>
-<dd>jqmSelect</dd>
-<dt>Author:</dt>
-<dd>Bruno Maia <brunoleaomaia@gmail.com></dd>
-<dt>Copyright:</dt>
-<dd>Copyright (c) 2011, Bruno Maia</dd>
-<dt>License:</dt>
-<dd>http://www.gnu.org/licenses/gpl.html GNU Public License</dd>
-<dt>Version:</dt>
-<dd>0.01</dd>
-<dt>See Also:</dt>
-<dd><code><a href="http://code.google.com/p/jqmphp/">jqmPhp Project Website</a></code></dd>
-<dd><code><a href="http://www.jquerymobile.com">jQuery Mobile Website</a></code></dd>
-</dl>
-<hr>
-
-<table id="summary_method">
-<tr><th colspan="2">Method Summary</th></tr>
-<tr>
-<td class="type"> void</td>
-<td class="description"><p class="name"><a href="#__construct()">__construct</a>(string id, string name, string label, array items, string icon, bool inline, string theme, bool fieldContain, mixed tag, array attributes)</p><p class="description"></p></td>
-</tr>
-<tr>
-<td class="type"> jqmSelect|jqmOption</td>
-<td class="description"><p class="name"><a href="#addOption()">addOption</a>(string text, string value, bool selected, bool returnAdded)</p><p class="description">Adds an option.</p></td>
-</tr>
-<tr>
-<td class="type"> bool|jqmSelect</td>
-<td class="description"><p class="name"><a href="#fieldContain()">fieldContain</a>(bool value)</p><p class="description">Gets and sets the fieldContain property.
-</p></td>
-</tr>
-<tr>
-<td class="type"> string|jqmSelect</td>
-<td class="description"><p class="name"><a href="#icon()">icon</a>(string value)</p><p class="description">Gets and sets the icon property (data-icon="gear").</p></td>
-</tr>
-<tr>
-<td class="type"> bool|jqmSelect</td>
-<td class="description"><p class="name"><a href="#inline()">inline</a>(bool value)</p><p class="description">Gets and sets the inline property (data-inline="true").</p></td>
-</tr>
-<tr>
-<td class="type"> string|jqmSelect</td>
-<td class="description"><p class="name"><a href="#label()">label</a>(string value)</p><p class="description">Gets and sets the label property.</p></td>
-</tr>
-<tr>
-<td class="type"> string|jqmSelect</td>
-<td class="description"><p class="name"><a href="#name()">name</a>(string value)</p><p class="description">Gets and sets the name attribute.</p></td>
-</tr>
-</table>
-
-<table class="inherit">
-<tr><th colspan="2">Methods inherited from jqmPhp\jqmTag</th></tr>
-<tr><td><a href="../jqmphp/jqmtag.html#__construct()">__construct</a>, <a href="../jqmphp/jqmtag.html#add()">add</a>, <a href="../jqmphp/jqmtag.html#addAttribute()">addAttribute</a>, <a href="../jqmphp/jqmtag.html#attribute()">attribute</a>, <a href="../jqmphp/jqmtag.html#attributes()">attributes</a>, <a href="../jqmphp/jqmtag.html#id()">id</a>, <a href="../jqmphp/jqmtag.html#items()">items</a>, <a href="../jqmphp/jqmtag.html#tag()">tag</a>, <a href="../jqmphp/jqmtag.html#theme()">theme</a></td></tr></table>
-
-<h2 id="detail_method">Method Detail</h2>
-<a href="../source/jqmselect.php.html#line48" class="location">jqmSelect.php at line 48</a>
-
-<h3 id="__construct()">__construct</h3>
-<code class="signature">public  void <strong>__construct</strong>(string id, string name, string label, array items, string icon, bool inline, string theme, bool fieldContain, mixed tag, array attributes)</code>
-<div class="details">
-<p></p></div>
-
-<hr>
-
-<a href="../source/jqmselect.php.html#line64" class="location">jqmSelect.php at line 64</a>
-
-<h3 id="addOption()">addOption</h3>
-<code class="signature">public  jqmSelect|jqmOption <strong>addOption</strong>(string text, string value, bool selected, bool returnAdded)</code>
-<div class="details">
-<p>Adds an option.</p></div>
-
-<hr>
-
-<a href="../source/jqmselect.php.html#line96" class="location">jqmSelect.php at line 96</a>
-
-<h3 id="fieldContain()">fieldContain</h3>
-<code class="signature">public  bool|jqmSelect <strong>fieldContain</strong>(bool value)</code>
-<div class="details">
-<p>Gets and sets the fieldContain property.
-If the fieldContain is true an automatic div data-role="fieldcontain" is generated.</p></div>
-
-<hr>
-
-<a href="../source/jqmselect.php.html#line106" class="location">jqmSelect.php at line 106</a>
-
-<h3 id="icon()">icon</h3>
-<code class="signature">public  string|jqmSelect <strong>icon</strong>(string value)</code>
-<div class="details">
-<p>Gets and sets the icon property (data-icon="gear").</p></div>
-
-<hr>
-
-<a href="../source/jqmselect.php.html#line116" class="location">jqmSelect.php at line 116</a>
-
-<h3 id="inline()">inline</h3>
-<code class="signature">public  bool|jqmSelect <strong>inline</strong>(bool value)</code>
-<div class="details">
-<p>Gets and sets the inline property (data-inline="true").</p></div>
-
-<hr>
-
-<a href="../source/jqmselect.php.html#line85" class="location">jqmSelect.php at line 85</a>
-
-<h3 id="label()">label</h3>
-<code class="signature">public  string|jqmSelect <strong>label</strong>(string value)</code>
-<div class="details">
-<p>Gets and sets the label property.</p></div>
-
-<hr>
-
-<a href="../source/jqmselect.php.html#line74" class="location">jqmSelect.php at line 74</a>
-
-<h3 id="name()">name</h3>
-<code class="signature">public  string|jqmSelect <strong>name</strong>(string value)</code>
-<div class="details">
-<p>Gets and sets the name attribute.</p></div>
-
-<hr>
-
-<div class="header">
-<h1>jqmPhp</h1>
-<ul>
-<li><a href="../overview-summary.html">Overview</a></li>
-<li><a href="../jqmphp/package-summary.html">Namespace</a></li>
-<li class="active">Class</li>
-<li><a href="../jqmphp/package-tree.html">Tree</a></li>
-<li><a href="../overview-files.html">Files</a></li>
-<li><a href="../deprecated-list.html">Deprecated</a></li>
-<li><a href="../todo-list.html">Todo</a></li>
-<li><a href="../index-all.html">Index</a></li>
-</ul>
-</div>
-
-<div class="small_links">
-<a href="../index.html" target="_top">Frames</a>
-<a href="../jqmphp/jqmselect.html" target="_top">No frames</a>
-</div>
-<div class="small_links">
-Summary: <a href="#summary_field">Field</a> | <a href="#summary_method">Method</a> | <a href="#summary_constr">Constr</a>
-Detail: <a href="#detail_field">Field</a> | <a href="#detail_method">Method</a> | <a href="#summary_constr">Constr</a>
-</div>
-<hr>
-
-<p id="footer">This document was generated by <a href="http://peej.github.com/phpdoctor/">PHPDoctor: The PHP Documentation Creator</a></p>
-
-</body>
-
+	<p class="notes" id="credit">
+		Documentation generated on Tue, 22 Mar 2011 19:17:09 -0300 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.3</a>
+	</p>
+	</div></body>
 </html>

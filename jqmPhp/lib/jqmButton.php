@@ -18,13 +18,21 @@
  *
  */
 /**
+ * This file is part of the jqmPhp package.
+ * @package jqmPhp
+ * @filesource
+ */
+namespace jqmPhp;
+/**
  * This class represents the 'a' tag (data-role="button").
  * @class jqmButton
  * @author Bruno Maia <brunoleaomaia@gmail.com>
  * @copyright Copyright (c) 2011, Bruno Maia
- * @license http://www.gnu.org/licenses/gpl.html GNU Public License
+ * @license http://www.gnu.org/licenses/gpl.html GNU Public License
  * @package jqmPhp
- * @version 0.01
+ * @version 0.03
+ * @since 0.01
+ * @link http://www.jqmphp.com/ jqmPhp Website
  * @link http://code.google.com/p/jqmphp/ jqmPhp Project Website
  * @link http://www.jquerymobile.com jQuery Mobile Website
  */
@@ -35,6 +43,8 @@ class jqmButton extends jqmTag {
     private $_role;
     private $_active;
     private $_inline;
+    private $_rel;
+    private $_target;
     /**
      *
      * @param string $id
@@ -45,7 +55,7 @@ class jqmButton extends jqmTag {
      * @param bool $active
      * @param bool $inline
      */
-    function __construct($id='', $attributes=array(), $items=array(), $theme='', $href='', $text='', $icon='', $active=false, $inline=false) {
+    function __construct($id='', $attributes=array(), $items=array(), $theme='', $href='', $text='', $icon='', $active=false, $inline=false, $rel='', $target='') {
         parent::__construct('a', $id, $attributes, $items, $theme);
         $this->_href = $this->attribute('href', $href, true);
         $this->_icon = $this->attribute('data-icon', $icon, true);
@@ -53,6 +63,8 @@ class jqmButton extends jqmTag {
         $this->active($active);
         $this->_inline = $this->attribute('data-inline', (($inline) ? 'true':''), true);
         $this->_text = $this->add(new jqmText($text),true);
+        $this->_rel = $this->addAttribute(new jqmAttribute('rel', $rel, false), true);
+        $this->_target = $this->addAttribute(new jqmAttribute('target', $target, false), true);
     }
     /**
      * Gets and sets the active property (class="ui-btn-active").
@@ -86,6 +98,28 @@ class jqmButton extends jqmTag {
         $args = func_get_args();
         if (count($args) == 0) return $this->_href->value();
         $this->_href->value($args[0]);
+        return $this;
+    }
+    /**
+     * Gets and sets the rel property.
+     * @param string $value
+     * @return string|jqmListitem
+     */
+    function rel() {
+        $args = func_get_args();
+        if (count($args) == 0) return $this->_rel->value();
+        $this->_rel->value($args[0]);
+        return $this;
+    }
+    /**
+     * Gets and sets the target property.
+     * @param string $value
+     * @return string|jqmListitem
+     */
+    function target() {
+        $args = func_get_args();
+        if (count($args) == 0) return $this->_target->value();
+        $this->_target->value($args[0]);
         return $this;
     }
     /**
