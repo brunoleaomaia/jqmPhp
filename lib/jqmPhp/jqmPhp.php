@@ -79,43 +79,6 @@ define('JQMPHP_CHARSET', 'UTF-8', true);
  */
 define('JQMPHP_VIEWPORT', 'width=device-width, initial-scale=1', true);
 
-/*
- * Includes required files.
- */
-require_once JQMPHP_PATH.'jqmCollection.php';
-require_once JQMPHP_PATH.'jqmTag.php';
-require_once JQMPHP_PATH.'jqmAttribute.php';
-require_once JQMPHP_PATH.'jqmBody.php';
-require_once JQMPHP_PATH.'jqmButton.php';
-require_once JQMPHP_PATH.'jqmCollapsible.php';
-require_once JQMPHP_PATH.'jqmContent.php';
-require_once JQMPHP_PATH.'jqmControlgroup.php';
-require_once JQMPHP_PATH.'jqmFieldcontain.php';
-require_once JQMPHP_PATH.'jqmHeader.php';
-require_once JQMPHP_PATH.'jqmFooter.php';
-require_once JQMPHP_PATH.'jqmForm.php';
-require_once JQMPHP_PATH.'jqmGrid.php';
-require_once JQMPHP_PATH.'jqmHead.php';
-require_once JQMPHP_PATH.'jqmHtml.php';
-require_once JQMPHP_PATH.'jqmInline.php';
-require_once JQMPHP_PATH.'jqmInput.php';
-require_once JQMPHP_PATH.'jqmCheckboxgroup.php';
-require_once JQMPHP_PATH.'jqmLabel.php';
-require_once JQMPHP_PATH.'jqmListitem.php';
-require_once JQMPHP_PATH.'jqmListview.php';
-require_once JQMPHP_PATH.'jqmLink.php';
-require_once JQMPHP_PATH.'jqmNavbar.php';
-require_once JQMPHP_PATH.'jqmOption.php';
-require_once JQMPHP_PATH.'jqmPage.php';
-require_once JQMPHP_PATH.'jqmRadiogroup.php';
-require_once JQMPHP_PATH.'jqmRange.php';
-require_once JQMPHP_PATH.'jqmScript.php';
-require_once JQMPHP_PATH.'jqmSelect.php';
-require_once JQMPHP_PATH.'jqmSlider.php';
-require_once JQMPHP_PATH.'jqmText.php';
-require_once JQMPHP_PATH.'jqmTextarea.php';
-require_once JQMPHP_PATH.'jqmTitle.php';
-
 /**
  * jqmPhp - HTML code generator for jQuery Mobile Framework
  * @class jqmPhp
