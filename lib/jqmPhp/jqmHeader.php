@@ -52,9 +52,7 @@ class jqmHeader extends jqmTag {
      */
     function __construct($id='', $attributes=array(), $items=array(), $theme='', $title='', $position='inline', $uiBar=false){
         parent::__construct('div', $id, $attributes, $items, $theme);
-        if (get_class($this) == 'jqmHeader') $role = 'header';
-        if (get_class($this) == 'jqmFooter') $role = 'footer';
-        $this->_role = $this->attribute('data-role', $role, true);
+        $this->_role = $this->attribute('data-role', 'header', true);
         $this->_position = $this->attribute('data-position', $position, true);
         $this->_uiBar = $this->attribute('class', ($uiBar) ? 'ui-bar' : '', true);
         $this->_title = $this->add(new jqmTitle($title),true);

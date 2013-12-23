@@ -50,6 +50,7 @@ class jqmFooter extends jqmHeader {
      */
     function __construct($id='', $attributes=array(), $items=array(), $theme='', $title='', $position='inline', $group=false){
         parent::__construct($id, $attributes, $items, $theme, $title, $position);
+        $this->_role = $this->attribute('data-role', 'footer', true);
         $this->group($group);
     }
     /**
