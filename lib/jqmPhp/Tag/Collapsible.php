@@ -39,7 +39,6 @@ use jqmPhp\Title;
 class Collapsible extends Tag
 {
     private $_role;
-    private $_title;
     private $_collapsed;
 
     /**
@@ -66,20 +65,6 @@ class Collapsible extends Tag
         $this->items()->addFromArray($items);
     }
 
-    /**
-     * Gets and sets the title property.
-     * @param string $value
-     * @return string|collapsible
-     */
-    public function title()
-    {
-        $args = func_get_args();
-        if (count($args) == 0) {
-            return $this->_title->text();
-        }
-        $this->_title->text($args[0]);
-        return $this;
-    }
 
     /**
      * Gets and sets the collapsed property (data-colapsed="true").
@@ -88,11 +73,10 @@ class Collapsible extends Tag
      */
     public function collapsed()
     {
-        $args = func_get_args();
-        if (count($args) == 0) {
+        if (func_num_args() === 0) {
             return ($this->_collapsed->value() == 'true') ? true : false;
         }
-        $this->_collapsed->value(($args[0]) ? 'true' : 'false');
+        $this->_collapsed->value(func_get_arg(0) === true ? 'true' : 'false');
         return $this;
     }
 
@@ -103,11 +87,10 @@ class Collapsible extends Tag
      */
     public function role()
     {
-        $args = func_get_args();
-        if (count($args) == 0) {
+        if (func_num_args() === 0) {
             return $this->_role->value();
         }
-        $this->_role->value($args[0]);
+        $this->_role->value(func_get_arg(0));
         return $this;
     }
 }

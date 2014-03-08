@@ -70,11 +70,10 @@ class Form extends Tag
      */
     public function action()
     {
-        $args = func_get_args();
-        if (count($args) == 0) {
+        if (func_num_args() === 0) {
             return $this->_action->value();
         }
-        $this->_action->value($args[0]);
+        $this->_action->value(func_get_arg(0));
         return $this;
     }
 
@@ -85,11 +84,10 @@ class Form extends Tag
      */
     public function method()
     {
-        $args = func_get_args();
-        if (count($args) == 0) {
+        if (func_num_args() === 0) {
             return $this->_method->value();
         }
-        $this->_method->value($args[0]);
+        $this->_method->value(func_get_arg(0));
         return $this;
     }
 }

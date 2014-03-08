@@ -45,6 +45,7 @@ class Title extends Text
         if ($this->text() != '') {
             $string = '<h1>' . $this->text() . '</h1>';
         }
+
         return $string;
     }
 }

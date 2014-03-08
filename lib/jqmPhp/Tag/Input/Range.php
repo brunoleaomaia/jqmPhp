@@ -74,11 +74,10 @@ class Range extends Input
      */
     public function name()
     {
-        $args = func_get_args();
-        if (count($args) == 0) {
+        if (func_num_args() === 0) {
             return $this->_name->value();
         }
-        $this->_name->value($args[0]);
+        $this->_name->value(func_get_arg(0));
         $this->_label->forField($this->_name);
         return $this;
     }
@@ -90,11 +89,10 @@ class Range extends Input
      */
     public function min()
     {
-        $args = func_get_args();
-        if (count($args) == 0) {
+        if (func_num_args() === 0) {
             return $this->_min->value();
         }
-        $this->_min->value($args[0]);
+        $this->_min->value(func_get_arg(0));
         return $this;
     }
 
@@ -105,11 +103,10 @@ class Range extends Input
      */
     public function max()
     {
-        $args = func_get_args();
-        if (count($args) == 0) {
+        if (func_num_args() === 0) {
             return $this->_max->value();
         }
-        $this->_max->value($args[0]);
+        $this->_max->value(func_get_arg(0));
         return $this;
     }
 }

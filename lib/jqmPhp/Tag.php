@@ -19,6 +19,7 @@
  */
 namespace jqmPhp;
 
+
 /**
  * This class represents an html tag.
  *
@@ -48,6 +49,8 @@ class Tag
      */
     private $theme;
 
+    protected $title;
+
     /**
      *
      * @param string $tagName
@@ -63,6 +66,30 @@ class Tag
         $this->items = new Collection($items);
         $this->id = new Attribute('id', $id);
         $this->theme = new Attribute('data-theme', $theme);
+        $this->title = new Title();
+    }
+
+    /**
+     * Gets and sets the title property
+     *
+     * @param string $value
+     * @return string|header
+     */
+    public function title()
+    {
+        if (func_num_args() === 0) {
+            return $this->title->text();
+        }
+        $this->title->text(func_get_arg(0));
+
+        return $this;
+    }
+
+    public function setTitle($title)
+    {
+        $this->title->text($title);
+
+        return $this;
     }
 
     /**
@@ -85,7 +112,8 @@ class Tag
     }
 
     /**
-     * Gets and sets the an attribute.
+     * Get or set an attribute
+     *
      * @param string $name
      * @param string $value
      * @param boolean $returnAttribute
@@ -93,28 +121,32 @@ class Tag
      */
     public function attribute()
     {
-        $args = func_get_args();
-        if (count($args) == 0) {
+        if (func_num_args() === 0) {
             return '';
         }
+
+        $args = func_get_args();
         for ($i = 0; $i < $this->attributes()->size(); $i++) {
-            if (is_object($this->attributes()->get($i)) && get_class($this->attributes()->get($i)) == 'jqmAttribute') {
+            if ($this->attributes()->get($i) instanceof Attribute) {
                 if ($this->attributes()->get($i)->name() == $args[0]) {
                     if (count($args) == 1) {
                         return $this->attributes()->get($i)->value();
                     }
                     $this->attributes()->get($i)->value($args[1]);
-                    if (count($args) == 3 && $args[2]) {
+
+                    if (count($args) == 3 && $args[2] === true) {
                         return $this->attributes()->get($i);
                     }
                     return $this;
                 }
             }
         }
-        if (count($args) == 1) {
+        if (func_num_args() === 1) {
             return '';
         }
-        return $this->addAttribute(new Attribute($args[0], $args[1]), (count($args) == 3 && $args[2]));
+
+        $returnAttribute = func_num_args() === 3 && $args[2] === true;
+        return $this->addAttribute(new Attribute($args[0], $args[1]), $returnAttribute);
     }
 
     /**
@@ -144,7 +176,8 @@ class Tag
     }
 
     /**
-     * Adds an item.
+     * Adds an item
+     *
      * @param mixed $item
      * @param boolean $returnItem
      * @return self|mixed
@@ -166,11 +199,10 @@ class Tag
      */
     public function tag()
     {
-        $args = func_get_args();
-        if (count($args) == 0) {
+        if (func_num_args() === 0) {
             return $this->tagName;
         }
-        $this->tagName = $args[0];
+        $this->tagName = func_get_arg(0);
         return $this;
     }
 
@@ -182,26 +214,25 @@ class Tag
      */
     public function id()
     {
-        $args = func_get_args();
-        if (count($args) == 0) {
+        if (func_num_args() === 0) {
             return $this->id->value();
         }
-        $this->id->value($args[0]);
+        $this->id->value(func_get_arg(0));
         return $this;
     }
 
     /**
-     * Gets and sets the theme attribute (data-theme="a").
+     * Gets and sets the theme attribute (data-theme="a")
+     *
      * @param string $value
      * @return string|self
      */
     public function theme()
     {
-        $args = func_get_args();
-        if (count($args) == 0) {
+        if (func_num_args() === 0) {
             return $this->theme->value();
         }
-        $this->theme->value($args[0]);
+        $this->theme->value(func_get_arg(0));
 
         return $this;
     }

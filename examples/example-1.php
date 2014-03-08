@@ -13,6 +13,6 @@ $j = new JqmContainer();
 $j->addBasicPage(
     'example-1',
     'Example 1',
-    '<h1>Hello World</h1><p>This is a basic page!</p><a href="index.php#">Home</a> | <a href="example-2.php#">Example 2</a>'
+    '<h1>Hello World</h1><p>This is a basic page!</p><a href="index.php">Home</a> | <a href="example-2.php">Example 2</a>'
 );
 echo $j;

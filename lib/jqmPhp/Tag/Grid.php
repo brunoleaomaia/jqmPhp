@@ -85,11 +85,10 @@ class Grid extends Tag
      */
     public function grid()
     {
-        $args = func_get_args();
-        if (count($args) == 0) {
+        if (func_num_args() === 0) {
             return $this->_grid;
         }
-        $type = $args[0];
+        $type = func_get_arg(0);
         if ($type != 'a' && $type != 'b' && $type != 'c' && $type != 'd') {
             $type = 'a';
         }

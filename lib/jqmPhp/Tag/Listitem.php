@@ -49,18 +49,21 @@ class Listitem extends Tag
     private $_splitTarget;
 
     /**
-     *
      * @param string $id
      * @param array $attributes
      * @param array $items
-     * @param boolean $divider
+     * @param bool $divider
      * @param string $title
      * @param string $href
      * @param string $count
      * @param string $img
      * @param string $subTitle
-     * @param boolean $isThumb
+     * @param bool $isThumb
      * @param string $splitHref
+     * @param string $rel
+     * @param string $target
+     * @param string $splitRel
+     * @param string $splitTarget
      */
     public function __construct(
         $id = '',
@@ -97,120 +100,112 @@ class Listitem extends Tag
     /**
      * Gets and sets the divider property (data-role="list-divider").
      * @param boolean $value
-     * @return bool|listitem
+     * @return bool|self
      */
     public function divider()
     {
-        $args = func_get_args();
-        if (count($args) == 0) {
+        if (func_num_args() === 0) {
             return ($this->_divider->value() == 'list-divider') ? true : false;
         }
-        $this->_divider->value(($args[0]) ? 'list-divider' : '');
+        $this->_divider->value(func_get_arg(0) === true ? 'list-divider' : '');
         return $this;
     }
 
     /**
      * Gets and sets the title property.
      * @param string $value
-     * @return string|listitem
+     * @return string|self
      */
     public function title()
     {
-        $args = func_get_args();
-        if (count($args) == 0) {
+        if (func_num_args() === 0) {
             return $this->_title;
         }
-        $this->_title = $args[0];
+        $this->_title = func_get_arg(0);
         return $this;
     }
 
     /**
      * Gets and sets the href property.
      * @param string $value
-     * @return string|listitem
+     * @return string|self
      */
     public function href()
     {
-        $args = func_get_args();
-        if (count($args) == 0) {
+        if (func_num_args() === 0) {
             return $this->_href;
         }
-        $this->_href = $args[0];
+        $this->_href = func_get_arg(0);
         return $this;
     }
 
     /**
      * Gets and sets the rel property.
      * @param string $value
-     * @return string|listitem
+     * @return string|self
      */
     public function rel()
     {
-        $args = func_get_args();
-        if (count($args) == 0) {
+        if (func_num_args() === 0) {
             return $this->_rel;
         }
-        $this->_rel = $args[0];
+        $this->_rel = func_get_arg(0);
         return $this;
     }
 
     /**
      * Gets and sets the target property.
      * @param string $value
-     * @return string|listitem
+     * @return string|self
      */
     public function target()
     {
-        $args = func_get_args();
-        if (count($args) == 0) {
+        if (func_num_args() === 0) {
             return $this->_target;
         }
-        $this->_target = $args[0];
+        $this->_target = func_get_arg(0);
         return $this;
     }
 
     /**
      * Gets and sets the count property (class="ui-li-count").
      * @param string $value
-     * @return string|listitem
+     * @return string|self
      */
     public function count()
     {
-        $args = func_get_args();
-        if (count($args) == 0) {
+        if (func_num_args() === 0) {
             return $this->_count;
         }
-        $this->_count = $args[0];
+        $this->_count = func_get_arg(0);
         return $this;
     }
 
     /**
      * Gets and sets the image property.
      * @param string $value
-     * @return string|listitem
+     * @return string|self
      */
     public function img()
     {
-        $args = func_get_args();
-        if (count($args) == 0) {
+        if (func_num_args() === 0) {
             return $this->_img;
         }
-        $this->_img = $args[0];
+        $this->_img = func_get_arg(0);
         return $this;
     }
 
     /**
      * Gets and sets the subTitle property.
      * @param string $value
-     * @return string|listitem
+     * @return string|self
      */
     public function subTitle()
     {
-        $args = func_get_args();
-        if (count($args) == 0) {
+        if (func_num_args() === 0) {
             return $this->_subTitle;
         }
-        $this->_subTitle = $args[0];
+        $this->_subTitle = func_get_arg(0);
         return $this;
     }
 
@@ -218,55 +213,51 @@ class Listitem extends Tag
      * Gets and sets the isThumb property.
      * If isThumb is false class="ui-li-icon" is added to html 'img' tag.
      * @param boolean $value
-     * @return bool|listitem
+     * @return bool|self
      */
     public function isThumb()
     {
-        $args = func_get_args();
-        if (count($args) == 0) {
+        if (func_num_args() === 0) {
             return $this->_isThumb;
         }
-        $this->_isThumb = $args[0];
+        $this->_isThumb = func_get_arg(0);
         return $this;
     }
 
     /**
      * Gets and sets the splitHref property.
      * @param string $value
-     * @return string|listitem
+     * @return string|self
      */
     public function splitHref()
     {
-        $args = func_get_args();
-        if (count($args) == 0) {
+        if (func_num_args() === 0) {
             return $this->_splitHref;
         }
-        $this->_splitHref = $args[0];
+        $this->_splitHref = func_get_arg(0);
         return $this;
     }
 
     public function splitRel()
     {
-        $args = func_get_args();
-        if (count($args) == 0) {
+        if (func_num_args() === 0) {
             return $this->_splitRel;
         }
-        $this->_splitRel = $args[0];
+        $this->_splitRel = func_get_arg(0);
         return $this;
     }
 
     /**
      * Gets and sets the target property.
      * @param string $value
-     * @return string|listitem
+     * @return string|self
      */
     public function splitTarget()
     {
-        $args = func_get_args();
-        if (count($args) == 0) {
+        if (func_num_args() === 0) {
             return $this->_splitTarget;
         }
-        $this->_splitTarget = $args[0];
+        $this->_splitTarget = func_get_arg(0);
         return $this;
     }
 
@@ -313,6 +304,7 @@ class Listitem extends Tag
             }
             $string .= '></a>';
         }
+
         return $string;
     }
 

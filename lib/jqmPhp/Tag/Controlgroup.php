@@ -19,6 +19,7 @@
  */
 
 namespace jqmPhp\Tag;
+
 use jqmPhp\Tag;
 
 /**
@@ -47,8 +48,13 @@ class Controlgroup extends Tag
      * @param string $theme
      * @param string $dataType
      */
-    public function __construct($id = '', array $attributes = array(), array $items = array(), $theme = '', $dataType = 'vertical')
-    {
+    public function __construct(
+        $id = '',
+        array $attributes = array(),
+        array $items = array(),
+        $theme = '',
+        $dataType = 'vertical'
+    ) {
         parent::__construct('div', $id, $attributes, $items, $theme);
         $this->_role = $this->attribute('data-role', 'controlgroup', true);
         $this->_dataType = $this->attribute('data-type', $dataType, true);
@@ -61,11 +67,10 @@ class Controlgroup extends Tag
      */
     public function role()
     {
-        $args = func_get_args();
-        if (count($args) == 0) {
+        if (func_num_args() === 0) {
             return $this->_role->value();
         }
-        $this->_role->value($args[0]);
+        $this->_role->value(func_get_arg(0));
         return $this;
     }
 
@@ -76,11 +81,10 @@ class Controlgroup extends Tag
      */
     public function dataType()
     {
-        $args = func_get_args();
-        if (count($args) == 0) {
+        if (func_num_args() === 0) {
             return $this->_dataType->value();
         }
-        $this->_dataType->value($args[0]);
+        $this->_dataType->value(func_get_arg(0));
         return $this;
     }
 }

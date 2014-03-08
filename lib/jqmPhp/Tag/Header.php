@@ -38,19 +38,18 @@ use jqmPhp\Title;
  */
 class Header extends Tag
 {
-    private $_title;
     protected $_role;
     private $_position;
     private $_uiBar;
 
     /**
-     *
      * @param string $id
      * @param array $attributes
      * @param array $items
      * @param string $theme
      * @param string $title
      * @param string $position
+     * @param bool $uiBar
      */
     public function __construct(
         $id = '',
@@ -82,32 +81,16 @@ class Header extends Tag
     }
 
     /**
-     * Gets and sets the title property.
-     * @param string $value
-     * @return string|header
-     */
-    public function title()
-    {
-        $args = func_get_args();
-        if (count($args) == 0) {
-            return $this->_title->text();
-        }
-        $this->_title->text($args[0]);
-        return $this;
-    }
-
-    /**
      *
      * @param string $value
      * @return string|header
      */
     public function role()
     {
-        $args = func_get_args();
-        if (count($args) == 0) {
+        if (func_num_args() === 0) {
             return $this->_role->value();
         }
-        $this->_role->value($args[0]);
+        $this->_role->value(func_get_arg(0));
         return $this;
     }
 
@@ -118,11 +101,10 @@ class Header extends Tag
      */
     public function position()
     {
-        $args = func_get_args();
-        if (count($args) == 0) {
+        if (func_num_args() === 0) {
             return $this->_position->value();
         }
-        $this->_position->value($args[0]);
+        $this->_position->value(func_get_arg(0));
         return $this;
     }
 
@@ -133,22 +115,22 @@ class Header extends Tag
      */
     public function uiBar()
     {
-        $args = func_get_args();
-        if (count($args) == 0) {
+        if (func_num_args() === 0) {
             return ($this->_uiBar->value() == 'ui-bar') ? true : false;
         }
-        $this->_uiBar->value(($args[0]) ? 'ui-bar' : '');
+        $this->_uiBar->value(func_get_arg(0) === true ? 'ui-bar' : '');
         return $this;
     }
 
     /**
-     * Adds a button (button).
-     * @param string $text
+     * @param $text
      * @param string $href
      * @param string $theme
      * @param string $icon
-     * @param boolean $returnAdded
-     * @return Header|Button
+     * @param bool $active
+     * @param bool $inline
+     * @param bool $returnAdded
+     * @return $this|Tag|mixed
      */
     public function addButton(
         $text,
@@ -161,7 +143,7 @@ class Header extends Tag
     ) {
         $bt = $this->add(new Button(), true);
         $bt->text($text)->href($href)->theme($theme)->icon($icon)->active($active)->inline($inline);
-        if ($returnAdded) {
+        if ($returnAdded === true) {
             return $bt;
         }
         return $this;

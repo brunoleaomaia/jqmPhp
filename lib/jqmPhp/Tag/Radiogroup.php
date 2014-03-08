@@ -91,7 +91,7 @@ class Radiogroup extends Tag
         if ($selected) {
             $rad->attribute('checked', 'checked');
         }
-        if ($returnAdded) {
+        if ($returnAdded === true) {
             return $rad;
         }
         return $this;
@@ -104,11 +104,10 @@ class Radiogroup extends Tag
      */
     public function legend()
     {
-        $args = func_get_args();
-        if (count($args) == 0) {
+        if (func_num_args() === 0) {
             return $this->_legend->items()->get(0);
         }
-        $this->_legend->items()->set(0, $args[0]);
+        $this->_legend->items()->set(0, func_get_arg(0));
         return $this;
     }
 
@@ -119,11 +118,10 @@ class Radiogroup extends Tag
      */
     public function name()
     {
-        $args = func_get_args();
-        if (count($args) == 0) {
+        if (func_num_args() === 0) {
             return $this->_name;
         }
-        $this->_name = $args[0];
+        $this->_name = func_get_arg(0);
         return $this;
     }
 
@@ -134,11 +132,10 @@ class Radiogroup extends Tag
      */
     public function role()
     {
-        $args = func_get_args();
-        if (count($args) == 0) {
+        if (func_num_args() === 0) {
             return $this->_role->value();
         }
-        $this->_role->value($args[0]);
+        $this->_role->value(func_get_arg(0));
         return $this;
     }
 
@@ -149,11 +146,10 @@ class Radiogroup extends Tag
      */
     public function dataType()
     {
-        $args = func_get_args();
-        if (count($args) == 0) {
+        if (func_num_args() === 0) {
             return $this->_dataType->value();
         }
-        $this->_dataType->value($args[0]);
+        $this->_dataType->value(func_get_arg(0));
         return $this;
     }
 
@@ -165,11 +161,10 @@ class Radiogroup extends Tag
      */
     public function fieldContain()
     {
-        $args = func_get_args();
-        if (count($args) == 0) {
+        if (func_num_args() === 0) {
             return $this->_fieldContain;
         }
-        $this->_fieldContain = $args[0];
+        $this->_fieldContain = func_get_arg(0);
         return $this;
     }
 

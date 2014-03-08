@@ -62,11 +62,10 @@ class Text
      */
     public function text()
     {
-        $args = func_get_args();
-        if (count($args) == 0) {
+        if (func_num_args() === 0) {
             return $this->text;
         }
-        $this->text = $args[0];
+        $this->text = func_get_arg(0);
 
         return $this;
     }

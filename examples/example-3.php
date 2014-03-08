@@ -43,8 +43,8 @@ $j->head()->add(new Script('js/custom.js')); // Adding a custom JavaScript.
 $p = new Page('example-3');
 $p->theme('b')
     ->title('Example 3')
-    ->header()->addButton('Example 2', 'example-2.php#', 'a', 'arrow-l')
-    ->addButton('Example 4', 'example-4.php#', 'b', 'arrow-r')
+    ->header()->addButton('Example 2', 'example-2.php', 'a', 'arrow-l')
+    ->addButton('Example 4', 'example-4.php', 'b', 'arrow-r')
     ->theme('a');
 /**
  * addContent() is alias to content()->add().
@@ -59,12 +59,12 @@ $p->addContent('<h3>Controlgroup and Buttons</h3>');
  */
 $cg = $p->content()->add(new Controlgroup(), true);
 $cg->dataType('vertical');
-$cg->add(new Button('', array(), array(), 'a', 'index.php#', 'Home', 'home', false));
-$cg->add(new Button('', array(), array(), 'b', 'example-1.php#', 'Example 1', 'arrow-l', false));
-$cg->add(new Button('', array(), array(), 'b', 'example-2.php#', 'Example 2', 'arrow-l', false));
+$cg->add(new Button('', array(), array(), 'a', 'index.php', 'Home', 'home', false));
+$cg->add(new Button('', array(), array(), 'b', 'example-1.php', 'Example 1', 'arrow-l', false));
+$cg->add(new Button('', array(), array(), 'b', 'example-2.php', 'Example 2', 'arrow-l', false));
 $cg->add(new Button('', array(), array(), 'b', '#', 'Example 3', 'check', true));
-$cg->add(new Button('', array(), array(), 'b', 'example-4.php#', 'Example 4', 'arrow-r', false));
-$cg->add(new Button('', array(), array(), 'b', 'example-5.php#', 'Example 5', 'arrow-r', false));
+$cg->add(new Button('', array(), array(), 'b', 'example-4.php', 'Example 4', 'arrow-r', false));
+$cg->add(new Button('', array(), array(), 'b', 'example-5.php', 'Example 5', 'arrow-r', false));
 
 /**
  * Create and config a new collapsible object and add items.
@@ -80,24 +80,24 @@ $p->addContent('<h3>Grid</h3>');
 $g = $p->addContent(new Grid(), true);
 $g->grid('b'); //Sets the grid type (class="ui-grid-b").
 $g->blockA()->add('Column A (ui-block-a)')->add(
-    new Button('', array(), array(), 'd', 'example-1.php#', 'EX1', 'arrow-l')
+    new Button('', array(), array(), 'd', 'example-1.php', 'EX1', 'arrow-l')
 );
 $g->blockB()->add('Column B (ui-block-b)')->add(
-    new Button('', array(), array(), 'd', 'example-2.php#', 'EX2', 'arrow-l')
+    new Button('', array(), array(), 'd', 'example-2.php', 'EX2', 'arrow-l')
 );
 $g->blockC()->add('Column C (ui-block-c)')->add(
-    new Button('', array(), array(), 'd', 'example-4.php#', 'EX4', 'arrow-r')
+    new Button('', array(), array(), 'd', 'example-4.php', 'EX4', 'arrow-r')
 );
 
 /**
  * Create and config a new button object with inline property.
  */
 $p->addContent('<h3>Inline</h3>');
-$p->addContent(new Button('', array(), array(), 'a', 'example-1.php#', 'EX1', 'arrow-l', false, true));
-$p->addContent(new Button('', array(), array(), 'a', 'example-2.php#', 'EX2', 'arrow-l', false, true));
+$p->addContent(new Button('', array(), array(), 'a', 'example-1.php', 'EX1', 'arrow-l', false, true));
+$p->addContent(new Button('', array(), array(), 'a', 'example-2.php', 'EX2', 'arrow-l', false, true));
 $p->addContent(new Button('', array(), array(), 'a', '#', 'EX3', 'check', true, true));
-$p->addContent(new Button('', array(), array(), 'a', 'example-4.php#', 'EX4', 'arrow-r', false, true));
-$p->addContent(new Button('', array(), array(), 'a', 'example-5.php#', 'EX5', 'arrow-r', false, true));
+$p->addContent(new Button('', array(), array(), 'a', 'example-4.php', 'EX4', 'arrow-r', false, true));
+$p->addContent(new Button('', array(), array(), 'a', 'example-5.php', 'EX5', 'arrow-r', false, true));
 
 /**
  * Add the page to jqmPhp object.

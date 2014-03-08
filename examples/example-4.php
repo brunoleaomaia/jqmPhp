@@ -35,27 +35,27 @@ $j->head()->title('Example 4');
 $p = new Page('example-4');
 $p->theme('b')->title('Example 4');
 $p->header()->theme('a')->add(
-    new Button('', array(new Attribute('data-iconpos', 'notext')), array(), 'a', 'index.php#', '', 'home')
+    new Button('', array(new Attribute('data-iconpos', 'notext')), array(), 'a', 'index.php', '', 'home')
 );
 
 /**
  * Create and config a new navbar object and add items.
  */
 $nav = $p->header()->add(new Navbar(), true);
-$nav->add(new Button('', array(), array(), 'a', 'example-1.php#', 'EX1', '', false));
-$nav->add(new Button('', array(), array(), 'a', 'example-2.php#', 'Ex2', '', false));
-$nav->add(new Button('', array(), array(), 'a', 'example-3.php#', 'EX3', '', false));
+$nav->add(new Button('', array(), array(), 'a', 'example-1.php', 'EX1', '', false));
+$nav->add(new Button('', array(), array(), 'a', 'example-2.php', 'Ex2', '', false));
+$nav->add(new Button('', array(), array(), 'a', 'example-3.php', 'EX3', '', false));
 $nav->add(new Button('', array(), array(), 'a', '#', 'EX4', '', true));
-$nav->add(new Button('', array(), array(), 'a', 'example-5.php#', 'EX5', '', false));
+$nav->add(new Button('', array(), array(), 'a', 'example-5.php', 'EX5', '', false));
 
 /**
  * Confif page footer (Footer).
  */
-$p->footer()->addButton('EX1', 'example-1.php#', '', 'arrow-l');
-$p->footer()->addButton('EX2', 'example-2.php#', '', 'arrow-l');
-$p->footer()->addButton('EX3', 'example-3.php#', '', 'arrow-l');
+$p->footer()->addButton('EX1', 'example-1.php', '', 'arrow-l');
+$p->footer()->addButton('EX2', 'example-2.php', '', 'arrow-l');
+$p->footer()->addButton('EX3', 'example-3.php', '', 'arrow-l');
 $p->footer()->addButton('EX4', '#', '', 'check', true);
-$p->footer()->addButton('EX5', 'example-5.php#', '', 'arrow-r');
+$p->footer()->addButton('EX5', 'example-5.php', '', 'arrow-r');
 $p->footer()->group(true)->uiBar(true)->theme('a');
 
 /**

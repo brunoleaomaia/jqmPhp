@@ -61,11 +61,10 @@ class Label extends Tag
      */
     public function text()
     {
-        $args = func_get_args();
-        if (count($args) == 0) {
+        if (func_num_args() === 0) {
             return $this->_text->text();
         }
-        $this->_text->text($args[0]);
+        $this->_text->text(func_get_arg(0));
         return $this;
     }
 
@@ -76,11 +75,10 @@ class Label extends Tag
      */
     public function forField()
     {
-        $args = func_get_args();
-        if (count($args) == 0) {
+        if (func_num_args() === 0) {
             return $this->_forField->value();
         }
-        $this->_forField->value($args[0]);
+        $this->_forField->value(func_get_arg(0));
         return $this;
     }
 }

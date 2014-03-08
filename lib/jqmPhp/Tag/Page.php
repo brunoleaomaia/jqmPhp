@@ -123,11 +123,10 @@ class Page extends Tag
      */
     public function fullscreen()
     {
-        $args = func_get_args();
-        if (count($args) == 0) {
+        if (func_num_args() === 0) {
             return ($this->_fullscreen->value() == 'true') ? true : false;
         }
-        $this->_fullscreen->value(($args[0]) ? 'true' : '');
+        $this->_fullscreen->value(func_get_arg(0) === true ? 'true' : '');
         return $this;
     }
 
@@ -138,26 +137,25 @@ class Page extends Tag
      */
     public function noBackBtn()
     {
-        $args = func_get_args();
-        if (count($args) == 0) {
+        if (func_num_args() === 0) {
             return ($this->_nobackbtn->value() == 'true') ? true : false;
         }
-        $this->_nobackbtn->value(($args[0]) ? 'true' : '');
+        $this->_nobackbtn->value(func_get_arg(0) === true ? 'true' : '');
         return $this;
     }
 
     /**
      * Gets and sets the header title.
-     * @param boolean $value
+     *
+     * @param string $value
      * @return bool|page
      */
     public function title()
     {
-        $args = func_get_args();
-        if (count($args) == 0) {
+        if (func_num_args() === 0) {
             return $this->header()->title();
         }
-        $this->header()->title(($args[0]));
+        $this->header()->title(func_get_arg(0));
         return $this;
     }
 
@@ -170,7 +168,7 @@ class Page extends Tag
     public function addContent($content, $returnAdded = false)
     {
         $this->_content->add($content);
-        if ($returnAdded) {
+        if ($returnAdded === true) {
             return $content;
         }
         return $this;
@@ -183,11 +181,10 @@ class Page extends Tag
      */
     public function role()
     {
-        $args = func_get_args();
-        if (count($args) == 0) {
+        if (func_num_args() === 0) {
             return $this->_role->value();
         }
-        $this->_role->value($args[0]);
+        $this->_role->value(func_get_arg(0));
         return $this;
     }
 }

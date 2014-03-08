@@ -187,7 +187,7 @@ class Container
         $page = new Page($id);
         $page->title($title)->addContent($content);
         $this->html()->body()->addPage($page);
-        if ($returnAdded) {
+        if ($returnAdded === true) {
             return $page;
         }
         return $this;

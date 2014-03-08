@@ -94,11 +94,10 @@ class Html extends Tag
      */
     public function doctype()
     {
-        $args = func_get_args();
-        if (count($args) == 0) {
+        if (func_num_args() === 0) {
             return $this->_doctype->text();
         }
-        $this->_doctype->text($args[0]);
+        $this->_doctype->text(func_get_arg(0));
         return $this;
     }
 
@@ -129,7 +128,7 @@ class Html extends Tag
     public function addPage($page, $returnAdded = false)
     {
         $this->body()->addPage($page);
-        if ($returnAdded) {
+        if ($returnAdded === true) {
             return $page;
         }
         return $this;

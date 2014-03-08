@@ -20,6 +20,7 @@
 
 namespace jqmPhp\Tag;
 
+use jqmPhp\Attribute;
 use jqmPhp\Tag;
 
 /**
@@ -72,149 +73,184 @@ class Listview extends Tag
         $dividerTheme = '',
         $countTheme = ''
     ) {
-        parent::__construct(($ordered) ? 'ol' : 'ul', $id, $attributes, $items, $theme);
-        $this->_role = $this->attribute('data-role', 'listview', true);
-        $this->_inset = $this->attribute('data-inset', (($inset) ? 'true' : ''), true);
-        $this->_filter = $this->attribute('data-filter', (($filter) ? 'true' : ''), true);
-        $this->_splitIcon = $this->attribute('data-split-icon', $splitIcon, true);
-        $this->_splitTheme = $this->attribute('data-split-theme', $splitTheme, true);
-        $this->_dividerTheme = $this->attribute('data-divider-theme', $dividerTheme, true);
-        $this->_countTheme = $this->attribute('data-count-theme', $countTheme, true);
+        parent::__construct($ordered === true ? 'ol' : 'ul', $id, $attributes, $items, $theme);
+
+        $this->_role = $this->addAttribute(new Attribute('data-role', 'listview'), true);
+        $this->_inset = $this->addAttribute(new Attribute('data-inset', $inset === true ? 'true' : ''), true);
+        $this->_filter = $this->addAttribute(new Attribute('data-filter', $filter === true ? 'true' : ''), true);
+        $this->_splitIcon = $this->addAttribute(new Attribute('data-split-icon', $splitIcon), true);
+        $this->_splitTheme = $this->addAttribute(new Attribute('data-split-theme', $splitTheme), true);
+        $this->_dividerTheme = $this->addAttribute(new Attribute('data-divider-theme', $dividerTheme), true);
+        $this->_countTheme = $this->addAttribute(new Attribute('data-count-theme', $countTheme), true);
     }
 
     /**
-     * Adds a Basic Listitem (listitem).
+     * Adds a Basic Listitem (Listitem).
      * @param string $title
      * @param string $href
      * @param string $count
      * @param boolean $returnAdded
-     * @return listview|listitem
+     * @return self|Listitem
      */
     public function addBasic($title, $href = '', $count = '', $returnAdded = false)
     {
-        $li = $this->add(new listitem(), true);
-        $li->title($title)->href($href)->count($count);
-        if ($returnAdded) {
+        $li = new Listitem();
+        $li->title($title)
+            ->href($href)
+            ->count($count);
+        $this->add($li);
+        if ($returnAdded === true) {
             return $li;
         }
         return $this;
     }
 
     /**
-     * Adds a Nested Listitem (listitem).
+     * Adds a Nested Listitem (Listitem).
      * @param string $title
-     * @param listview $listview
+     * @param Listview $listview
      * @param boolean $returnAdded
-     * @return listview
+     * @return self
      */
-    public function addNested($title, $listview, $returnAdded = false)
+    public function addNested($title, Listview $listview, $returnAdded = false)
     {
-        $li = $this->add(new listitem(), true);
+        $li = $this->add(new Listitem());
         $li->title($title);
         $li->add($listview);
-        if ($returnAdded) {
+        if ($returnAdded === true) {
             return $li;
         }
         return $this;
     }
 
     /**
-     * Adds a Divider Listitem (listitem).
+     * Adds a Divider Listitem
+     *
      * @param string $title
      * @param string $count
      * @param boolean $returnAdded
-     * @return listview|listitem
+     * @return self|Listitem
      */
     public function addDivider($title, $count = '', $returnAdded = false)
     {
-        $li = $this->add(new listitem(), true);
-        $li->title($title)->divider(true)->count($count);
-        if ($returnAdded) {
+        $li = new Listitem();
+        $li->title($title)
+            ->divider(true)
+            ->count($count);
+
+        $this->add($li);
+        if ($returnAdded === true) {
             return $li;
         }
         return $this;
     }
 
     /**
-     * Adds a Icon Listitem (listitem).
+     * Adds a Icon Listitem (Listitem)
+     *
      * @param string $title
      * @param string $href
      * @param string $img
      * @param string $count
      * @param boolean $returnAdded
-     * @return listview|listitem
+     * @return self|Listitem
      */
     public function addIcon($title, $href = '', $img = '', $count = '', $returnAdded = false)
     {
-        $li = $this->add(new listitem(), true);
-        $li->title($title)->href($href)->count($count)->img($img);
-        if ($returnAdded) {
+        $li = new Listitem();
+        $li->title($title)
+            ->href($href)
+            ->count($count)
+            ->img($img);
+        $this->add($li);
+        if ($returnAdded === true) {
             return $li;
         }
         return $this;
     }
 
     /**
-     * Adds a Thumbnail Listitem (listitem).
+     * Adds a Thumbnail Listitem (Listitem)
+     *
      * @param string $title
      * @param string $subTitle
      * @param string $href
      * @param string $img
      * @param string $count
      * @param boolean $returnAdded
-     * @return listview|listitem
+     * @return self|Listitem
      */
     public function addThumb($title, $subTitle = '', $href = '', $img = '', $count = '', $returnAdded = false)
     {
-        $li = $this->add(new listitem(), true);
-        $li->title($title)->href($href)->count($count)->img($img)->isThumb(true)->subTitle($subTitle);
-        if ($returnAdded) {
+        $li = new Listitem();
+        $li->title($title)
+            ->href($href)
+            ->count($count)
+            ->img($img)
+            ->isThumb(true)
+            ->subTitle($subTitle);
+
+        $this->add($li);
+        if ($returnAdded === true) {
             return $li;
         }
         return $this;
     }
 
     /**
-     * Adds a Split Listitem (listitem).
+     * Adds a Split Listitem (Listitem)
+     *
      * @param string $title
      * @param string $href
      * @param string $splitHref
      * @param string $count
      * @param boolean $returnAdded
-     * @return listview|listitem
+     * @return self|Listitem
      */
     public function addSplit($title, $href = '', $splitHref = '', $count = '', $returnAdded = false)
     {
-        $li = $this->add(new listitem(), true);
-        $li->title($title)->href($href)->count($count)->splitHref($splitHref);
-        if ($returnAdded) {
+        $li = new Listitem();
+
+        $li->title($title)
+            ->href($href)
+            ->count($count)
+            ->splitHref($splitHref);
+        $this->add($li);
+        if ($returnAdded === true) {
             return $li;
         }
         return $this;
     }
 
     /**
-     * Adds a Icon-Split Listitem (listitem).
+     * Adds a Icon-Split Listitem (Listitem)
+     *
      * @param string $title
      * @param string $href
      * @param string $splitHref
      * @param string $img
      * @param string $count
      * @param boolean $returnAdded
-     * @return listview|listitem
+     * @return self|Listitem
      */
     public function addIconSplit($title, $href = '', $splitHref = '', $img = '', $count = '', $returnAdded = false)
     {
-        $li = $this->add(new listitem(), true);
-        $li->title($title)->href($href)->count($count)->splitHref($splitHref)->img($img);
-        if ($returnAdded) {
+        $li = new Listitem();
+        $li->title($title)
+            ->href($href)
+            ->count($count)
+            ->splitHref($splitHref)
+            ->img($img);
+        $this->add($li);
+        if ($returnAdded === true) {
             return $li;
         }
         return $this;
     }
 
     /**
-     * Adds a Thumbnail-Split Listitem (listitem).
+     * Adds a Thumbnail-Split Listitem (Listitem)
+     *
      * @param string $title
      * @param string $subTitle
      * @param string $href
@@ -222,7 +258,7 @@ class Listview extends Tag
      * @param string $img
      * @param string $count
      * @param boolean $returnAdded
-     * @return listview|listitem
+     * @return self|Listitem
      */
     public function addThumbSplit(
         $title,
@@ -233,11 +269,16 @@ class Listview extends Tag
         $count = '',
         $returnAdded = false
     ) {
-        $li = $this->add(new listitem(), true);
-        $li->title($title)->href($href)->count($count)->splitHref($splitHref)->img($img)->subTitle($subTitle)->isThumb(
-            true
-        );
-        if ($returnAdded) {
+        $li = new Listitem();
+        $li->title($title)
+            ->href($href)
+            ->count($count)
+            ->splitHref($splitHref)
+            ->img($img)
+            ->subTitle($subTitle)
+            ->isThumb(true);
+        $this->add($li);
+        if ($returnAdded === true) {
             return $li;
         }
         return $this;
@@ -250,11 +291,10 @@ class Listview extends Tag
      */
     public function role()
     {
-        $args = func_get_args();
-        if (count($args) == 0) {
+        if (func_num_args() === 0) {
             return $this->_role->value();
         }
-        $this->_role->value($args[0]);
+        $this->_role->value(func_get_arg(0));
         return $this;
     }
 
@@ -265,11 +305,10 @@ class Listview extends Tag
      */
     public function inset()
     {
-        $args = func_get_args();
-        if (count($args) == 0) {
+        if (func_num_args() === 0) {
             return ($this->_inset->value() == 'true') ? true : false;
         }
-        $this->_inset->value(($args[0]) ? 'true' : '');
+        $this->_inset->value(func_get_arg(0) === true ? 'true' : '');
         return $this;
     }
 
@@ -280,11 +319,10 @@ class Listview extends Tag
      */
     public function filter()
     {
-        $args = func_get_args();
-        if (count($args) == 0) {
+        if (func_num_args() === 0) {
             return ($this->_filter->value() == 'true') ? true : false;
         }
-        $this->_filter->value(($args[0]) ? 'true' : '');
+        $this->_filter->value(func_get_arg(0) === true ? 'true' : '');
         return $this;
     }
 
@@ -295,11 +333,10 @@ class Listview extends Tag
      */
     public function splitIcon()
     {
-        $args = func_get_args();
-        if (count($args) == 0) {
+        if (func_num_args() === 0) {
             return $this->_splitIcon->value();
         }
-        $this->_splitIcon->value($args[0]);
+        $this->_splitIcon->value(func_get_arg(0));
         return $this;
     }
 
@@ -310,11 +347,10 @@ class Listview extends Tag
      */
     public function splitTheme()
     {
-        $args = func_get_args();
-        if (count($args) == 0) {
+        if (func_num_args() === 0) {
             return $this->_splitTheme->value();
         }
-        $this->_splitTheme->value($args[0]);
+        $this->_splitTheme->value(func_get_arg(0));
         return $this;
     }
 
@@ -325,11 +361,10 @@ class Listview extends Tag
      */
     public function dividerTheme()
     {
-        $args = func_get_args();
-        if (count($args) == 0) {
+        if (func_num_args() === 0) {
             return $this->_dividerTheme->value();
         }
-        $this->_dividerTheme->value($args[0]);
+        $this->_dividerTheme->value(func_get_arg(0));
         return $this;
     }
 
@@ -340,11 +375,10 @@ class Listview extends Tag
      */
     public function countTheme()
     {
-        $args = func_get_args();
-        if (count($args) == 0) {
+        if (func_num_args() === 0) {
             return $this->_countTheme->value();
         }
-        $this->_countTheme->value($args[0]);
+        $this->_countTheme->value(func_get_arg(0));
         return $this;
     }
 }

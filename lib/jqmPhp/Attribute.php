@@ -58,7 +58,9 @@ class Attribute
     public function __toString()
     {
         $string = '';
-        if ($this->value() != '' || ($this->value() == '' && $this->allowBlank())) $string = $this->name() . '="' . $this->value() . '"';
+        if ($this->value() != '' || ($this->value() == '' && $this->allowBlank())) {
+            $string = $this->name() . '="' . $this->value() . '"';
+        }
         return $string;
     }
 
@@ -70,9 +72,11 @@ class Attribute
      */
     public function name()
     {
-        $args = func_get_args();
-        if (count($args) == 0) return $this->_name;
-        $this->_name = $args[0];
+        if (func_num_args() === 0) {
+            return $this->_name;
+        }
+
+        $this->_name = func_get_arg(0);
 
         return $this;
     }
@@ -84,9 +88,10 @@ class Attribute
      */
     public function value()
     {
-        $args = func_get_args();
-        if (count($args) == 0) return $this->_value;
-        $this->_value = $args[0];
+        if (func_num_args() === 0) {
+            return $this->_value;
+        }
+        $this->_value = func_get_arg(0);
 
         return $this;
     }
@@ -99,9 +104,10 @@ class Attribute
      */
     public function allowBlank()
     {
-        $args = func_get_args();
-        if (count($args) == 0) return $this->_allowBlank;
-        $this->_allowBlank = $args[0];
+        if (func_num_args() === 0) {
+            return $this->_allowBlank;
+        }
+        $this->_allowBlank = func_get_arg(0);
 
         return $this;
     }

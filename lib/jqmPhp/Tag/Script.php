@@ -58,11 +58,10 @@ class Script extends Tag
      */
     public function src()
     {
-        $args = func_get_args();
-        if (count($args) == 0) {
+        if (func_num_args() === 0) {
             return $this->_src->value();
         }
-        $this->_src->value($args[0]);
+        $this->_src->value(func_get_arg(0));
         return $this;
     }
 }

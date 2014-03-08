@@ -19,6 +19,7 @@
  */
 
 namespace jqmPhp\Tag;
+
 use jqmPhp\Tag;
 
 /**
@@ -70,11 +71,10 @@ class Footer extends Header
      */
     public function group()
     {
-        $args = func_get_args();
-        if (count($args) == 0) {
+        if (func_num_args() === 0) {
             return $this->_group;
         }
-        $this->_group = $args[0];
+        $this->_group = func_get_arg(0);
         $this->items()->prefix((($this->_group) ? '<div data-role="controlgroup" data-type="horizontal">' : ''));
         $this->items()->suffix((($this->_group) ? '</div>' : ''));
         return $this;

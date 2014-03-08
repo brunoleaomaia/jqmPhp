@@ -84,7 +84,7 @@ class Select extends Tag
     public function addOption($text, $value = '', $selected = false, $returnAdded = false)
     {
         $opt = $this->add(new Option($text, $value, $selected), true);
-        if ($returnAdded) {
+        if ($returnAdded === true) {
             return $opt;
         }
         return $this;
@@ -97,11 +97,10 @@ class Select extends Tag
      */
     public function name()
     {
-        $args = func_get_args();
-        if (count($args) == 0) {
+        if (func_num_args() === 0) {
             return $this->_name->value();
         }
-        $this->_name->value($args[0]);
+        $this->_name->value(func_get_arg(0));
         $this->_label->forField($this->_name);
         return $this;
     }
@@ -113,11 +112,10 @@ class Select extends Tag
      */
     public function label()
     {
-        $args = func_get_args();
-        if (count($args) == 0) {
+        if (func_num_args() === 0) {
             return $this->_label->text();
         }
-        $this->_label->text($args[0]);
+        $this->_label->text(func_get_arg(0));
         return $this;
     }
 
@@ -129,11 +127,10 @@ class Select extends Tag
      */
     public function fieldContain()
     {
-        $args = func_get_args();
-        if (count($args) == 0) {
+        if (func_num_args() === 0) {
             return $this->_fieldContain;
         }
-        $this->_fieldContain = $args[0];
+        $this->_fieldContain = func_get_arg(0);
         return $this;
     }
 
@@ -145,11 +142,10 @@ class Select extends Tag
      */
     public function icon()
     {
-        $args = func_get_args();
-        if (count($args) == 0) {
+        if (func_num_args() === 0) {
             return $this->_icon->value();
         }
-        $this->_icon->value($args[0]);
+        $this->_icon->value(func_get_arg(0));
         return $this;
     }
 
@@ -160,11 +156,10 @@ class Select extends Tag
      */
     public function inline()
     {
-        $args = func_get_args();
-        if (count($args) == 0) {
+        if (func_num_args() === 0) {
             return ($this->_inline->value() == 'true') ? true : false;
         }
-        $this->_inline->value(($args[0]) ? 'true' : '');
+        $this->_inline->value(func_get_arg(0) === true ? 'true' : '');
         return $this;
     }
 

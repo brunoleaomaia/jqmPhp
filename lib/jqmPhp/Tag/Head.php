@@ -44,7 +44,6 @@ class Head extends Tag
     private $_xmlns;
     private $_charset;
     private $_viewport;
-    private $_title;
     private $_css;
     private $_jq;
     private $_jqm;
@@ -74,8 +73,23 @@ class Head extends Tag
         $this->_css = $this->add(new Link($css), true);
         $this->_jq = $this->add(new Script($jq), true);
         $this->_jqm = $this->add(new Script($jqm), true);
-        $this->_title = new Text($title);
-        $this->add(new Tag('title', '', array(), array($this->_title)));
+        $this->add(new Tag('title', '', array(), array(new Text($title))));
+    }
+
+    /**
+     * Gets and sets the title property
+     *
+     * @param string $value
+     * @return string|header
+     */
+    public function title()
+    {
+        if (func_num_args() === 0) {
+            return $this->title->text();
+        }
+        $this->title->text(func_get_arg(0));
+
+        return $this;
     }
 
     /**
@@ -86,11 +100,10 @@ class Head extends Tag
      */
     public function xmlns()
     {
-        $args = func_get_args();
-        if (count($args) == 0) {
+        if (func_num_args() === 0) {
             return $this->_xmlns->value();
         }
-        $this->_xmlns->value($args[0]);
+        $this->_xmlns->value(func_get_arg(0));
         return $this;
     }
 
@@ -101,11 +114,10 @@ class Head extends Tag
      */
     public function charset()
     {
-        $args = func_get_args();
-        if (count($args) == 0) {
+        if (func_num_args() === 0) {
             return $this->_charset->value();
         }
-        $this->_charset->value($args[0]);
+        $this->_charset->value(func_get_arg(0));
         return $this;
     }
 
@@ -116,28 +128,13 @@ class Head extends Tag
      */
     public function viewport()
     {
-        $args = func_get_args();
-        if (count($args) == 0) {
+        if (func_num_args() === 0) {
             return $this->_viewport->value();
         }
-        $this->_viewport->value($args[0]);
+        $this->_viewport->value(func_get_arg(0));
         return $this;
     }
 
-    /**
-     * Gets and sets the title property.
-     * @param string $value
-     * @return string|head
-     */
-    public function title()
-    {
-        $args = func_get_args();
-        if (count($args) == 0) {
-            return $this->_title->text();
-        }
-        $this->_title->text($args[0]);
-        return $this;
-    }
 
     /**
      * Gets and sets the path to the jQuery Mobile CSS file.
@@ -146,11 +143,10 @@ class Head extends Tag
      */
     public function css()
     {
-        $args = func_get_args();
-        if (count($args) == 0) {
+        if (func_num_args() === 0) {
             return $this->_css->href();
         }
-        $this->_css->href($args[0]);
+        $this->_css->href(func_get_arg(0));
         return $this;
     }
 
@@ -161,11 +157,10 @@ class Head extends Tag
      */
     public function jq()
     {
-        $args = func_get_args();
-        if (count($args) == 0) {
+        if (func_num_args() === 0) {
             return $this->_jq->src();
         }
-        $this->_jq->src($args[0]);
+        $this->_jq->src(func_get_arg(0));
         return $this;
     }
 
@@ -176,11 +171,10 @@ class Head extends Tag
      */
     public function jqm()
     {
-        $args = func_get_args();
-        if (count($args) == 0) {
+        if (func_num_args() === 0) {
             return $this->_jqm->src();
         }
-        $this->_jqm->src($args[0]);
+        $this->_jqm->src(func_get_arg(0));
         return $this;
     }
 }

@@ -105,11 +105,10 @@ class Slider extends Tag
      */
     public function name()
     {
-        $args = func_get_args();
-        if (count($args) == 0) {
+        if (func_num_args() === 0) {
             return $this->_name->value();
         }
-        $this->_name->value($args[0]);
+        $this->_name->value(func_get_arg(0));
         $this->_label->forField($this->_name->value());
         return $this;
     }
@@ -121,11 +120,10 @@ class Slider extends Tag
      */
     public function onValue()
     {
-        $args = func_get_args();
-        if (count($args) == 0) {
+        if (func_num_args() === 0) {
             return $this->_on->attribute('value');
         }
-        $this->_on->attribute('value', $args[0]);
+        $this->_on->attribute('value', func_get_arg(0));
         return $this;
     }
 
@@ -136,11 +134,10 @@ class Slider extends Tag
      */
     public function onLabel()
     {
-        $args = func_get_args();
-        if (count($args) == 0) {
+        if (func_num_args() === 0) {
             return $this->_on->items()->get(0);
         }
-        $this->_on->items()->set(0, $args[0]);
+        $this->_on->items()->set(0, func_get_arg(0));
         return $this;
     }
 
@@ -151,11 +148,10 @@ class Slider extends Tag
      */
     public function offValue()
     {
-        $args = func_get_args();
-        if (count($args) == 0) {
+        if (func_num_args() === 0) {
             return $this->_off->attribute('value');
         }
-        $this->_off->attribute('value', $args[0]);
+        $this->_off->attribute('value', func_get_arg(0));
         return $this;
     }
 
@@ -166,11 +162,10 @@ class Slider extends Tag
      */
     public function offLabel()
     {
-        $args = func_get_args();
-        if (count($args) == 0) {
+        if (func_num_args() === 0) {
             return $this->_off->items()->get(0);
         }
-        $this->_off->items()->set(0, $args[0]);
+        $this->_off->items()->set(0, func_get_arg(0));
         return $this;
     }
 
@@ -181,11 +176,10 @@ class Slider extends Tag
      */
     public function isOn()
     {
-        $args = func_get_args();
-        if (count($args) == 0) {
+        if (func_num_args() === 0) {
             return $this->_isOn;
         }
-        $this->_isOn = ($args[0]);
+        $this->_isOn = (func_get_arg(0));
         if ($this->_isOn) {
             $this->_on->attribute('selected', 'selected');
             $this->_off->attribute('selected', '');
@@ -221,11 +215,10 @@ class Slider extends Tag
      */
     public function label()
     {
-        $args = func_get_args();
-        if (count($args) == 0) {
+        if (func_num_args() === 0) {
             return $this->_label->text();
         }
-        $this->_label->text($args[0]);
+        $this->_label->text(func_get_arg(0));
         return $this;
     }
 
@@ -237,11 +230,10 @@ class Slider extends Tag
      */
     public function fieldContain()
     {
-        $args = func_get_args();
-        if (count($args) == 0) {
+        if (func_num_args() === 0) {
             return $this->_fieldContain;
         }
-        $this->_fieldContain = $args[0];
+        $this->_fieldContain = func_get_arg(0);
         return $this;
     }
 

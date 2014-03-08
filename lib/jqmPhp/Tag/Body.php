@@ -18,6 +18,7 @@
  *
  */
 namespace jqmPhp\Tag;
+
 use jqmPhp\Collection;
 use jqmPhp\Tag;
 
@@ -71,7 +72,7 @@ class Body extends Tag
     public function addPage(Page $page, $returnAdded = false)
     {
         $this->pages()->add($page);
-        if ($returnAdded) {
+        if ($returnAdded === true) {
             return $page;
         }
         return $this;

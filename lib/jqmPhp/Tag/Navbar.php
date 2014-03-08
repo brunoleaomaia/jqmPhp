@@ -68,7 +68,7 @@ class Navbar extends Tag
     {
         $bt = $this->add(new button(), true);
         $bt->text($text)->href($href)->theme($theme)->icon($icon);
-        if ($returnAdded) {
+        if ($returnAdded === true) {
             return $bt;
         }
         return $this;
@@ -81,11 +81,10 @@ class Navbar extends Tag
      */
     public function role()
     {
-        $args = func_get_args();
-        if (count($args) == 0) {
+        if (func_num_args() === 0) {
             return $this->_role->value();
         }
-        $this->_role->value($args[0]);
+        $this->_role->value(func_get_arg(0));
         return $this;
     }
 }

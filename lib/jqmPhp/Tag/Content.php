@@ -19,6 +19,7 @@
  */
 
 namespace jqmPhp\Tag;
+
 use jqmPhp\Tag;
 
 /**
@@ -58,11 +59,10 @@ class Content extends Tag
      */
     public function role()
     {
-        $args = func_get_args();
-        if (count($args) == 0) {
+        if (func_num_args() === 0) {
             return $this->_role->value();
         }
-        $this->_role->value($args[0]);
+        $this->_role->value(func_get_arg(0));
         return $this;
     }
 }

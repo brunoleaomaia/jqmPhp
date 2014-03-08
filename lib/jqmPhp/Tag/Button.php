@@ -19,6 +19,7 @@
  */
 
 namespace jqmPhp\Tag;
+
 use jqmPhp\Attribute;
 use jqmPhp\Tag;
 use jqmPhp\Text;
@@ -92,11 +93,10 @@ class Button extends Tag
      */
     public function active()
     {
-        $args = func_get_args();
-        if (count($args) == 0) {
+        if (func_num_args() === 0) {
             return $this->_active;
         }
-        $this->_active = $args[0];
+        $this->_active = func_get_arg(0);
         $this->attribute('class', (($this->_active) ? 'ui-btn-active' : ''));
         return $this;
     }
@@ -108,11 +108,10 @@ class Button extends Tag
      */
     public function inline()
     {
-        $args = func_get_args();
-        if (count($args) == 0) {
+        if (func_num_args() === 0) {
             return ($this->_inline->value() == 'true') ? true : false;
         }
-        $this->_inline->value(($args[0]) ? 'true' : '');
+        $this->_inline->value(func_get_args(0) === true ? 'true' : '');
         return $this;
     }
 
@@ -123,11 +122,10 @@ class Button extends Tag
      */
     public function href()
     {
-        $args = func_get_args();
-        if (count($args) == 0) {
+        if (func_num_args() === 0) {
             return $this->_href->value();
         }
-        $this->_href->value($args[0]);
+        $this->_href->value(func_get_arg(0));
         return $this;
     }
 
@@ -138,11 +136,10 @@ class Button extends Tag
      */
     public function rel()
     {
-        $args = func_get_args();
-        if (count($args) == 0) {
+        if (func_num_args() === 0) {
             return $this->_rel->value();
         }
-        $this->_rel->value($args[0]);
+        $this->_rel->value(func_get_arg(0));
         return $this;
     }
 
@@ -153,11 +150,10 @@ class Button extends Tag
      */
     public function target()
     {
-        $args = func_get_args();
-        if (count($args) == 0) {
+        if (func_num_args() === 0) {
             return $this->_target->value();
         }
-        $this->_target->value($args[0]);
+        $this->_target->value(func_get_arg(0));
         return $this;
     }
 
@@ -168,11 +164,10 @@ class Button extends Tag
      */
     public function text()
     {
-        $args = func_get_args();
-        if (count($args) == 0) {
+        if (func_num_args() === 0) {
             return $this->_text->text();
         }
-        $this->_text->text($args[0]);
+        $this->_text->text(func_get_arg(0));
         return $this;
     }
 
@@ -183,11 +178,10 @@ class Button extends Tag
      */
     public function icon()
     {
-        $args = func_get_args();
-        if (count($args) == 0) {
+        if (func_num_args() === 0) {
             return $this->_icon->value();
         }
-        $this->_icon->value($args[0]);
+        $this->_icon->value(func_get_arg(0));
         return $this;
     }
 
@@ -198,11 +192,10 @@ class Button extends Tag
      */
     public function role()
     {
-        $args = func_get_args();
-        if (count($args) == 0) {
+        if (func_num_args() === 0) {
             return $this->_role->value();
         }
-        $this->_role->value($args[0]);
+        $this->_role->value(func_get_arg(0));
         return $this;
     }
 }

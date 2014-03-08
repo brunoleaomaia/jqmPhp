@@ -57,11 +57,10 @@ class Option extends Tag
      */
     public function text()
     {
-        $args = func_get_args();
-        if (count($args) == 0) {
+        if (func_num_args() === 0) {
             return $this->_text->text();
         }
-        $this->_text->text($args[0]);
+        $this->_text->text(func_get_arg(0));
         return $this;
     }
 
@@ -72,11 +71,10 @@ class Option extends Tag
      */
     public function value()
     {
-        $args = func_get_args();
-        if (count($args) == 0) {
+        if (func_num_args() === 0) {
             return $this->_value->value();
         }
-        $this->_value->value($args[0]);
+        $this->_value->value(func_get_arg(0));
         return $this;
     }
 
@@ -87,11 +85,10 @@ class Option extends Tag
      */
     public function selected()
     {
-        $args = func_get_args();
-        if (count($args) == 0) {
+        if (func_num_args() === 0) {
             return ($this->_selected->value() == 'selected') ? true : false;
         }
-        $this->_selected->value(($args[0]) ? 'selected' : '');
+        $this->_selected->value(func_get_arg(0) === true ? 'selected' : '');
         return $this;
     }
 }

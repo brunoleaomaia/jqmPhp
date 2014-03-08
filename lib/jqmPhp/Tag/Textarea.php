@@ -86,11 +86,10 @@ class Textarea extends Tag
      */
     public function text()
     {
-        $args = func_get_args();
-        if (count($args) == 0) {
+        if (func_num_args() === 0) {
             return $this->_text->text();
         }
-        $this->_text->text($args[0]);
+        $this->_text->text(func_get_arg(0));
         return $this;
     }
 
@@ -101,11 +100,10 @@ class Textarea extends Tag
      */
     public function name()
     {
-        $args = func_get_args();
-        if (count($args) == 0) {
+        if (func_num_args() === 0) {
             return $this->_name->value();
         }
-        $this->_name->value($args[0]);
+        $this->_name->value(func_get_arg(0));
         $this->_label->forField($this->_name->value());
         if ($this->type() == 'radio') {
             $this->_label->forField($this->id());
@@ -120,11 +118,10 @@ class Textarea extends Tag
      */
     public function cols()
     {
-        $args = func_get_args();
-        if (count($args) == 0) {
+        if (func_num_args() === 0) {
             return $this->_cols->value();
         }
-        $this->_cols->value($args[0]);
+        $this->_cols->value(func_get_arg(0));
         return $this;
     }
 
@@ -135,11 +132,10 @@ class Textarea extends Tag
      */
     public function rows()
     {
-        $args = func_get_args();
-        if (count($args) == 0) {
+        if (func_num_args() === 0) {
             return $this->_rows->value();
         }
-        $this->_rows->value($args[0]);
+        $this->_rows->value(func_get_arg(0));
         return $this;
     }
 
@@ -150,11 +146,10 @@ class Textarea extends Tag
      */
     public function label()
     {
-        $args = func_get_args();
-        if (count($args) == 0) {
+        if (func_num_args() === 0) {
             return $this->_label->text();
         }
-        $this->_label->text($args[0]);
+        $this->_label->text(func_get_arg(0));
         return $this;
     }
 
@@ -166,11 +161,10 @@ class Textarea extends Tag
      */
     public function fieldContain()
     {
-        $args = func_get_args();
-        if (count($args) == 0) {
+        if (func_num_args() === 0) {
             return $this->_fieldContain;
         }
-        $this->_fieldContain = $args[0];
+        $this->_fieldContain = func_get_arg(0);
         return $this;
     }
 
