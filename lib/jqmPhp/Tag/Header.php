@@ -141,10 +141,16 @@ class Header extends Tag
         $inline = false,
         $returnAdded = false
     ) {
-        $bt = $this->add(new Button(), true);
-        $bt->text($text)->href($href)->theme($theme)->icon($icon)->active($active)->inline($inline);
+        $button = new Button();
+        $button->text($text)
+            ->href($href)
+            ->theme($theme)
+            ->icon($icon)
+            ->active($active)
+            ->inline($inline);
+        $this->add($button);
         if ($returnAdded === true) {
-            return $bt;
+            return $button;
         }
         return $this;
     }

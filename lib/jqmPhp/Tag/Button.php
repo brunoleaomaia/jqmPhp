@@ -172,7 +172,8 @@ class Button extends Tag
     }
 
     /**
-     * Gets and sets the icon property (data-icon='gear').
+     * Gets and sets the icon property (data-icon='gear')
+     *
      * @param string $value
      * @return string|button
      */

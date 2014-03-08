@@ -45,7 +45,7 @@ class Container
      *
      * @var string
      */
-    const CSS = 'http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.css';
+    const CSS = '//code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.css';
 
     /**
      * Default Doctype
@@ -59,14 +59,14 @@ class Container
      *
      * @var string
      */
-    const JQUERY_PATH = 'http://code.jquery.com/jquery-1.7.1.min.js';
+    const JQUERY_PATH = '//code.jquery.com/jquery-1.8.3.min.js';
 
     /**
      * Default jQuery Mobile path
      *
      * @var string
      */
-    const JQUERY_MOBILE_PATH = 'http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.js';
+    const JQUERY_MOBILE_PATH = '//code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js';
 
     /**
      * Default XML namespace

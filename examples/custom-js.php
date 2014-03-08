@@ -8,6 +8,7 @@ use jqmPhp\Tag\Input;
 use jqmPhp\Tag\Listview;
 use jqmPhp\Tag\Page;
 use jqmPhp\Tag\Script;
+use jqmPhp\Tag;
 
 
 /**
@@ -44,7 +45,7 @@ $p->addContent('To facilitate the addition of JS you can use the class <b>script
 $p->addContent(
     '<pre class="ui-body-c" style="padding:20px;">$jqmPhp = new Php();' . "\n" . '$jqmPhp->head()->add(' . "\n\t" . 'new script(\'custom.js\')' . "\n" . ');</pre>'
 );
-$p->addContent(new Tag('p', 'p_js', 'class="ui-body-c" style="padding:20px;"', '&nbsp;'));
+$p->addContent(new Tag('p', 'p_js', array('class="ui-body-c" style="padding:20px;"'), array('&nbsp;')));
 
 
 /**
