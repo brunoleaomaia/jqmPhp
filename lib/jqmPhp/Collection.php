@@ -49,15 +49,7 @@ class Collection
      */
     public function __construct(array $items = array(), $separator = '', $prefix = '', $suffix = '')
     {
-        if (!is_array($items) && $items != '') {
-            $items = array($items);
-        }
-        if (!is_array($items)) {
-            $items = array();
-        }
-        if (is_array($items)) {
-            $this->_items = $items;
-        }
+        $this->_items = $items;
         $this->_separator = $separator;
         $this->_prefix = $prefix;
         $this->_suffix = $suffix;
@@ -93,21 +85,24 @@ class Collection
     public function add($item)
     {
         $this->_items[] = $item;
+
         return $this;
     }
 
     /**
      * Adds many items from an array.
+     *
      * @param array $items
      * @return self
      */
     public function addFromArray(array $items)
     {
-        if (is_array($items)) {
-            for ($i = 0; $i < count($items); $i++) {
-                $this->add($items[$i]);
+        if (count($items) > 0) {
+            foreach ($items as $item) {
+                $this->add($item);
             }
         }
+
         return $this;
     }
 

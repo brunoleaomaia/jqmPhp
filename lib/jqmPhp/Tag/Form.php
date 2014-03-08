@@ -24,7 +24,7 @@ use jqmPhp\Tag;
 
 /**
  * This class represents the 'form' tag.
- * @class form
+ *
  * @author Bruno Maia <brunoleaomaia@gmail.com>
  * @copyright Copyright (c) 2011, Bruno Maia
  * @license http://www.gnu.org/licenses/gpl.html GNU Public License
@@ -35,7 +35,7 @@ use jqmPhp\Tag;
  * @link http://code.google.com/p/jqmphp/ jqmPhp Project Website
  * @link http://www.jquerymobile.com jQuery Mobile Website
  */
-class form extends Tag
+class Form extends Tag
 {
     private $_action;
     private $_method;
@@ -64,8 +64,9 @@ class form extends Tag
 
     /**
      * Gets and sets the action attribute.
+     *
      * @param string $value
-     * @return string|form
+     * @return string|self
      */
     public function action()
     {
@@ -80,7 +81,7 @@ class form extends Tag
     /**
      * Gets and sets the action attribute.
      * @param string $value
-     * @return string|form
+     * @return string|self
      */
     public function method()
     {

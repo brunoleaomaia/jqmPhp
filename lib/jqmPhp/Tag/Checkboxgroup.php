@@ -19,6 +19,8 @@
  */
 
 namespace jqmPhp\Tag;
+
+use jqmPhp\Attribute;
 use jqmPhp\Tag;
 
 /**
@@ -57,13 +59,11 @@ class Checkboxgroup extends Tag
         $dataType = 'vertical',
         $fieldContain = false
     ) {
-        parent::__construct('fieldset', $id, '', '', $theme);
-        $this->_legend = $this->add(new Tag('legend', '', '', $legend), true);
-        if (is_array($items)) {
-            $this->items()->addFromArray($items);
-        }
-        $this->_role = $this->attribute('data-role', 'controlgroup', true);
-        $this->_dataType = $this->attribute('data-type', $dataType, true);
+        parent::__construct('fieldset', $id, array(), array(), $theme);
+        $this->_legend = $this->add(new Tag('legend', '', array(), array($legend)), true);
+        $this->items()->addFromArray($items);
+        $this->_role = new Attribute('data-role', 'controlgroup');
+        $this->_dataType = new Attribute('data-type', $dataType);
         $this->_fieldContain = $fieldContain;
     }
 
@@ -95,13 +95,14 @@ class Checkboxgroup extends Tag
         if ($returnAdded) {
             return $chk;
         }
+
         return $this;
     }
 
     /**
      * Gets and sets the legend property.
      * @param string $value
-     * @return string|checkboxgroup
+     * @return string|self
      */
     public function legend()
     {
@@ -116,7 +117,7 @@ class Checkboxgroup extends Tag
     /**
      *
      * @param string $value
-     * @return string|checkboxgroup
+     * @return string|self
      */
     public function role()
     {
@@ -131,7 +132,7 @@ class Checkboxgroup extends Tag
     /**
      * Gets and sets the dataType property (data-type="vertical").
      * @param string $value
-     * @return string|checkboxgroup
+     * @return string|self
      */
     public function dataType()
     {
@@ -147,7 +148,7 @@ class Checkboxgroup extends Tag
      * Gets and sets the fieldContain property.
      * If the fieldContain is true an automatic div data-role="fieldcontain" is generated.
      * @param boolean $value
-     * @return bool|checkboxgroup
+     * @return bool|self
      */
     public function fieldContain()
     {
@@ -179,8 +180,7 @@ class Checkboxgroup extends Tag
      */
     public function closeTag()
     {
-        $string = '';
-        $string .= parent::closeTag();
+        $string = parent::closeTag();
         if ($this->_fieldContain) {
             $string .= '</div>';
         }

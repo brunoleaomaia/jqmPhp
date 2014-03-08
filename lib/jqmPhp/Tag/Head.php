@@ -50,11 +50,10 @@ class Head extends Tag
     private $_jqm;
 
     /**
-     *
      * @param string $xmlns
      * @param string $charset
-     * @param string $title
-     * @param string $css
+     * @param array|string $title
+     * @param array|string $css
      * @param string $jq
      * @param string $jqm
      */
@@ -76,7 +75,7 @@ class Head extends Tag
         $this->_jq = $this->add(new Script($jq), true);
         $this->_jqm = $this->add(new Script($jqm), true);
         $this->_title = new Text($title);
-        $this->add(new Tag('title', '', '', array($this->_title)));
+        $this->add(new Tag('title', '', array(), array($this->_title)));
     }
 
     /**

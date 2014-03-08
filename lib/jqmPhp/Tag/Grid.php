@@ -36,7 +36,7 @@ use jqmPhp\Tag;
  * @link http://code.google.com/p/jqmphp/ jqmPhp Project Website
  * @link http://www.jquerymobile.com jQuery Mobile Website
  */
-class grid extends Tag
+class Grid extends Tag
 {
     private $_grid;
     private $_a;
@@ -64,36 +64,6 @@ class grid extends Tag
         array $d = array(),
         array $e = array()
     ) {
-        if (is_string($a) && $a != '') {
-            $a = array($a);
-        }
-        if (is_string($b) && $b != '') {
-            $b = array($b);
-        }
-        if (is_string($c) && $c != '') {
-            $c = array($c);
-        }
-        if (is_string($d) && $d != '') {
-            $d = array($d);
-        }
-        if (is_string($e) && $e != '') {
-            $e = array($e);
-        }
-        if (!is_array($a)) {
-            $a = array();
-        }
-        if (!is_array($b)) {
-            $b = array();
-        }
-        if (!is_array($c)) {
-            $c = array();
-        }
-        if (!is_array($d)) {
-            $d = array();
-        }
-        if (!is_array($e)) {
-            $e = array();
-        }
         parent::__construct('div', $id);
         $this->grid($type);
         $this->_a = $this->add(new Collection($a), true);

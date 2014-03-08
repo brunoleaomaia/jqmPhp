@@ -19,6 +19,7 @@
  */
 
 namespace jqmPhp\Tag;
+
 use jqmPhp\Tag;
 use jqmPhp\Title;
 
@@ -50,9 +51,15 @@ class Collapsible extends Tag
      * @param string $title
      * @param boolean $collapsed
      */
-    public function __construct($id = '', array $attributes = array(), array $items = array(), $theme = '', $title = '', $collapsed = true)
-    {
-        parent::__construct('div', $id, $attributes, '', $theme);
+    public function __construct(
+        $id = '',
+        array $attributes = array(),
+        array $items = array(),
+        $theme = '',
+        $title = '',
+        $collapsed = true
+    ) {
+        parent::__construct('div', $id, $attributes, array(), $theme);
         $this->_role = $this->attribute('data-role', 'collapsible', true);
         $this->_collapsed = $this->attribute('data-collapsed', (($collapsed) ? 'true' : 'false'), true);
         $this->_title = $this->add(new Title($title), true);

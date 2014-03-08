@@ -34,27 +34,35 @@ namespace jqmPhp;
  */
 class Tag
 {
-    private $_tag;
-    private $_id;
-    private $_attributes;
-    private $_items;
-    private $_theme;
+    private $tagName;
+    private $id;
+    private $attributes;
+
+    /**
+     * @var Collection
+     */
+    private $items;
+
+    /**
+     * @var Attribute
+     */
+    private $theme;
 
     /**
      *
-     * @param string $tag
+     * @param string $tagName
      * @param string $id
      * @param array $attributes
      * @param array $items
      * @param string $theme
      */
-    public function __construct($tag, $id = '', array $attributes = array(), array $items = array(), $theme = '')
+    public function __construct($tagName, $id = '', array $attributes = array(), array $items = array(), $theme = '')
     {
-        $this->_tag = $tag;
-        $this->_attributes = new Collection($attributes);
-        $this->_items = new Collection($items);
-        $this->_id = $this->attribute('id', $id, true);
-        $this->_theme = $this->attribute('data-theme', $theme, true);
+        $this->tagName = $tagName;
+        $this->attributes = new Collection($attributes);
+        $this->items = new Collection($items);
+        $this->id = new Attribute('id', $id);
+        $this->theme = new Attribute('data-theme', $theme);
     }
 
     /**
@@ -63,10 +71,7 @@ class Tag
      */
     public function __toString()
     {
-        $string = $this->openTag();
-        $string .= $this->items();
-        $string .= $this->closeTag();
-        return $string;
+        return $this->openTag() . $this->items() . $this->closeTag();
     }
 
     /**
@@ -76,7 +81,7 @@ class Tag
      */
     public function attributes()
     {
-        return $this->_attributes;
+        return $this->attributes;
     }
 
     /**
@@ -84,7 +89,7 @@ class Tag
      * @param string $name
      * @param string $value
      * @param boolean $returnAttribute
-     * @return string|Tag|Attribute
+     * @return string|self|Attribute
      */
     public function attribute()
     {
@@ -116,7 +121,7 @@ class Tag
      * Adds an attribute.
      * @param Attribute $attribute
      * @param boolean $returnAttribute
-     * @return Tag|Attribute
+     * @return self|Attribute
      */
     public function addAttribute($attribute, $returnAttribute = false)
     {
@@ -129,19 +134,20 @@ class Tag
     }
 
     /**
-     * Gets a collection of items of the tag.
+     * Gets a collection of items of the tag
+     *
      * @return Collection
      */
     public function items()
     {
-        return $this->_items;
+        return $this->items;
     }
 
     /**
      * Adds an item.
      * @param mixed $item
      * @param boolean $returnItem
-     * @return Tag|mixed
+     * @return self|mixed
      */
     public function add($item, $returnItem = false)
     {
@@ -154,46 +160,49 @@ class Tag
 
     /**
      * Gets and sets the HTML tag.
+     *
      * @param string $value
-     * @return string|Tag
+     * @return string|self
      */
     public function tag()
     {
         $args = func_get_args();
         if (count($args) == 0) {
-            return $this->_tag;
+            return $this->tagName;
         }
-        $this->_tag = $args[0];
+        $this->tagName = $args[0];
         return $this;
     }
 
     /**
      * Gets and sets the id attribute.
+     *
      * @param string $value
-     * @return string|Tag
+     * @return string|self
      */
     public function id()
     {
         $args = func_get_args();
         if (count($args) == 0) {
-            return $this->_id->value();
+            return $this->id->value();
         }
-        $this->_id->value($args[0]);
+        $this->id->value($args[0]);
         return $this;
     }
 
     /**
      * Gets and sets the theme attribute (data-theme="a").
      * @param string $value
-     * @return string|Tag
+     * @return string|self
      */
     public function theme()
     {
         $args = func_get_args();
         if (count($args) == 0) {
-            return $this->_theme->value();
+            return $this->theme->value();
         }
-        $this->_theme->value($args[0]);
+        $this->theme->value($args[0]);
+
         return $this;
     }
 
