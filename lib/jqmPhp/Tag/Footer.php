@@ -17,15 +17,13 @@
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
  */
-/**
- * This file is part of the jqmPhp package.
- * @package jqmPhp
- * @filesource
- */
-namespace jqmPhp;
+
+namespace jqmPhp\Tag;
+use jqmPhp\Tag;
+
 /**
  * This class represents the 'div' tag (data-role="footer").
- * @class jqmFooter
+ *
  * @author Bruno Maia <brunoleaomaia@gmail.com>
  * @copyright Copyright (c) 2011, Bruno Maia
  * @license http://www.gnu.org/licenses/gpl.html GNU Public License
@@ -36,8 +34,10 @@ namespace jqmPhp;
  * @link http://code.google.com/p/jqmphp/ jqmPhp Project Website
  * @link http://www.jquerymobile.com jQuery Mobile Website
  */
-class jqmFooter extends jqmHeader {
+class Footer extends Header
+{
     private $_group;
+
     /**
      *
      * @param string $id
@@ -46,26 +46,37 @@ class jqmFooter extends jqmHeader {
      * @param string $theme
      * @param string $title
      * @param string $position
-     * @param bool $group
+     * @param boolean $group
      */
-    function __construct($id='', $attributes=array(), $items=array(), $theme='', $title='', $position='inline', $group=false){
+    public function __construct(
+        $id = '',
+        $attributes = array(),
+        $items = array(),
+        $theme = '',
+        $title = '',
+        $position = 'inline',
+        $group = false
+    ) {
         parent::__construct($id, $attributes, $items, $theme, $title, $position);
         $this->_role = $this->attribute('data-role', 'footer', true);
         $this->group($group);
     }
+
     /**
      * Gets and sets the group property.
      * If the group is true an automatic div data-role="controlgroup" is generated.
-     * @param bool $value
-     * @return bool|jqmFooter
+     * @param boolean $value
+     * @return bool|Footer
      */
-    function group(){
+    public function group()
+    {
         $args = func_get_args();
-        if (count($args) == 0) return $this->_group;
+        if (count($args) == 0) {
+            return $this->_group;
+        }
         $this->_group = $args[0];
-        $this->items()->prefix((($this->_group)?'<div data-role="controlgroup" data-type="horizontal">':''));
-        $this->items()->suffix((($this->_group)?'</div>':''));
+        $this->items()->prefix((($this->_group) ? '<div data-role="controlgroup" data-type="horizontal">' : ''));
+        $this->items()->suffix((($this->_group) ? '</div>' : ''));
         return $this;
     }
 }
-?>

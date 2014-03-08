@@ -17,15 +17,15 @@
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
  */
-/**
- * This file is part of the jqmPhp package.
- * @package jqmPhp
- * @filesource
- */
-namespace jqmPhp;
+
+namespace jqmPhp\Tag;
+
+use jqmPhp\Collection;
+use jqmPhp\Tag;
+
 /**
  * This class represents the 'div' tag (class="ui-grid-a").
- * @class jqmGrid
+ * @class grid
  * @author Bruno Maia <brunoleaomaia@gmail.com>
  * @copyright Copyright (c) 2011, Bruno Maia
  * @license http://www.gnu.org/licenses/gpl.html GNU Public License
@@ -36,13 +36,15 @@ namespace jqmPhp;
  * @link http://code.google.com/p/jqmphp/ jqmPhp Project Website
  * @link http://www.jquerymobile.com jQuery Mobile Website
  */
-class jqmGrid extends jqmTag {
+class grid extends Tag
+{
     private $_grid;
     private $_a;
     private $_b;
     private $_c;
     private $_d;
     private $_e;
+
     /**
      *
      * @param string $id
@@ -53,77 +55,121 @@ class jqmGrid extends jqmTag {
      * @param array $d
      * @param array $e
      */
-    function __construct($id='', $type='a', $a=array(), $b=array(), $c=array(), $d=array(), $e=array()) {
-        if (is_string($a) && $a != '') $a = array($a);
-        if (is_string($b) && $b != '') $b = array($b);
-        if (is_string($c) && $c != '') $c = array($c);
-        if (is_string($d) && $d != '') $d = array($d);
-        if (is_string($e) && $e != '') $e = array($e);
-        if (!is_array($a)) $a = array();
-        if (!is_array($b)) $b = array();
-        if (!is_array($c)) $c = array();
-        if (!is_array($d)) $d = array();
-        if (!is_array($e)) $e = array();
+    public function __construct(
+        $id = '',
+        $type = 'a',
+        array $a = array(),
+        array $b = array(),
+        array $c = array(),
+        array $d = array(),
+        array $e = array()
+    ) {
+        if (is_string($a) && $a != '') {
+            $a = array($a);
+        }
+        if (is_string($b) && $b != '') {
+            $b = array($b);
+        }
+        if (is_string($c) && $c != '') {
+            $c = array($c);
+        }
+        if (is_string($d) && $d != '') {
+            $d = array($d);
+        }
+        if (is_string($e) && $e != '') {
+            $e = array($e);
+        }
+        if (!is_array($a)) {
+            $a = array();
+        }
+        if (!is_array($b)) {
+            $b = array();
+        }
+        if (!is_array($c)) {
+            $c = array();
+        }
+        if (!is_array($d)) {
+            $d = array();
+        }
+        if (!is_array($e)) {
+            $e = array();
+        }
         parent::__construct('div', $id);
         $this->grid($type);
-        $this->_a = $this->add(new jqmCollection($a),true);
-        $this->_b = $this->add(new jqmCollection($b),true);
-        $this->_c = $this->add(new jqmCollection($c),true);
-        $this->_d = $this->add(new jqmCollection($d),true);
-        $this->_e = $this->add(new jqmCollection($e),true);
+        $this->_a = $this->add(new Collection($a), true);
+        $this->_b = $this->add(new Collection($b), true);
+        $this->_c = $this->add(new Collection($c), true);
+        $this->_d = $this->add(new Collection($d), true);
+        $this->_e = $this->add(new Collection($e), true);
         $this->_a->prefix('<div class="ui-block-a">')->suffix('</div>');
         $this->_b->prefix('<div class="ui-block-b">')->suffix('</div>');
         $this->_c->prefix('<div class="ui-block-c">')->suffix('</div>');
         $this->_d->prefix('<div class="ui-block-d">')->suffix('</div>');
         $this->_e->prefix('<div class="ui-block-e">')->suffix('</div>');
     }
+
     /**
      * Gets and sets the grid type (a, b, c, d).
      * @param string $value
-     * @return string|jqmGrid
+     * @return string|grid
      */
-    function grid() {
+    public function grid()
+    {
         $args = func_get_args();
-        if (count($args) == 0) return $this->_grid;
-        $type = $args[0]; if ($type != 'a' && $type != 'b' && $type != 'c' && $type != 'd') $type = 'a';
+        if (count($args) == 0) {
+            return $this->_grid;
+        }
+        $type = $args[0];
+        if ($type != 'a' && $type != 'b' && $type != 'c' && $type != 'd') {
+            $type = 'a';
+        }
         $this->_grid = $type;
-        $this->attribute('class', 'ui-grid-'.$this->_grid);
+        $this->attribute('class', 'ui-grid-' . $this->_grid);
         return $this;
     }
+
     /**
      * Gets a collection of items in the block A (class="ui-block-a").
-     * @return jqmCollection
+     * @return Collection
      */
-    function blockA() {
+    public function blockA()
+    {
         return $this->_a;
     }
+
     /**
      * Gets a collection of items in the block B (class="ui-block-b").
-     * @return jqmCollection
+     * @return Collection
      */
-    function blockB() {
+    public function blockB()
+    {
         return $this->_b;
     }
+
     /**
      * Gets a collection of items in the block C (class="ui-block-c").
-     * @return jqmCollection
+     * @return Collection
      */
-    function blockC() {
+    public function blockC()
+    {
         return $this->_c;
     }
+
     /**
      * Gets a collection of items in the block D (class="ui-block-d").
-     * @return jqmCollection
+     * @return Collection
      */
-    function blockD() {
+    public function blockD()
+    {
         return $this->_d;
     }
+
     /**
      * Gets a collection of items in the block E (class="ui-block-e").
-     * @return jqmCollection
+     * @return Collection
      */
-    function blockE() {
+    public function blockE()
+    {
         return $this->_e;
     }
 }
-?>

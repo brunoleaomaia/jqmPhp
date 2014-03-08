@@ -17,15 +17,13 @@
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
  */
+namespace jqmPhp\Tag;
+use jqmPhp\Collection;
+use jqmPhp\Tag;
+
 /**
- * This file is part of the jqmPhp package.
- * @package jqmPhp
- * @filesource
- */
-namespace jqmPhp;
-/**
- * This class represents a text container.
- * @class jqmText
+ * This class represents the 'body' tag.
+ *
  * @author Bruno Maia <brunoleaomaia@gmail.com>
  * @copyright Copyright (c) 2011, Bruno Maia
  * @license http://www.gnu.org/licenses/gpl.html GNU Public License
@@ -36,33 +34,47 @@ namespace jqmPhp;
  * @link http://code.google.com/p/jqmphp/ jqmPhp Project Website
  * @link http://www.jquerymobile.com jQuery Mobile Website
  */
-class jqmText {
-    private $_text;
+class Body extends Tag
+{
+    private $_pages;
+
     /**
      *
-     * @param string $text
+     * @param string $id
+     * @param array $attributes
+     * @param array $items
+     * @param Page[] $pages
      */
-    function __construct($text='') {
-        $this->_text = $text;
+    public function __construct($id = '', array $attributes = array(), array $items = array(), array $pages = array())
+    {
+        parent::__construct('body', $id, $attributes, $items);
+        $this->_pages = $this->add(new Collection($pages), true);
     }
+
     /**
+     * Gets the pages collection in HTML Body
      *
-     * @return string 
+     * @return Collection
      */
-    function __toString(){
-        $string = $this->text();
-        return $string;
+    public function pages()
+    {
+        return $this->_pages;
     }
+
     /**
+     * Adds a page to the pages collection of HTML Body element
      *
-     * @param string $value
-     * @return string|jqmText
+     * @param Page $page
+     * @param boolean $returnAdded
+     * @return self|Page
      */
-    function text(){
-        $args = func_get_args();
-        if (count($args) == 0) return $this->_text;
-        $this->_text = $args[0];
+    public function addPage(Page $page, $returnAdded = false)
+    {
+        $this->pages()->add($page);
+        if ($returnAdded) {
+            return $page;
+        }
         return $this;
     }
 }
-?>
+

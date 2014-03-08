@@ -17,15 +17,13 @@
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
  */
+
+namespace jqmPhp\Tag;
+use jqmPhp\Tag;
+
 /**
- * This file is part of the jqmPhp package.
- * @package jqmPhp
- * @filesource
- */
-namespace jqmPhp;
-/**
- * This class represents the 'div' tag (data-inline="true").
- * @class jqmInline
+ * This class represents the 'div' tag (data-role="content").
+ *
  * @author Bruno Maia <brunoleaomaia@gmail.com>
  * @copyright Copyright (c) 2011, Bruno Maia
  * @license http://www.gnu.org/licenses/gpl.html GNU Public License
@@ -36,7 +34,10 @@ namespace jqmPhp;
  * @link http://code.google.com/p/jqmphp/ jqmPhp Project Website
  * @link http://www.jquerymobile.com jQuery Mobile Website
  */
-class jqmInline extends jqmTag {
+class Content extends Tag
+{
+    private $_role;
+
     /**
      *
      * @param string $id
@@ -44,9 +45,24 @@ class jqmInline extends jqmTag {
      * @param array $items
      * @param string $theme
      */
-    function __construct($id='', $attributes=array(), $items=array(), $theme=''){
+    public function __construct($id = '', array $attributes = array(), array $items = array(), $theme = '')
+    {
         parent::__construct('div', $id, $attributes, $items, $theme);
-        $this->attribute('data-inline', 'true');
+        $this->_role = $this->attribute('data-role', 'content', true);
+    }
+
+    /**
+     *
+     * @param string $value
+     * @return string|content
+     */
+    public function role()
+    {
+        $args = func_get_args();
+        if (count($args) == 0) {
+            return $this->_role->value();
+        }
+        $this->_role->value($args[0]);
+        return $this;
     }
 }
-?>

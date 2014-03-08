@@ -17,15 +17,12 @@
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
  */
-/**
- * This file is part of the jqmPhp package.
- * @package jqmPhp
- * @filesource
- */
+
 namespace jqmPhp;
+
 /**
  * This class represents an attribute of an HTML tag.
- * @class jqmAttribute
+ *
  * @author Bruno Maia <brunoleaomaia@gmail.com>
  * @copyright Copyright (c) 2011, Bruno Maia
  * @license http://www.gnu.org/licenses/gpl.html GNU Public License
@@ -36,62 +33,76 @@ namespace jqmPhp;
  * @link http://code.google.com/p/jqmphp/ jqmPhp Project Website
  * @link http://www.jquerymobile.com jQuery Mobile Website
  */
-class jqmAttribute {
+class Attribute
+{
     private $_name;
     private $_value;
     private $_allowBlank;
+
     /**
      *
      * @param string $name
      * @param string $value
-     * @param bool $allowBlank
+     * @param boolean $allowBlank
      */
-    function __construct($name, $value='', $allowBlank=false){
-         $this->_name = $name;
-         $this->_value = $value;
-         $this->_allowBlank = $allowBlank;
+    public function __construct($name, $value = '', $allowBlank = false)
+    {
+        $this->_name = $name;
+        $this->_value = $value;
+        $this->_allowBlank = $allowBlank;
     }
+
     /**
      * @return string
      */
-    function __toString() {
+    public function __toString()
+    {
         $string = '';
-        if ($this->value() != '' || ($this->value() == '' && $this->allowBlank())) $string = $this->name().'="'.$this->value().'"';
+        if ($this->value() != '' || ($this->value() == '' && $this->allowBlank())) $string = $this->name() . '="' . $this->value() . '"';
         return $string;
     }
+
     /**
      * Gets and sets the attribute name property.
+     *
      * @param string $value
-     * @return string|jqmAttribute
+     * @return string|Attribute
      */
-    function name(){
+    public function name()
+    {
         $args = func_get_args();
         if (count($args) == 0) return $this->_name;
         $this->_name = $args[0];
+
         return $this;
     }
+
     /**
      * Gets and sets the attribute value property.
      * @param string $value
-     * @return string|jqmAttribute
+     * @return string|self
      */
-    function value(){
+    public function value()
+    {
         $args = func_get_args();
         if (count($args) == 0) return $this->_value;
         $this->_value = $args[0];
+
         return $this;
     }
+
     /**
      * Gets and sets the allowBlank property.
      * If the allowBlank is false and the value property is empty no code is generated.
-     * @param bool $allow
-     * @return bool|jqmAttribute
+     * @param boolean $allow
+     * @return bool|self
      */
-    function allowBlank(){
+    public function allowBlank()
+    {
         $args = func_get_args();
         if (count($args) == 0) return $this->_allowBlank;
         $this->_allowBlank = $args[0];
+
         return $this;
     }
 }
-?>

@@ -17,14 +17,17 @@
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
  */
-/**
- * This file is part of the jqmPhp package.
- * @package jqmPhp
- * @filesource
- */
-namespace jqmPhp;
+
+namespace jqmPhp\Tag;
+
+use jqmPhp\Attribute;
+use jqmPhp\Container;
+use jqmPhp\Tag;
+use jqmPhp\Text;
+
 /**
  * This class represents the 'head' tag
+ *
  * @author Bruno Maia <brunoleaomaia@gmail.com>
  * @copyright Copyright (c) 2011, Bruno Maia
  * @license http://www.gnu.org/licenses/gpl.html GNU Public License
@@ -36,7 +39,8 @@ namespace jqmPhp;
  * @link http://www.jquerymobile.com jQuery Mobile Website
  * @filesource
  */
-class jqmHead extends jqmTag {
+class Head extends Tag
+{
     private $_xmlns;
     private $_charset;
     private $_viewport;
@@ -44,6 +48,7 @@ class jqmHead extends jqmTag {
     private $_css;
     private $_jq;
     private $_jqm;
+
     /**
      *
      * @param string $xmlns
@@ -53,92 +58,130 @@ class jqmHead extends jqmTag {
      * @param string $jq
      * @param string $jqm
      */
-    function __construct($xmlns=JQMPHP_XMLNS,$charset=JQMPHP_CHARSET,$title=JQMPHP_TITLE,$css=JQMPHP_CSS,$jq=JQMPHP_JQ,$jqm=JQMPHP_JQM){
+    public function __construct(
+        $xmlns = Container::XMLNS,
+        $charset = Container::CHARSET,
+        $title = Container::TITLE,
+        $css = Container::CSS,
+        $jq = Container::JQUERY_PATH,
+        $jqm = Container::JQUERY_MOBILE_PATH
+    ) {
         parent::__construct('head');
         $this->_xmlns = $this->attribute('xmlns', $xmlns, true);
-        $this->_charset = new jqmAttribute('charset', $charset); $this->add(new jqmTag('meta', '', array($this->_charset)));
-        $this->_viewport = new jqmAttribute('content', JQMPHP_VIEWPORT); $this->add(new jqmTag('meta', '', array(new jqmAttribute('name', 'viewport'), $this->_viewport)));
-        $this->_css = $this->add(new jqmLink($css),true);
-        $this->_jq = $this->add(new jqmScript($jq),true);
-        $this->_jqm = $this->add(new jqmScript($jqm),true);
-        $this->_title = new jqmText($title); $this->add(new jqmTag('title', '', '', array($this->_title)));
+        $this->_charset = new Attribute('charset', $charset);
+        $this->add(new Tag('meta', '', array($this->_charset)));
+        $this->_viewport = new Attribute('content', Container::VIEWPORT);
+        $this->add(new Tag('meta', '', array(new Attribute('name', 'viewport'), $this->_viewport)));
+        $this->_css = $this->add(new Link($css), true);
+        $this->_jq = $this->add(new Script($jq), true);
+        $this->_jqm = $this->add(new Script($jqm), true);
+        $this->_title = new Text($title);
+        $this->add(new Tag('title', '', '', array($this->_title)));
     }
+
     /**
      * Gets and sets the xmlns property.
+     *
      * @param string $value
-     * @return string|jqmHead
+     * @return string|self
      */
-    function xmlns(){
+    public function xmlns()
+    {
         $args = func_get_args();
-        if (count($args) == 0) return $this->_xmlns->value();
+        if (count($args) == 0) {
+            return $this->_xmlns->value();
+        }
         $this->_xmlns->value($args[0]);
         return $this;
     }
+
     /**
      * Gets and sets the charset property.
      * @param string $value
-     * @return string|jqmHead
+     * @return string|head
      */
-    function charset(){
+    public function charset()
+    {
         $args = func_get_args();
-        if (count($args) == 0) return $this->_charset->value();
+        if (count($args) == 0) {
+            return $this->_charset->value();
+        }
         $this->_charset->value($args[0]);
         return $this;
     }
+
     /**
      * Gets and sets the viewport property.
      * @param string $value
-     * @return string|jqmHead
+     * @return string|head
      */
-    function viewport(){
+    public function viewport()
+    {
         $args = func_get_args();
-        if (count($args) == 0) return $this->_viewport->value();
+        if (count($args) == 0) {
+            return $this->_viewport->value();
+        }
         $this->_viewport->value($args[0]);
         return $this;
     }
+
     /**
      * Gets and sets the title property.
      * @param string $value
-     * @return string|jqmHead
+     * @return string|head
      */
-    function title(){
+    public function title()
+    {
         $args = func_get_args();
-        if (count($args) == 0) return $this->_title->text();
+        if (count($args) == 0) {
+            return $this->_title->text();
+        }
         $this->_title->text($args[0]);
         return $this;
     }
+
     /**
      * Gets and sets the path to the jQuery Mobile CSS file.
      * @param string $value
-     * @return string|jqmHead
+     * @return string|head
      */
-    function css(){
+    public function css()
+    {
         $args = func_get_args();
-        if (count($args) == 0) return $this->_css->href();
+        if (count($args) == 0) {
+            return $this->_css->href();
+        }
         $this->_css->href($args[0]);
         return $this;
     }
+
     /**
      * Gets and sets the path to the jQuery JavaScript file
      * @param string $value
-     * @return string|jqmHead
+     * @return string|head
      */
-    function jq(){
+    public function jq()
+    {
         $args = func_get_args();
-        if (count($args) == 0) return $this->_jq->src();
+        if (count($args) == 0) {
+            return $this->_jq->src();
+        }
         $this->_jq->src($args[0]);
         return $this;
     }
+
     /**
      * Gets and sets the path to the jQuery Mobile JavaScript file
      * @param string $value
-     * @return string|jqmHead
+     * @return string|head
      */
-    function jqm(){
+    public function jqm()
+    {
         $args = func_get_args();
-        if (count($args) == 0) return $this->_jqm->src();
+        if (count($args) == 0) {
+            return $this->_jqm->src();
+        }
         $this->_jqm->src($args[0]);
         return $this;
     }
 }
-?>

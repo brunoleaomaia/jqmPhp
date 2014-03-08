@@ -17,15 +17,13 @@
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
  */
+
+namespace jqmPhp\Tag;
+use jqmPhp\Tag;
+
 /**
- * This file is part of the jqmPhp package.
- * @package jqmPhp
- * @filesource
- */
-namespace jqmPhp;
-/**
- * This class represents the 'div' tag (data-role="navbar").
- * @class jqmNavbar
+ * This class represents the 'div' tag (data-role="controlgroup").
+ *
  * @author Bruno Maia <brunoleaomaia@gmail.com>
  * @copyright Copyright (c) 2011, Bruno Maia
  * @license http://www.gnu.org/licenses/gpl.html GNU Public License
@@ -36,47 +34,53 @@ namespace jqmPhp;
  * @link http://code.google.com/p/jqmphp/ jqmPhp Project Website
  * @link http://www.jquerymobile.com jQuery Mobile Website
  */
-class jqmNavbar extends jqmTag {
+class Controlgroup extends Tag
+{
     private $_role;
+    private $_dataType;
+
     /**
      *
      * @param string $id
      * @param array $attributes
      * @param array $items
      * @param string $theme
+     * @param string $dataType
      */
-    function __construct($id='', $attributes=array(), $items=array(), $theme=''){
+    public function __construct($id = '', array $attributes = array(), array $items = array(), $theme = '', $dataType = 'vertical')
+    {
         parent::__construct('div', $id, $attributes, $items, $theme);
-        $this->_role = $this->attribute('data-role', 'navbar', true);
-        $this->items()->prefix('<ul><li>');
-        $this->items()->separator('</li><li>');
-        $this->items()->suffix('</li></ul>');
+        $this->_role = $this->attribute('data-role', 'controlgroup', true);
+        $this->_dataType = $this->attribute('data-type', $dataType, true);
     }
+
     /**
-     * Adds a button (jqmButton).
-     * @param string $text
-     * @param string $href
-     * @param string $theme
-     * @param string $icon
-     * @param bool $returnAdded
-     * @return jqmNavbar|jqmButton
-     */
-    function addButton($text, $href='', $theme='', $icon='', $returnAdded=false) {
-        $bt = $this->add(new jqmButton(), true);
-        $bt->text($text)->href($href)->theme($theme)->icon($icon);
-        if ($returnAdded) return $bt;
-        return $this;
-    }
-    /**
-     * @access private
+     *
      * @param string $value
-     * @return string|jqmContent
+     * @return string|controlgroup
      */
-    function role() {
+    public function role()
+    {
         $args = func_get_args();
-        if (count($args) == 0) return $this->_role->value();
+        if (count($args) == 0) {
+            return $this->_role->value();
+        }
         $this->_role->value($args[0]);
         return $this;
     }
+
+    /**
+     * Gets and sets the dataType property (data-type="vertical").
+     * @param string $value
+     * @return string|controlgroup
+     */
+    public function dataType()
+    {
+        $args = func_get_args();
+        if (count($args) == 0) {
+            return $this->_dataType->value();
+        }
+        $this->_dataType->value($args[0]);
+        return $this;
+    }
 }
-?>

@@ -17,15 +17,15 @@
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
  */
-/**
- * This file is part of the jqmPhp package.
- * @package jqmPhp
- * @filesource
- */
-namespace jqmPhp;
+
+namespace jqmPhp\Tag;
+
+use jqmPhp\Tag;
+use jqmPhp\Title;
+
 /**
  * This class represents the 'div' tag (data-role="header").
- * @class jqmHeader
+ *
  * @author Bruno Maia <brunoleaomaia@gmail.com>
  * @copyright Copyright (c) 2011, Bruno Maia
  * @license http://www.gnu.org/licenses/gpl.html GNU Public License
@@ -36,11 +36,13 @@ namespace jqmPhp;
  * @link http://code.google.com/p/jqmphp/ jqmPhp Project Website
  * @link http://www.jquerymobile.com jQuery Mobile Website
  */
-class jqmHeader extends jqmTag {
+class Header extends Tag
+{
     private $_title;
-    private $_role;
+    protected $_role;
     private $_position;
     private $_uiBar;
+
     /**
      *
      * @param string $id
@@ -50,80 +52,118 @@ class jqmHeader extends jqmTag {
      * @param string $title
      * @param string $position
      */
-    function __construct($id='', $attributes=array(), $items=array(), $theme='', $title='', $position='inline', $uiBar=false){
+    public function __construct(
+        $id = '',
+        $attributes = array(),
+        $items = array(),
+        $theme = '',
+        $title = '',
+        $position = 'inline',
+        $uiBar = false
+    ) {
         parent::__construct('div', $id, $attributes, $items, $theme);
         $this->_role = $this->attribute('data-role', 'header', true);
         $this->_position = $this->attribute('data-position', $position, true);
         $this->_uiBar = $this->attribute('class', ($uiBar) ? 'ui-bar' : '', true);
-        $this->_title = $this->add(new jqmTitle($title),true);
+        $this->_title = $this->add(new Title($title), true);
     }
+
     /**
-     * @access private
+     *
      * @return string
      */
-    function __toString() {
+    public function __toString()
+    {
         $string = '';
-        if ($this->title()!='' || $this->items()->size() > 1) $string = parent::__toString();
+        if ($this->title() != '' || $this->items()->size() > 1) {
+            $string = parent::__toString();
+        }
         return $string;
     }
+
     /**
      * Gets and sets the title property.
      * @param string $value
-     * @return string|jqmHeader
+     * @return string|header
      */
-    function title() {
+    public function title()
+    {
         $args = func_get_args();
-        if (count($args) == 0) return $this->_title->text();
+        if (count($args) == 0) {
+            return $this->_title->text();
+        }
         $this->_title->text($args[0]);
         return $this;
     }
+
     /**
-     * @access private
+     *
      * @param string $value
-     * @return string|jqmHeader
+     * @return string|header
      */
-    function role() {
+    public function role()
+    {
         $args = func_get_args();
-        if (count($args) == 0) return $this->_role->value();
+        if (count($args) == 0) {
+            return $this->_role->value();
+        }
         $this->_role->value($args[0]);
         return $this;
     }
+
     /**
      * Gets and sets the position property (data-position="inline").
      * @param string $value
-     * @return string|jqmHeader
+     * @return string|header
      */
-    function position() {
+    public function position()
+    {
         $args = func_get_args();
-        if (count($args) == 0) return $this->_position->value();
+        if (count($args) == 0) {
+            return $this->_position->value();
+        }
         $this->_position->value($args[0]);
         return $this;
     }
+
     /**
      * Gets and sets the uiBar property (class="ui-bar").
      * @param string $value
-     * @return string|jqmHeader
+     * @return string|header
      */
-    function uiBar() {
+    public function uiBar()
+    {
         $args = func_get_args();
-        if (count($args) == 0) return ($this->_uiBar->value() == 'ui-bar') ? true : false;
-        $this->_uiBar->value(($args[0]) ? 'ui-bar': '');
+        if (count($args) == 0) {
+            return ($this->_uiBar->value() == 'ui-bar') ? true : false;
+        }
+        $this->_uiBar->value(($args[0]) ? 'ui-bar' : '');
         return $this;
     }
+
     /**
-     * Adds a button (jqmButton).
+     * Adds a button (button).
      * @param string $text
      * @param string $href
      * @param string $theme
      * @param string $icon
-     * @param bool $returnAdded
-     * @return jqmHeader|jqmButton
+     * @param boolean $returnAdded
+     * @return Header|Button
      */
-    function addButton($text, $href='', $theme='', $icon='', $active=false, $inline=false, $returnAdded=false) {
-        $bt = $this->add(new jqmButton(), true);
+    public function addButton(
+        $text,
+        $href = '',
+        $theme = '',
+        $icon = '',
+        $active = false,
+        $inline = false,
+        $returnAdded = false
+    ) {
+        $bt = $this->add(new Button(), true);
         $bt->text($text)->href($href)->theme($theme)->icon($icon)->active($active)->inline($inline);
-        if ($returnAdded) return $bt;
+        if ($returnAdded) {
+            return $bt;
+        }
         return $this;
     }
 }
-?>

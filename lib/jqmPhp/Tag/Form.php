@@ -17,15 +17,14 @@
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
  */
+
+namespace jqmPhp\Tag;
+
+use jqmPhp\Tag;
+
 /**
- * This file is part of the jqmPhp package.
- * @package jqmPhp
- * @filesource
- */
-namespace jqmPhp;
-/**
- * This class represents the 'div' tag (data-role="fieldcontain").
- * @class jqmFieldcontain
+ * This class represents the 'form' tag.
+ * @class form
  * @author Bruno Maia <brunoleaomaia@gmail.com>
  * @copyright Copyright (c) 2011, Bruno Maia
  * @license http://www.gnu.org/licenses/gpl.html GNU Public License
@@ -36,29 +35,60 @@ namespace jqmPhp;
  * @link http://code.google.com/p/jqmphp/ jqmPhp Project Website
  * @link http://www.jquerymobile.com jQuery Mobile Website
  */
-class jqmFieldcontain extends jqmTag {
-    private $_role;
+class form extends Tag
+{
+    private $_action;
+    private $_method;
+
     /**
      *
      * @param string $id
      * @param array $attributes
      * @param array $items
      * @param string $theme
+     * @param string $action
+     * @param string $method
      */
-    function __construct($id='', $attributes=array(), $items=array(), $theme=''){
-        parent::__construct('div', $id, $attributes, $items, $theme);
-        $this->_role = $this->attribute('data-role', 'fieldcontain', true);
+    public function __construct(
+        $id = '',
+        array $attributes = array(),
+        array $items = array(),
+        $theme = '',
+        $action = '',
+        $method = 'POST'
+    ) {
+        parent::__construct('form', $id, $attributes, $items, $theme);
+        $this->_action = $this->attribute('action', $action, true);
+        $this->_method = $this->attribute('method', $method, true);
     }
+
     /**
-     * @access private
+     * Gets and sets the action attribute.
      * @param string $value
-     * @return string|jqmContent
+     * @return string|form
      */
-    function role() {
+    public function action()
+    {
         $args = func_get_args();
-        if (count($args) == 0) return $this->_role->value();
-        $this->_role->value($args[0]);
+        if (count($args) == 0) {
+            return $this->_action->value();
+        }
+        $this->_action->value($args[0]);
+        return $this;
+    }
+
+    /**
+     * Gets and sets the action attribute.
+     * @param string $value
+     * @return string|form
+     */
+    public function method()
+    {
+        $args = func_get_args();
+        if (count($args) == 0) {
+            return $this->_method->value();
+        }
+        $this->_method->value($args[0]);
         return $this;
     }
 }
-?>

@@ -17,15 +17,15 @@
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
  */
-/**
- * This file is part of the jqmPhp package.
- * @package jqmPhp
- * @filesource
- */
-namespace jqmPhp;
+
+namespace jqmPhp\Tag;
+use jqmPhp\Attribute;
+use jqmPhp\Tag;
+use jqmPhp\Text;
+
 /**
  * This class represents the 'a' tag (data-role="button").
- * @class jqmButton
+ *
  * @author Bruno Maia <brunoleaomaia@gmail.com>
  * @copyright Copyright (c) 2011, Bruno Maia
  * @license http://www.gnu.org/licenses/gpl.html GNU Public License
@@ -36,7 +36,8 @@ namespace jqmPhp;
  * @link http://code.google.com/p/jqmphp/ jqmPhp Project Website
  * @link http://www.jquerymobile.com jQuery Mobile Website
  */
-class jqmButton extends jqmTag {
+class Button extends Tag
+{
     private $_href;
     private $_text;
     private $_icon;
@@ -45,115 +46,163 @@ class jqmButton extends jqmTag {
     private $_inline;
     private $_rel;
     private $_target;
+
     /**
      *
      * @param string $id
+     * @param array $attributes
+     * @param array $items
+     * @param string $theme
      * @param string $href
      * @param string $text
      * @param string $icon
-     * @param string $theme
-     * @param bool $active
-     * @param bool $inline
+     * @param boolean $active
+     * @param boolean $inline
+     * @param string $rel
+     * @param string $target
      */
-    function __construct($id='', $attributes=array(), $items=array(), $theme='', $href='', $text='', $icon='', $active=false, $inline=false, $rel='', $target='') {
+    public function __construct(
+        $id = '',
+        array $attributes = array(),
+        array $items = array(),
+        $theme = '',
+        $href = '',
+        $text = '',
+        $icon = '',
+        $active = false,
+        $inline = false,
+        $rel = '',
+        $target = ''
+    ) {
         parent::__construct('a', $id, $attributes, $items, $theme);
         $this->_href = $this->attribute('href', $href, true);
         $this->_icon = $this->attribute('data-icon', $icon, true);
         $this->_role = $this->attribute('data-role', 'button', true);
         $this->active($active);
-        $this->_inline = $this->attribute('data-inline', (($inline) ? 'true':''), true);
-        $this->_text = $this->add(new jqmText($text),true);
-        $this->_rel = $this->addAttribute(new jqmAttribute('rel', $rel, false), true);
-        $this->_target = $this->addAttribute(new jqmAttribute('target', $target, false), true);
+        $this->_inline = $this->attribute('data-inline', (($inline) ? 'true' : ''), true);
+        $this->_text = $this->add(new Text($text), true);
+        $this->_rel = $this->addAttribute(new Attribute('rel', $rel, false), true);
+        $this->_target = $this->addAttribute(new Attribute('target', $target, false), true);
     }
+
     /**
      * Gets and sets the active property (class="ui-btn-active").
-     * @param bool $value
-     * @return bool|jqmButton
+     * @param boolean $value
+     * @return bool|button
      */
-    function active(){
+    public function active()
+    {
         $args = func_get_args();
-        if (count($args) == 0) return $this->_active;
+        if (count($args) == 0) {
+            return $this->_active;
+        }
         $this->_active = $args[0];
-        $this->attribute('class', (($this->_active)? 'ui-btn-active':''));
+        $this->attribute('class', (($this->_active) ? 'ui-btn-active' : ''));
         return $this;
     }
+
     /**
      * Gets and sets the inline property (data-inline="true").
-     * @param bool $value
-     * @return bool|jqmButton
+     * @param boolean $value
+     * @return bool|button
      */
-    function inline() {
+    public function inline()
+    {
         $args = func_get_args();
-        if (count($args) == 0) return ($this->_inline->value()=='true') ? true : false;
+        if (count($args) == 0) {
+            return ($this->_inline->value() == 'true') ? true : false;
+        }
         $this->_inline->value(($args[0]) ? 'true' : '');
         return $this;
     }
+
     /**
      * Gets and sets the href property.
      * @param string $value
-     * @return string|jqmButton
+     * @return string|button
      */
-    function href(){
+    public function href()
+    {
         $args = func_get_args();
-        if (count($args) == 0) return $this->_href->value();
+        if (count($args) == 0) {
+            return $this->_href->value();
+        }
         $this->_href->value($args[0]);
         return $this;
     }
+
     /**
      * Gets and sets the rel property.
      * @param string $value
-     * @return string|jqmListitem
+     * @return string|listitem
      */
-    function rel() {
+    public function rel()
+    {
         $args = func_get_args();
-        if (count($args) == 0) return $this->_rel->value();
+        if (count($args) == 0) {
+            return $this->_rel->value();
+        }
         $this->_rel->value($args[0]);
         return $this;
     }
+
     /**
      * Gets and sets the target property.
      * @param string $value
-     * @return string|jqmListitem
+     * @return string|listitem
      */
-    function target() {
+    public function target()
+    {
         $args = func_get_args();
-        if (count($args) == 0) return $this->_target->value();
+        if (count($args) == 0) {
+            return $this->_target->value();
+        }
         $this->_target->value($args[0]);
         return $this;
     }
+
     /**
      * Gets and sets the text property.
      * @param string $value
-     * @return string|jqmButton
+     * @return string|button
      */
-    function text(){
+    public function text()
+    {
         $args = func_get_args();
-        if (count($args) == 0) return $this->_text->text();
+        if (count($args) == 0) {
+            return $this->_text->text();
+        }
         $this->_text->text($args[0]);
         return $this;
     }
+
     /**
      * Gets and sets the icon property (data-icon='gear').
      * @param string $value
-     * @return string|jqmButton
+     * @return string|button
      */
-    function icon(){
+    public function icon()
+    {
         $args = func_get_args();
-        if (count($args) == 0) return $this->_icon->value();
+        if (count($args) == 0) {
+            return $this->_icon->value();
+        }
         $this->_icon->value($args[0]);
         return $this;
     }
+
     /**
-     * @access private
+     *
      * @param string $value
-     * @return string|jqmButton
+     * @return string|button
      */
-    function role() {
+    public function role()
+    {
         $args = func_get_args();
-        if (count($args) == 0) return $this->_role->value();
+        if (count($args) == 0) {
+            return $this->_role->value();
+        }
         $this->_role->value($args[0]);
         return $this;
     }
 }
-?>
