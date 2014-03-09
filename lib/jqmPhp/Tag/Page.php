@@ -20,6 +20,7 @@
 
 namespace jqmPhp\Tag;
 
+use jqmPhp\Attribute;
 use jqmPhp\Tag;
 
 /**
@@ -38,10 +39,30 @@ use jqmPhp\Tag;
 class Page extends Tag
 {
     private $_role;
+
+    /**
+     * @var Header
+     */
     private $_header;
+
+    /**
+     * @var Content
+     */
     private $_content;
+
+    /**
+     * @var Footer
+     */
     private $_footer;
+
+    /**
+     * @var boolean
+     */
     private $_fullscreen;
+
+    /**
+     * @var boolean
+     */
     private $_nobackbtn;
 
     /**
@@ -62,31 +83,36 @@ class Page extends Tag
         $nobackbtn = false
     ) {
         parent::__construct('div', $id, $attributes, $items, $theme);
-        if (is_array($items)) {
-            for ($i = 0; $i < count($items); $i++) {
-                if (is_object($items[$i]) && get_class($items[$i]) == 'header') {
-                    $this->_header = $this->add($items[$i], true);
-                }
-                if (is_object($items[$i]) && get_class($items[$i]) == 'content') {
-                    $this->_content = $this->add($items[$i], true);
-                }
-                if (is_object($items[$i]) && get_class($items[$i]) == 'Footer') {
-                    $this->_footer = $this->add($items[$i], true);
+        if (count($items) > 0) {
+            foreach ($items as $item) {
+                if ($item instanceof Header) {
+                    $this->_header = $this->add($item, true);
+                } elseif ($item instanceof Content) {
+                    $this->_content = $this->add($item, true);
+                } elseif ($item instanceof Footer) {
+                    $this->_footer = $this->add($item, true);
                 }
             }
         }
+
         if (!$this->_header) {
-            $this->_header = $this->add(new header(), true);
+            $this->_header = $this->add(new Header(), true);
         }
         if (!$this->_content) {
-            $this->_content = $this->add(new content(), true);
+            $this->_content = $this->add(new Content(), true);
         }
         if (!$this->_footer) {
             $this->_footer = $this->add(new Footer(), true);
         }
-        $this->_role = $this->attribute('data-role', 'page', true);
-        $this->_fullscreen = $this->attribute('data-fullscreen', (($fullscreen) ? 'true' : ''), true);
-        $this->_nobackbtn = $this->attribute('data-nobackbtn', (($nobackbtn) ? 'true' : ''), true);
+        $this->_role = $this->addAttribute(new Attribute('data-role', 'page'), true);
+        $this->_fullscreen = $this->addAttribute(
+            new Attribute('data-fullscreen', $fullscreen === true ? 'true' : ''),
+            true
+        );
+        $this->_nobackbtn = $this->addAttribute(
+            new Attribute('data-nobackbtn', $nobackbtn === true ? 'true' : ''),
+            true
+        );
     }
 
     /**
@@ -119,7 +145,7 @@ class Page extends Tag
     /**
      * Gets and sets the fullscreen property (data-fullscreen="true").
      * @param boolean $value
-     * @return bool|page
+     * @return bool|self
      */
     public function fullscreen()
     {
@@ -133,7 +159,7 @@ class Page extends Tag
     /**
      * Gets and sets the noBackBtn property (data-nobackbtn="true").
      * @param boolean $value
-     * @return bool|page
+     * @return bool|self
      */
     public function noBackBtn()
     {
@@ -148,7 +174,7 @@ class Page extends Tag
      * Gets and sets the header title.
      *
      * @param string $value
-     * @return bool|page
+     * @return bool|self
      */
     public function title()
     {
@@ -163,7 +189,7 @@ class Page extends Tag
      * Adds an item to the page content (content).
      * @param mixed $content
      * @param boolean $returnAdded
-     * @return page|mixed
+     * @return self|mixed
      */
     public function addContent($content, $returnAdded = false)
     {
@@ -177,7 +203,7 @@ class Page extends Tag
     /**
      *
      * @param string $value
-     * @return string|page
+     * @return string|self
      */
     public function role()
     {

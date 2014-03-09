@@ -132,7 +132,7 @@ class Container
     /**
      * Gets the 'HTML' element (html).
      *
-     * @return html
+     * @return Html
      */
     public function html()
     {

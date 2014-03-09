@@ -67,8 +67,8 @@ class Radiogroup extends Tag
         $this->_name = $name;
         $this->_legend = $this->add(new Tag('legend', '', array(), array($legend)), true);
         $this->items()->addFromArray($items);
-        $this->_role = new Attribute('data-role', 'controlgroup');
-        $this->_dataType = new Attribute('data-type', $dataType);
+        $this->_role = $this->addAttribute(new Attribute('data-role', 'controlgroup'), true);
+        $this->_dataType = $this->addAttribute(new Attribute('data-type', $dataType), true);
         $this->_fieldContain = $fieldContain;
     }
 

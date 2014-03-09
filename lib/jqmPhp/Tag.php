@@ -49,6 +49,9 @@ class Tag
      */
     private $theme;
 
+    /**
+     * @var Title
+     */
     protected $title;
 
     /**
@@ -64,8 +67,8 @@ class Tag
         $this->tagName = $tagName;
         $this->attributes = new Collection($attributes);
         $this->items = new Collection($items);
-        $this->id = new Attribute('id', $id);
-        $this->theme = new Attribute('data-theme', $theme);
+        $this->id = $this->addAttribute(new Attribute('id', $id), true);
+        $this->theme = $this->addAttribute(new Attribute('data-theme', $theme), true);
         $this->title = new Title();
     }
 

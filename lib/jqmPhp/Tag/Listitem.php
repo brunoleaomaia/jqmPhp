@@ -20,6 +20,7 @@
 
 namespace jqmPhp\Tag;
 
+use jqmPhp\Attribute;
 use jqmPhp\Tag;
 
 /**
@@ -83,7 +84,10 @@ class Listitem extends Tag
         $splitTarget = ''
     ) {
         parent::__construct('li', $id, $attributes, $items);
-        $this->_divider = $this->attribute('data-role', (($divider) ? 'list-divider' : ''), true);
+        $this->_divider = $this->addAttribute(
+            new Attribute('data-role', $divider === true ? 'list-divider' : ''),
+            true
+        );
         $this->_title = $title;
         $this->_href = $href;
         $this->_rel = $rel;

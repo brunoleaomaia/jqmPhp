@@ -66,9 +66,9 @@ class Head extends Tag
     ) {
         parent::__construct('head');
         $this->_xmlns = $this->attribute('xmlns', $xmlns, true);
-        $this->_charset = new Attribute('charset', $charset);
+        $this->_charset = $this->addAttribute(new Attribute('charset', $charset), true);
         $this->add(new Tag('meta', '', array($this->_charset)));
-        $this->_viewport = new Attribute('content', Container::VIEWPORT);
+        $this->_viewport = $this->addAttribute(new Attribute('content', Container::VIEWPORT), true);
         $this->add(new Tag('meta', '', array(new Attribute('name', 'viewport'), $this->_viewport)));
         $this->_css = $this->add(new Link($css), true);
         $this->_jq = $this->add(new Script($jq), true);

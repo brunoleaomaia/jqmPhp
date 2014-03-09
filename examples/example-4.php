@@ -49,7 +49,7 @@ $nav->add(new Button('', array(), array(), 'a', '#', 'EX4', '', true));
 $nav->add(new Button('', array(), array(), 'a', 'example-5.php', 'EX5', '', false));
 
 /**
- * Confif page footer (Footer).
+ * Configure page footer (Footer).
  */
 $p->footer()->addButton('EX1', 'example-1.php', '', 'arrow-l');
 $p->footer()->addButton('EX2', 'example-2.php', '', 'arrow-l');
